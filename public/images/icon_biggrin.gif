@@ -1,0 +1,2 @@
+<br />
+<b>Warning</b>:  readfile(/images/smiles/icon_biggrin.gif): failed to open stream: No such file or directory in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />

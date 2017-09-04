@@ -1,0 +1,4 @@
+<br />
+<b>Warning</b>:  readfile(): php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(http://in.sdo.com/wp-content/uploads/2011/05/SNDACode-Banner.jpg): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />

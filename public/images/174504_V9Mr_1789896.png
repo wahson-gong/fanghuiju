@@ -1,0 +1,8 @@
+<br />
+<b>Warning</b>:  readfile(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(https://static.oschina.net/uploads/space/2016/1125/174504_V9Mr_1789896.png): failed to open stream: Invalid argument in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(https://static.oschina.net/uploads/space/2016/1125/174504_V9Mr_1789896.png): failed to open stream: Invalid argument in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />

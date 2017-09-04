@@ -1,0 +1,8 @@
+<br />
+<b>Warning</b>:  readfile(): php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(http://static.pixelpipe.com/b1df3f4a-26d6-4fea-8219-173235a2c06f_m.jpg): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(): php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  readfile(http://static.pixelpipe.com/b1df3f4a-26d6-4fea-8219-173235a2c06f_m.jpg): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />

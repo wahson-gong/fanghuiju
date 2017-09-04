@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<?php include CUR_VIEW_PATH."public/head.html"?>
+        <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+       <script src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
+
+        
+	</head>
+
+	<body class="body-color">
+		<header>
+		<?php include CUR_VIEW_PATH."public/header.html"?>
+
+		</header>
+		<!--侧边菜单栏-->
+		<aside class="side-nav">
+			<?php include CUR_VIEW_PATH."public/aside.html"?>
+		</aside>
+		<!--侧边菜单栏 end-->
+
+		<!--主体部分-->
+		<section class="body-content">
+
+			<!--管理模块-->
+			<section>
+				<ul class="menu-list">
+					
+					<li class="bg-skyblue">
+						<a href="/index.php?p=admin&c=yonghu&a=index">
+							<span class="ficon ficon-yzyonghuguanli"></span>
+							<br />用户管理
+						</a>
+					</li>
+					
+					<li class="bg-green">
+						<a href="/index.php?p=admin&c=lanmu&a=index">
+							<span class="ficon ficon-anquan"></span>
+							<br />栏目管理
+						</a>
+					</li>
+					<li class="bg-yellow">
+						<a href="/index.php?p=admin&c=system&a=index">
+							<span class="ficon ficon-wenzhang"></span>
+							<br />系统日志
+						</a>
+					</li>
+					<li class="bg-blue">
+						<a href="/index.php?p=admin&c=peizhi&a=index">
+							<span class="ficon ficon-shop"></span>
+							<br />网站配置
+						</a>
+					</li>
+					<li class="bg-red">
+					<a href="/index.php?p=admin&c=wenzhang&a=index&model_id=53&sort_id=26">
+						<span class="ficon ficon-kuozhanicon"></span>
+						<br />关于我们
+					</a>
+				    </li>
+					<li class="bg-watermelon-red">
+					<a href="/index.php?p=admin&c=autotable&a=index&model_id=55">
+						<span class="ficon ficon-cuxiaohuodong"></span>
+						<br />首页换图
+					</a>
+				   </li>
+					
+					
+				</ul>
+			</section>
+			<!--管理模块 end-->
+
+			<!--数据分析-->
+			<section>
+				<div class="home-modular">
+					<div class="home-modular-header">
+						<span class="ficon ficon-shujutongji"></span>&nbsp;数据分析
+					</div>
+					<div class="home-modular-contet">
+						<div class="data-analysis" id="container">
+							 
+						</div>
+						<div class="data-type">
+							<ul class="data-type-list">
+
+								<li>
+									<a>
+										<span class="ficon ficon-zoomout"></span><br />
+										<span class="data-num">
+										<?php echo $systemMode->select(" SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   ")[0]['count_id'] ?></span>
+										<br /> 今日访问
+									</a>
+								</li>
+								<li>
+									<a>
+										<span class="ficon ficon-user"></span><br />
+										<span class="data-num"><?php echo $systemMode->select(" SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   ")[0]['count_id'] ?></span><br /> 总访问量
+									</a>
+								</li>
+								<li>
+									<a>
+										<span class="ficon ficon-dingdan"></span><br />
+										<span class="data-num"><?php echo $tableModel->select(" SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    ")[0]['count_id'] ?></span><br /> 新增文章
+									</a>
+								</li>
+								<li>
+									<a>
+										<span class="ficon ficon-shop"></span><br />
+										<span class="data-num"><?php echo $tableModel->select(" SELECT count(id) as count_id from sl_article  ")[0]['count_id'] ?></span><br /> 文章总数
+									</a>
+								</li>
+								<li>
+									<a>
+										<span class="ficon ficon-diqiu"></span><br />
+										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    ")[0]['count_id'] ?></span><br /> 今日留言
+									</a>
+								</li>
+								<li>
+									<a>
+										<span class="ficon ficon-wait"></span><br />
+										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from sl_feedbook ")[0]['count_id'] ?></span><br /> 总留言
+									</a>
+								</li>
+							</ul>
+						</div>
+						<p class="clear"></p>
+					</div>
+				</div>
+			</section>
+			<!--数据分析 end -->
+
+			<!--数据块-->
+			<section class="hmc-small">
+				
+			</section>
+			<!--数据块  end -->
+
+			<footer>
+				<?php include CUR_VIEW_PATH."public/footer.html"?>
+			</footer>
+		</section>
+		<p class="clear"></p>
+
+		<script src="application/views/admin/js/wow.min.js" type="text/javascript"></script>
+		<script src="application/views/admin/js/common.js" type="text/javascript"></script>
+
+		<!--wow 初始化-->
+		<script>
+			if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+				new WOW().init();
+			};
+		</script>
+		
+		
+		<script type="text/javascript">
+		$(function () {
+		    $('#container').highcharts({
+		        title: {
+		            text: '每月数据统计',
+		            x: -20 //center
+		        },
+		        subtitle: {
+		            text: '来源：<?php echo $GLOBALS['config_cache']['COMPANYNAME'] ?>',
+		            x: -20
+		        },
+		        xAxis: {
+		            categories: [
+                                <?php foreach($dtime as $k=>$v ){ ?>   
+		                         '<?php echo date('m-d',strtotime($v['dtime']))  ?>',
+		                         <?php }?>	                
+		                ]
+		        },
+		        yAxis: {
+		            title: {
+		                text: '数量(条)'
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        },
+		        tooltip: {
+		            valueSuffix: '条'
+		        },
+		        legend: {
+		            layout: 'vertical',
+		            align: 'right',
+		            verticalAlign: 'middle',
+		            borderWidth: 0
+		        },
+		        series: [
+                <?php foreach($sort as $k=>$v1) : ?>
+		        {
+		            name: '<?php echo $v1['u1'] ?>',
+		            data: [
+		                   
+<?php foreach($dtime as $k=>$v ){ ?>   
+<?php echo $tableModel->select(" SELECT count(id) as count_id from sl_article where sort_id={$v1['id']}  and DATE_SUB('".date('y-m-d',strtotime($v['dtime']))."', INTERVAL 0 DAY) = date(dtime) ")[0]['count_id']  ?>,
+<?php }?>	    
+		                   
+		                   ]
+		        },
+		        
+		        <?php endforeach;?>
+		        
+		        ]
+		    });
+		});
+		</script>
+
+		
+	</body>
+
+</html>

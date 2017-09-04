@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<?php include CUR_VIEW_PATH."public/head.html"?>
+</head>
+
+<body class="body-color">
+	<header>
+		<?php include CUR_VIEW_PATH."public/header.html"?>
+
+	</header>
+	<!--侧边菜单栏-->
+	<aside class="side-nav">
+		<?php include CUR_VIEW_PATH."public/aside.html"?>
+	</aside>
+	<!--侧边菜单栏 end-->
+
+	<!--主体部分-->
+	<section class="body-content">
+		<!--当前位置-->
+		<div class="site-location">
+			&nbsp;&nbsp;
+			<span class="ficon ficon-weizhi"></span>&nbsp;<a href="index.php?p=admin&c=index&a=index">用户首页</a>
+			&nbsp;&gt;&nbsp;<a href="index.php?p=admin&c=moxing&a=index">模型管理</a>
+			&nbsp;&gt;&nbsp;<a href="index.php?p=admin&c=autotable&a=index&model_id=<?php echo $_GET['model_id'] ?>">表单管理</a>
+			&nbsp;&gt;&nbsp;<a href="#">添加信息</a>
+		</div>
+		
+		<!--当前位置 end-->
+		<br/>
+		
+    <form method="post" action="index.php?p=admin&c=autotable&a=update&model_id=<?php echo $_GET['model_id'] ?>" name='theForm' id="theForm" enctype="multipart/form-data">
+		<section class="pos-relative">
+			<!--发布文章中间部分-->
+			<article class="article-edit">
+				<!--上边信息-->
+				<div class="article-top">
+				 	 
+				    <table class="a-info">
+				             
+				      <?php foreach($filedLists as $v){ ?>
+                         <?php if($v['u7']!="文本编辑器" and $v['u7']!="时间框" and $v['u7']!="数字"){ ?>
+
+                              <!-- 文本框 -->
+                          <?php if($v['u7']=="文本域"){?>
+                          
+                            <tr style="display: table-row;">
+				    		    <th><?php echo $v['u2'] ?></th>
+				    		    <td>
+				    			<textarea name="<?php echo $v['u1'] ?>" class="input" style="height: 127px; margin: 0px; width: 100%;"><?php echo $wenzhang[$v['u1']]  ?></textarea><i><?php echo $v['u3'] ?></i>
+				    		    </td>
+				    	     </tr>
+				    	     <!-- 图片 -->
+				    	  <?php }else if($v['u7']=="图片"){ ?>   
+				    	     <tr style="display: table-row;">
+				    		    <th><?php echo $v['u2'] ?></th>
+				    		    <td>
+	                            <input type = 'file' name = '<?php echo $v['u1'] ?>' class="input"  />
+                                <img src="<?php echo $wenzhang[$v['u1']]  ?>" style="max-width: 200px;max-height: 100px;overflow: hidden;" onerror="javascript:this.src='application/views/admin/images/nopic.jpg';" />
+                                <i><?php echo $v['u3'] ?></i>
+				    		    </td>
+				    	     </tr>
+				    	      <!--单选 -->
+				    	   <?php }else if($v['u7']=="单选"){ ?>   
+				    	     <tr style="display: table-row;">
+				    		    <th><?php echo $v['u2'] ?></th>
+								<td>
+								<?php $filedModel1=new FiledModel("filed"); $filedVal=$filedModel1->getFiledDefaultValue($v['id']); ?>
+								<!-- 循环默认值 -->
+								<?php $i=1; foreach($filedVal as $key=>$val){ ?>
+								     <?php if($wenzhang[$v['u1']] ==trim($val) ) { ?>
+                                          <input id="<?php echo $v['u1'].$i ?>" type="radio" name="<?php echo $v['u1'] ?>" checked="checked" value="<?php echo trim($val) ?>"><?php echo trim($val) ?>
+                                     <?php }else{ ?>
+                                          <input id="<?php echo $v['u1'].$i ?>" type="radio" name="<?php echo $v['u1'] ?>" value="<?php echo trim($val) ?>"><?php echo trim($val) ?>
+                                      <?php } ?>
+                                     
+                                <?php $i++; } ?>
+								</td>
+
+							</tr>  
+				    	     
+				    	      <!--其他情况 -->
+                          <?php }else{ ?>
+                          
+                             <tr>
+				    		     <th><?php echo $v['u2'] ?></th>
+				    		     <td>
+				    			     <input name="<?php echo $v['u1'] ?>" type="text" class="input" value="<?php echo $wenzhang[$v['u1']]  ?>"/><i><?php echo $v['u3'] ?></i>
+				    		     </td>
+				           	 </tr>
+				           	 
+                          <?php } ?>
+                            
+                         <?php } ?>
+                      <?php } ?>
+				    
+				    
+				    
+				    	
+				    	
+				    </table>
+				    
+				</div>
+				<!--编辑器-->
+				
+				 <!-- 编辑器配置文件 -->
+                 <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.config.js"></script>
+                 <!-- 编辑器源码文件 -->
+                <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.all.js"></script>
+                 <!-- 实例化编辑器 -->
+    
+				<?php foreach($filedLists as $v){ ?>
+                         
+                    <?php if($v['u7']=="文本编辑器" ){ ?>
+                   
+                      <div class="bjq">
+                       <p class="title" style="font-size: 15px;font-weight: bold;color: #555;"><em class="txt-blue ficon ficon-deng"></em> <?php echo $v['u2'] ?></em></p>
+                          <script id="<?php echo $v['u1'] ?>" name="<?php echo $v['u1'] ?>" type="text/plain"><?php echo html_entity_decode($wenzhang[$v['u1']])   ?></script>
+                          <script type="text/javascript">
+                            var ue_<?php echo $v['u1'] ?> = UE.getEditor('<?php echo $v['u1'] ?>');
+                            
+                          </script>
+                         
+                      </div>
+                    <?php } ?>
+                       
+               <?php } ?>
+				
+			</article>
+			<!--发布文章 侧边-->
+			<aside class="article-side">
+				<div class="box">
+				
+				<!-- 时间部分 -->
+				<?php foreach($filedLists as $v){ ?>
+                         
+                    <?php if($v['u7']=="时间框" ){ ?>
+					    <div class="marb-20">
+					        <p class="title"><em class="txt-blue ficon ficon-riqi"></em> <?php echo $v['u2'] ?></p>
+					        <p><input name="<?php echo $v['u1'] ?>" type="text" id="TextBox1" class="dinput" value="<?php echo  $wenzhang[$v['u1']]  ?>" onClick="WdatePicker()" /></p>
+					        
+					    </div>
+				   <?php } ?>
+                       
+               <?php } ?>  
+				    
+				<!-- 数字部分 -->  
+			   <?php foreach($filedLists as $v){ ?>
+                         
+                    <?php if($v['u7']=="数字" ){ ?>
+                        <div class="marb-20">
+					        <p class="title"><em class="txt-blue ficon ficon-deng"></em> <?php echo $v['u2'] ?></p>
+					        <p>排序： <input type="text" class="input" style="width: 50px;"  name="<?php echo $v['u1'] ?>" value="<?php echo  $wenzhang[$v['u1']]  ?>"/> <span class="txt-blue">数值越小越前面</span></p>
+				        </div>
+                    
+                     <?php } ?>
+                       
+               <?php } ?>  
+               
+               
+				 
+				</div>
+			</aside>
+			<input type="text" name="id" value="<?php echo $wenzhang[id]  ?>" hidden="hide" />
+			<p>
+				<tr>
+				<th></th>
+				<td>
+						<a href="#" class="btn btn-blue" onclick="$('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
+						<a href="#" class="btn btn-green" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a>
+			   </td>
+			   </tr>
+			</p>
+			
+		</section>
+     </form>
+
+<footer>
+	<?php include CUR_VIEW_PATH."public/footer.html"?>
+</footer>
+</section>
+
+<p class="clear"></p>
+
+<script src="application/views/admin/js/wow.min.js" type="text/javascript"></script>
+<script src="application/views/admin/js/common.js" type="text/javascript"></script>
+
+<!--wow 初始化-->
+<script>
+	if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+		new WOW().init();
+	};
+</script>
+<script type="text/javascript">
+			$(".a-info-ss").click(function(){
+				$(".a-info .collapse").fadeToggle();
+			})
+		</script>
+
+</body>
+
+</html>

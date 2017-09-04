@@ -1,0 +1,3 @@
+<br />
+<b>Warning</b>:  readfile(http://farm4.static.flickr.com/3009/3808018192_1a198f1e22.jpg): failed to open stream: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ in <b>D:\phpEnv\www\ghyCMS\framework\libraries\Common.class.php</b> on line <b>314</b><br />

@@ -1,0 +1,19 @@
+[2017-09-04 21:06:36] set names utf8
+[2017-09-04 21:06:36] DESC sl_article
+[2017-09-04 21:06:36] set names utf8
+[2017-09-04 21:06:36] DESC sl_article
+[2017-09-04 21:07:08] set names utf8
+[2017-09-04 21:07:08] DESC sl_article
+[2017-09-04 21:07:08] set names utf8
+[2017-09-04 21:07:08] DESC sl_article
+[2017-09-04 21:07:22] set names utf8
+[2017-09-04 21:07:22] DESC sl_article
+[2017-09-04 21:07:22] set names utf8
+[2017-09-04 21:07:22] DESC sl_article
+[2017-09-04 21:10:37] set names utf8
+[2017-09-04 21:10:37] DESC sl_article
+[2017-09-04 21:10:37] set names utf8
+[2017-09-04 21:10:37] DESC sl_article
+[2017-09-04 21:10:37] set names utf8
+[2017-09-04 21:10:37] DESC sl_moxing
+[2017-09-04 21:10:37] select  * from sl_article where  (dtime between '2017-08-27 00:00' and '2017-08-27 23:59')    and  id='2330' and status='终审' and  1=1  order by id desc 
