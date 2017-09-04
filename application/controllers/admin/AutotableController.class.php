@@ -18,7 +18,7 @@ class AutotableController extends BaseController{
 	    {
 	        $where .= " and ".$tableModel->getSqlWhereStr();
 	    }
-	    
+	     
 	    //得到字段模型
 	    $filedModel=new FiledModel("filed");
 	    if(trim($u6)!='')

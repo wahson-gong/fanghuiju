@@ -3,6 +3,13 @@
 
 <head>
 	<?php include CUR_VIEW_PATH."public/head.html"?>
+	 <!--编辑器-->
+	 <!-- 编辑器配置文件 -->
+     <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.config.js"></script>
+     <!-- 编辑器源码文件 -->
+     <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.all.js"></script>
+     <!-- 实例化编辑器 -->
+    
 </head>
 
 <body class="body-color">
@@ -42,48 +49,7 @@
 				      <?php foreach($filedLists as $v){ ?>
                          <?php if($v['u7']!="文本编辑器" and $v['u7']!="时间框" and $v['u7']!="数字"){ ?>
 
-                              <!-- 文本框 -->
-                          <?php if($v['u7']=="文本域"){?>
-                          
-                            <tr style="display: table-row;">
-				    		    <th><?php echo $v['u2'] ?></th>
-				    		    <td>
-				    			<textarea name="<?php echo $v['u1'] ?>" class="input" style="height: 127px; margin: 0px; width: 904px;"></textarea><i><?php echo $v['u3'] ?></i>
-				    		    </td>
-				    	     </tr>
-				    	     <!-- 图片 -->
-				    	  <?php }else if($v['u7']=="图片"){ ?>   
-				    	     <tr style="display: table-row;">
-				    		    <th><?php echo $v['u2'] ?></th>
-				    		    <td>
-	                            <input type = 'file' name = '<?php echo $v['u1'] ?>' class="input" /><i><?php echo $v['u3'] ?></i>
-				    		    </td>
-				    	     </tr>
-				    	      <!--单选 -->
-				    	   <?php }else if($v['u7']=="单选"){ ?>   
-				    	     <tr style="display: table-row;">
-				    		    <th><?php echo $v['u2'] ?></th>
-								<td>
-								<?php $filedModel1=new FiledModel("filed"); $filedVal=$filedModel1->getFiledDefaultValue($v['id']); ?>
-								<!-- 循环默认值 -->
-								<?php $i=1; foreach($filedVal as $key=>$val){ ?>
-                                     <input id="<?php echo $v['u1'].$i ?>" type="radio" name="<?php echo $v['u1'] ?>" value="<?php echo trim($val) ?>"><?php echo trim($val) ?>
-                                <?php $i++; } ?>
-								</td>
-
-							</tr>  
-				    	     
-				    	      <!--其他情况 -->
-                          <?php }else{ ?>
-                          
-                             <tr>
-				    		     <th><?php echo $v['u2'] ?></th>
-				    		     <td>
-				    			     <input name="<?php echo $v['u1'] ?>" type="text" class="input"/><i><?php echo $v['u3'] ?></i>
-				    		     </td>
-				           	 </tr>
-				           	 
-                          <?php } ?>
+                           <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
                             
                          <?php } ?>
                       <?php } ?>
@@ -95,26 +61,13 @@
 				    </table>
 				    
 				</div>
-				<!--编辑器-->
 				
-				 <!-- 编辑器配置文件 -->
-                 <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.config.js"></script>
-                 <!-- 编辑器源码文件 -->
-                <script type="text/javascript" src="application/views/admin/js/ueditor/ueditor.all.js"></script>
-                 <!-- 实例化编辑器 -->
-    
 				<?php foreach($filedLists as $v){ ?>
                          
                     <?php if($v['u7']=="文本编辑器" ){ ?>
                    
-                      <div class="bjq">
-                       <p class="title" style="font-size: 15px;font-weight: bold;color: #555;"><em class="txt-blue ficon ficon-deng"></em> <?php echo $v['u2'] ?></em></p>
-                          <script id="<?php echo $v['u1'] ?>" name="<?php echo $v['u1'] ?>" type="text/plain"></script>
-                          <script type="text/javascript">
-                            var ue_<?php echo $v['u1'] ?> = UE.getEditor('<?php echo $v['u1'] ?>');
-                          </script>
-                         
-                      </div>
+                      <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
+                          
                     <?php } ?>
                        
                <?php } ?>
@@ -128,11 +81,9 @@
 				<?php foreach($filedLists as $v){ ?>
                          
                     <?php if($v['u7']=="时间框" ){ ?>
-					    <div class="marb-20">
-					        <p class="title"><em class="txt-blue ficon ficon-riqi"></em> <?php echo $v['u2'] ?></p>
-					        <p><input name="<?php echo $v['u1'] ?>" type="text" id="TextBox1" class="dinput" onClick="WdatePicker()" /></p>
-					        
-					    </div>
+                    
+					    <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
+                          
 				   <?php } ?>
                        
                <?php } ?>  
@@ -141,10 +92,8 @@
 			   <?php foreach($filedLists as $v){ ?>
                          
                     <?php if($v['u7']=="数字" ){ ?>
-                        <div class="marb-20">
-					        <p class="title"><em class="txt-blue ficon ficon-deng"></em> <?php echo $v['u2'] ?></p>
-					        <p>排序： <input type="text" class="input" style="width: 50px;"  name="<?php echo $v['u1'] ?>"/> <span class="txt-blue">数值越小越前面</span></p>
-				        </div>
+                    
+                        <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
                     
                      <?php } ?>
                        
