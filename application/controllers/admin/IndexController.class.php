@@ -37,4 +37,28 @@ class IndexController extends BaseController {
 		// var_dump($admins);
 		include CUR_VIEW_PATH . "main.html";
 	}
+	
+	//ajax接口
+	public function apiAction(){
+	    $type=$_GET["type"];
+	    header('Content-Type:application/json; charset=utf-8');
+	    $temp_str='';
+	    if($type=="getLiandongHtml")
+	    {
+	        $classid=$_GET["classid"];
+	        //filedName
+	        $filedName=$_GET["filedName"];
+	        if($classid!="")
+	        {
+	            $temp_str=$this->$type($classid,$filedName);
+	            echo $temp_str;
+	        }
+	        else 
+	        {
+	            echo "";
+	        }
+	        
+	    }
+	    
+	}
 }

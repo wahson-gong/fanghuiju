@@ -11,6 +11,11 @@ body, html {
 	margin: 0;
 }
 
+div .liandong{
+	display：block;
+	/* float:left; */
+}
+
 a {
 	text-decoration: none;
 	color: #333;

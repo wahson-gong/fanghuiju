@@ -14,6 +14,63 @@ class BaseController extends Controller {
 		}
 	}
 	
+	
+	//返回联动空间选中的下一项html
+	public function getLiandongHtml($classid,$filedName,$selected_val="",$canshu_id=""){
+	    $CanshuModel = new Model("canshu");
+	    $Canshu = $CanshuModel->select("select * from sl_canshu where classid=".$classid);
+	    $temp_html='';
+	    if(count($Canshu)>0)
+	    {
+	        //$temp_html.='<div id=div_'.$classid.' class="liandong" >';
+	        $temp_html.='<select name="DropDownList'.$classid.'" onchange="$(this).nextAll().remove() ;change(this.value,\'liandong_'.$filedName.'\',\''.$filedName.'\');"   id="DropDownList'.$classid.'" class="select-container2">';
+	        $temp_html.='<option value="">请选择</option>';
+	       
+	       //有子栏目
+	       foreach ($Canshu as $k=>$v)
+	       {
+	           //<option value="323">武汉</option>
+	           if($canshu_id==$v["id"])
+	           {
+	               $temp_html.='<option value="'.$v["id"].'"  selected = "selected"  >'.$v["u1"].'</option>';
+	           }else
+	           {
+	               $temp_html.='<option value="'.$v["id"].'">'.$v["u1"].'</option>';
+	           }
+	           
+	           
+	       }
+	       $temp_html.='</select>';
+	       //$temp_html.='</div>';
+	    }
+	    else
+	    {
+	        //无子栏目
+	        $temp_html='';
+	    }
+	    return $temp_html;
+	   
+	}
+	
+    //返回全部联动控件选html
+	public function getAllLiandongHtml($canshu_id,$filedName,$classid,$temp1_html){
+        	$canshuModel=new Model("canshu");
+        	$canshu = $canshuModel->select("select * from sl_canshu where id=".$canshu_id);
+        	
+        	if($canshu_id <= $classid)
+        	{
+        	    return $temp1_html;
+            }else
+            {
+                $temp1_html=$this->getLiandongHtml($canshu[0]["classid"],$filedName,$canshu[0]["classid"],$canshu_id).$temp1_html;
+                return $this->getAllLiandongHtml($canshu[0]["classid"],$filedName,$classid,$temp1_html);
+                
+            }
+            //return "123";
+            
+             
+    }
+	
 	/*
 	 * 加载自定义控件方法
 	 * $kjName        $v['u2']
@@ -104,6 +161,38 @@ class BaseController extends Controller {
                             <input name="'.$filedName.'" type="text" class="input" /><i>密码为空则不修改'.$tipString.'</i>
     				    </td>
 				   </tr>'; 
+	    } else if($type=="联动")
+	    {
+	        if(strlen($selectValue)==0)
+	        {
+	            $filedModel1=new FiledModel("filed");
+	            $filedVal=$filedModel1->getFiledDefaultValue($filedId);
+	            return '<tr style="display: table-row;">
+				    		    <th>'.$kjName.'</th>
+				    		    <td><div id="liandong'.$filedId.'" class="liandong1" >'.
+				    		    $this->getLiandongHtml($filedVal,$filedName).
+				    		    '</div><input name="'.$filedName.'" id="'.$filedName.'" type="hidden"  value="'.$selectValue.'">'.
+				    		    '</td>
+                        </tr>';
+	        }else
+	        {
+	            $filedModel1=new FiledModel("filed");
+	            $filedVal=$filedModel1->getFiledDefaultValue($filedId);
+	            //默认值
+	            $classid=$filedVal;
+	            //已选中，递归全部选中项
+	            //$temp_html=$this->getAllLiandongHtml($selectValue,$filedName,$classid,"");
+	            return '<tr style="display: table-row;">
+				    		    <th>'.$kjName.'</th>
+				    		    <td><div id="liandong_'.$filedName.'" class="liandong1" >'.
+				    		    $this->getAllLiandongHtml($selectValue,$filedName,$classid,"").
+				    		    '</div><input name="'.$filedName.'" id="'.$filedName.'" type="hidden"  value="'.$selectValue.'">'.
+				    		    '</td>
+                        </tr>';
+	        }
+	        
+	        
+	        
 	    }else 
 	    {
 	       return '<tr>

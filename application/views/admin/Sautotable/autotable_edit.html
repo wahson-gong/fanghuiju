@@ -44,7 +44,8 @@
 				<div class="article-top">
 				 	 
 				    <table class="a-info">
-				             
+				            
+		             
 				      <?php foreach($filedLists as $v){ ?>
                          <?php if($v['u7']!="文本编辑器" and $v['u7']!="时间框" and $v['u7']!="数字"){ ?>
 
@@ -54,9 +55,6 @@
                          <?php } ?>
                       <?php } ?>
 				    
-				    
-				    
-				    	
 				    	
 				    </table>
 				    
@@ -107,7 +105,7 @@
 				 
 				</div>
 			</aside>
-			<input type="text" name="id" value="<?php echo $wenzhang[id]  ?>" hidden="hide" />
+			<input type="text" name="id" value="<?php echo $_GET["id"]  ?>" hidden="hide" />
 			<p>
 				<tr>
 				<th></th>
