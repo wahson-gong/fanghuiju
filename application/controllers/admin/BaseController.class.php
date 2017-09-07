@@ -59,6 +59,7 @@ class BaseController extends Controller {
         	
         	if($canshu_id <= $classid)
         	{
+        	    $temp1_html=$this->getLiandongHtml($canshu_id,$filedName,"","").$temp1_html;
         	    return $temp1_html;
             }else
             {
@@ -169,7 +170,7 @@ class BaseController extends Controller {
 	            $filedVal=$filedModel1->getFiledDefaultValue($filedId);
 	            return '<tr style="display: table-row;">
 				    		    <th>'.$kjName.'</th>
-				    		    <td><div id="liandong'.$filedId.'" class="liandong1" >'.
+				    		    <td><div id="liandong_'.$filedName.'" class="liandong1" >'.
 				    		    $this->getLiandongHtml($filedVal,$filedName).
 				    		    '</div><input name="'.$filedName.'" id="'.$filedName.'" type="hidden"  value="'.$selectValue.'">'.
 				    		    '</td>
@@ -193,8 +194,36 @@ class BaseController extends Controller {
 	        
 	        
 	        
+	    }else if($type=="组图")
+	    {
+	        $filedModel1=new FiledModel("filed");
+	        $filedVal=$filedModel1->getFiledDefaultValue($filedId);
+	        return '<tr style="display: table-row;">
+				    		    <th>'.$kjName.'</th>
+				    		    <td>'.
+				    		    '<input name="'.$filedName.'" id="'.$filedName.'" type="hidden"  value="'.$selectValue.'">'.
+				    		    '	       
+                                <iframe width="100%" onload="this.height=50" src="/index.php?p=admin&c=Inc&a=addWebuploader&field='.$filedName.'" scrolling="no" frameborder="0" id="if'.$filedName.'" ></iframe>
+                    	        <script>
+                    	        function reinitIframe(){
+                    	            var iframe = document.getElementById("if'.$filedName.'");
+                    	            try{
+                    	                var bHeight = iframe.contentWindow.document.body.scrollHeight;
+                    	                var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                    	                var height = Math.max(bHeight, dHeight);
+                    	                iframe.height = height;
+                    	                console.log(height);
+                    	            }catch (ex){}
+                    	        }
+                    	        window.setInterval("reinitIframe()", 200);
+                    	        </script>'.
+				    		    '</td>
+                        </tr>';
+	        
+	        
 	    }else 
 	    {
+	        
 	       return '<tr>
 				    	 <th>'.$kjName.'</th>
     				    <td>

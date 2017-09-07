@@ -216,7 +216,7 @@ class AutotableController extends BaseController{
 	        }
 	    }
 	    //调用模型完成更新
-	   
+	    //var_dump($data);die();
 	    if($tableModel->update($data)){
 	        $this->jump('index.php?p=admin&c=autotable&a=index&model_id='.$model_id,"更新成功",2);
 	    }else{

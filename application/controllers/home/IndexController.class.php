@@ -56,7 +56,10 @@ class IndexController extends   BaseController {
 		        foreach ($temp_arr as $k=>$v)
 		        {
 		            if($temp_arr[$k]["dtime"]!=null)
-		            $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		            {
+		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime1"]=$v["dtime"];
+		            }
 		            //echo $temp_arr[$k]["dtime"];
 		        }
 		        
@@ -189,11 +192,106 @@ class IndexController extends   BaseController {
 		        }
 		        
 		    }
+		    else if($type=="updateimg")
+		    {
+		        $rdata['status'] = false;
+		        $rdata['msg'] = "上传失败";
+		        
+		        $base64_image_content = $_REQUEST['img'];
+		        if( $base64_image_content=="")
+		        {
+		            $rdata['status'] = true;
+		            $rdata['msg'] = "上传失败！";
+		            $this->ajaxReturn($rdata);
+		        }
+		        //匹配出图片的格式
+		        if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)){
+		            $type = $result[2];
+		            $new_file = "public/app/uploads/";
+		            if(!file_exists($new_file))
+		            {
+		                //检查是否有该文件夹，如果没有就创建，并给予最高权限
+		                mkdir($new_file, 0700,true);
+		            }
+		            $new_fileName="fromApp".time().mt_rand(1,100).".{$type}";
+		            $new_file = $new_file.$new_fileName;
+		            
+		            if (file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_image_content)))){
+		                
+		                $rdata['status'] = true;
+		                $rdata['msg'] = $new_file;
+		                
+		            }else{
+		                $rdata['status'] = false;
+		                $rdata['msg'] = "上传失败！";
+		            }
+		        }
+		        
+		        
+		    }
+		    else if($type=="zoufangjilu")
+		    {
+		        //处理返回的列名称，用于多表查询
+		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
+		        //返回条数
+		        $number=$this->NumberFilter($_GET["number"]);
+		        //当前页数
+		        $page=$this->NumberFilter($_GET["page"]);
+		        
+		        // 		   ordertype：排序字段，默认已有ID，如不需要排序请为空
+		        $ordertype=$commonClass->SafeFilterStr($_GET["ordertype"]);
+		        // 		   orderby：排序方式，升序和降序
+		        $orderby=$commonClass->SafeFilterStr($_GET["orderby"]);
+		        // 		   sqlvalue：默认查询方式,如果有多个用逗号分隔，“|”会替换成=号
+		        $sqlvalue=$this->SqlvalueFilter($_GET["sqlvalue"]);
+		        
+		        
+		        //拼接为sql语句
+		        $_sql=$this->getSql($t,$liemingcheng,$number,$page,$ordertype,$orderby,$sqlvalue);
+		        if($print=="yes")
+		        {
+		            echo $_sql;
+		            die();
+		        }
+		        
+		        $temp_model = new Model($t);
+		        $temp_arr=$temp_model->select($_sql);
+		        //处理多表数据
+		        foreach ($temp_arr as $k=>$v)
+		        {
+		            if($temp_arr[$k]["dtime"]!=null)
+		            {
+		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime1"]=$v["dtime"];
+		            }
+		            //户籍数据
+		            $huji_model= new Model("huji");
+		            $huji = $huji_model->selectByCol("huhao", $v["huhao"]);
+		            $temp_arr[$k]["huji"]=$huji;
+		            //组名
+		            $canshu_model= new Model("canshu");
+		            $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
+		            $temp_arr[$k]["zu"]=$canshu;
+		            //村名
+		            $canshu = $canshu_model->selectByPk($v["suoshucun"]);
+		            $temp_arr[$k]["cun"]=$canshu;
+		            //echo $temp_arr[$k]["dtime"];
+		        }
+		        
+		        //下面两个方法都是输出查询结果
+		        //var_dump($temp_model->select($_sql));
+		        //$print($temp_model->select($_sql));
+		        
+		        $rdata['status'] = "true";
+		        $rdata['msg']=json_encode($temp_arr);
+		        
+		    }
 		    else if($type=="随便自己命名的方法")
 		    {
 		        $_sql="select * from sl_user ";
 		        $temp_model = new Model("moxing");
 		        $temp_arr=$temp_model->select($_sql);
+		       
 		        
 		        //下面两个方法都是输出查询结果
 		        //var_dump($temp_model->select($_sql));

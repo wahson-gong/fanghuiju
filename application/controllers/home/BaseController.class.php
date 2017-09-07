@@ -199,16 +199,20 @@ class BaseController extends Controller {
         
         
         
-        
         if($ordertype!="")
         {
-	        if($ordertype=="id")
-    	        {
-    	            $_sql=$_sql." order by ".$ordertype." ".$orderby ;
-    	        }else
-        	        {
-    	            $_sql=$_sql." order by ".$ordertype." ".$orderby ."  , id desc ";
-    	        }
+            if($ordertype=="id")
+            {
+                $_sql=$_sql." order by ".$ordertype." ".$orderby ;
+            }else if(strlen(strstr($t, ','))>0)
+            {
+                
+                $_sql=$_sql." order by ".$ordertype." ".$orderby ;
+                
+            }else
+            {
+                $_sql=$_sql." order by ".$ordertype." ".$orderby ."  , id desc ";
+            }
         }else
         {
             $_sql=$_sql." order by id desc ";
