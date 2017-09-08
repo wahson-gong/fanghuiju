@@ -37387,3 +37387,1212 @@
 [2017-09-08 03:06:30] set names utf8
 [2017-09-08 03:06:30] DESC sl_column
 [2017-09-08 03:06:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_filed
+[2017-09-08 17:36:23] select * from sl_filed where model_id='53'  order by  u10 asc,id desc 
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_moxing
+[2017-09-08 17:36:23] select u1 from sl_moxing where id=53
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_article
+[2017-09-08 17:36:23] select * from `sl_article` where `id`=2334
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_column
+[2017-09-08 17:36:23] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_column
+[2017-09-08 17:36:23] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:23] set names utf8
+[2017-09-08 17:36:23] DESC sl_filed
+[2017-09-08 17:36:24] select * from `sl_filed` where `id`=269
+[2017-09-08 17:36:24] select u8 from sl_filed where id=269
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_sort
+[2017-09-08 17:36:27] select * from sl_sort where id=17
+[2017-09-08 17:36:27] select * from sl_sort where id=0
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_moxing
+[2017-09-08 17:36:27] select u1 from sl_moxing where id=53
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_article
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_filed
+[2017-09-08 17:36:27] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-08 17:36:27] select status from sl_article where sort_id='17' group by status 
+[2017-09-08 17:36:27] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-08 17:36:27] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_column
+[2017-09-08 17:36:27] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:27] set names utf8
+[2017-09-08 17:36:27] DESC sl_column
+[2017-09-08 17:36:27] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_filed
+[2017-09-08 17:36:31] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_moxing
+[2017-09-08 17:36:31] select u1 from sl_moxing where id=66
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_zoufangjilu
+[2017-09-08 17:36:31] select * from `sl_zoufangjilu` where `id`=19
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_column
+[2017-09-08 17:36:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_column
+[2017-09-08 17:36:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_filed
+[2017-09-08 17:36:31] select * from `sl_filed` where `id`=478
+[2017-09-08 17:36:31] select u8 from sl_filed where id=478
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=26
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=23
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=23
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=22
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=22
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=21
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=21
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=20
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=20
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=19
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=19
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=17
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=17
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=17
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_filed
+[2017-09-08 17:36:31] select * from `sl_filed` where `id`=477
+[2017-09-08 17:36:31] select u8 from sl_filed where id=477
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=23
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=22
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=22
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=21
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where id=21
+[2017-09-08 17:36:31] set names utf8
+[2017-09-08 17:36:31] DESC sl_canshu
+[2017-09-08 17:36:31] select * from sl_canshu where classid=20
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where id=20
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where classid=19
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where id=19
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where classid=17
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where id=17
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_canshu
+[2017-09-08 17:36:32] select * from sl_canshu where classid=17
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_filed
+[2017-09-08 17:36:32] select * from `sl_filed` where `id`=461
+[2017-09-08 17:36:32] select u8 from sl_filed where id=461
+[2017-09-08 17:36:32] set names utf8
+[2017-09-08 17:36:32] DESC sl_filed
+[2017-09-08 17:36:32] select * from `sl_filed` where `id`=359
+[2017-09-08 17:36:32] select u8 from sl_filed where id=359
+[2017-09-08 17:36:54] set names utf8
+[2017-09-08 17:36:54] DESC sl_moxing
+[2017-09-08 17:36:54] select u1 from sl_moxing where id=66
+[2017-09-08 17:36:54] set names utf8
+[2017-09-08 17:36:54] DESC sl_zoufangjilu
+[2017-09-08 17:36:54] set names utf8
+[2017-09-08 17:36:54] DESC sl_filed
+[2017-09-08 17:36:54] select u1 from sl_filed where model_id='66' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='dtime' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='yonghuming' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zoufangqingkuang' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='cunzaidewenti' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='ruhurenyuan' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zutu' 
+[2017-09-08 17:36:54] select * from sl_filed where  u7='图片'  and model_id='66' and u1='huhao' 
+[2017-09-08 17:36:55] select * from sl_filed where  u7='图片'  and model_id='66' and u1='status' 
+[2017-09-08 17:36:55] select * from sl_filed where  u7='图片'  and model_id='66' and u1='bianhao' 
+[2017-09-08 17:36:55] select * from sl_filed where  u7='图片'  and model_id='66' and u1='jihuabianhao' 
+[2017-09-08 17:36:55] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshucun' 
+[2017-09-08 17:36:55] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshuzu' 
+[2017-09-08 17:36:55] UPDATE `sl_zoufangjilu` SET `dtime`='2017-09-06 22:46:03',`yonghuming`='123456',`zoufangqingkuang`='户走访情况测试',`cunzaidewenti`='存在问题情况测试',`ruhurenyuan`='张华,刘宇',`zutu`=' {next}{next}{next}{next}public/webuploader/upload/8baddc91aeb713fd00d990b93df732ea.jpg{title}图片简介测试内容{next}public/webuploader/upload/50262d059f7af1824b9db8a03cb0aa89.jpeg{title}图片简介测试内容{next}public/webuploader/upload/057983f66b4aa80af77c5d42db1d4b64.jpg{title}图片简介测试内容{next}public/webuploader/upload/1503987476.png{title}图片简介测试内容',`huhao`='265001829',`status`='终审',`bianhao`='2,1',`jihuabianhao`='18',`suoshucun`='23',`suoshuzu`='26' WHERE `id`=19
+[2017-09-08 17:36:56] set names utf8
+[2017-09-08 17:36:56] DESC sl_moxing
+[2017-09-08 17:36:56] select u1 from sl_moxing where id=66
+[2017-09-08 17:36:56] set names utf8
+[2017-09-08 17:36:56] DESC sl_zoufangjilu
+[2017-09-08 17:36:56] set names utf8
+[2017-09-08 17:36:56] DESC sl_filed
+[2017-09-08 17:36:56] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-08 17:36:56] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-08 17:36:56] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:36:56] set names utf8
+[2017-09-08 17:36:56] DESC sl_column
+[2017-09-08 17:36:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:56] set names utf8
+[2017-09-08 17:36:56] DESC sl_column
+[2017-09-08 17:36:56] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_filed
+[2017-09-08 17:36:57] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_moxing
+[2017-09-08 17:36:57] select u1 from sl_moxing where id=66
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_zoufangjilu
+[2017-09-08 17:36:57] select * from `sl_zoufangjilu` where `id`=19
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_column
+[2017-09-08 17:36:57] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_column
+[2017-09-08 17:36:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_filed
+[2017-09-08 17:36:57] select * from `sl_filed` where `id`=478
+[2017-09-08 17:36:57] select u8 from sl_filed where id=478
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_canshu
+[2017-09-08 17:36:57] select * from sl_canshu where id=26
+[2017-09-08 17:36:57] set names utf8
+[2017-09-08 17:36:57] DESC sl_canshu
+[2017-09-08 17:36:57] select * from sl_canshu where classid=23
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=23
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=22
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=22
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=21
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=21
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=20
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=20
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=19
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=19
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_filed
+[2017-09-08 17:36:58] select * from `sl_filed` where `id`=477
+[2017-09-08 17:36:58] select u8 from sl_filed where id=477
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=23
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=22
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=22
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=21
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=21
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=20
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=20
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=19
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=19
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where id=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_canshu
+[2017-09-08 17:36:58] select * from sl_canshu where classid=17
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_filed
+[2017-09-08 17:36:58] select * from `sl_filed` where `id`=461
+[2017-09-08 17:36:58] select u8 from sl_filed where id=461
+[2017-09-08 17:36:58] set names utf8
+[2017-09-08 17:36:58] DESC sl_filed
+[2017-09-08 17:36:58] select * from `sl_filed` where `id`=359
+[2017-09-08 17:36:58] select u8 from sl_filed where id=359
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_sort
+[2017-09-08 17:40:20] select * from sl_sort where id=17
+[2017-09-08 17:40:20] select * from sl_sort where id=0
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_moxing
+[2017-09-08 17:40:20] select u1 from sl_moxing where id=53
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_article
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_filed
+[2017-09-08 17:40:20] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-08 17:40:20] select status from sl_article where sort_id='17' group by status 
+[2017-09-08 17:40:20] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-08 17:40:20] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_column
+[2017-09-08 17:40:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:20] set names utf8
+[2017-09-08 17:40:20] DESC sl_column
+[2017-09-08 17:40:20] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_filed
+[2017-09-08 17:40:24] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_moxing
+[2017-09-08 17:40:24] select u1 from sl_moxing where id=66
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_zoufangjilu
+[2017-09-08 17:40:24] select * from `sl_zoufangjilu` where `id`=19
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_column
+[2017-09-08 17:40:24] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_column
+[2017-09-08 17:40:24] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_filed
+[2017-09-08 17:40:24] select * from `sl_filed` where `id`=478
+[2017-09-08 17:40:24] select u8 from sl_filed where id=478
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=26
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=23
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=23
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=22
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=22
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=21
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=21
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=20
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=20
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=19
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=19
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=17
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where id=17
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_canshu
+[2017-09-08 17:40:24] select * from sl_canshu where classid=17
+[2017-09-08 17:40:24] set names utf8
+[2017-09-08 17:40:24] DESC sl_filed
+[2017-09-08 17:40:24] select * from `sl_filed` where `id`=477
+[2017-09-08 17:40:25] select u8 from sl_filed where id=477
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=23
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=22
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=22
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=21
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=21
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=20
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=20
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=19
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=19
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=17
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where id=17
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_canshu
+[2017-09-08 17:40:25] select * from sl_canshu where classid=17
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_filed
+[2017-09-08 17:40:25] select * from `sl_filed` where `id`=461
+[2017-09-08 17:40:25] select u8 from sl_filed where id=461
+[2017-09-08 17:40:25] set names utf8
+[2017-09-08 17:40:25] DESC sl_filed
+[2017-09-08 17:40:25] select * from `sl_filed` where `id`=359
+[2017-09-08 17:40:25] select u8 from sl_filed where id=359
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_filed
+[2017-09-08 17:40:31] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_moxing
+[2017-09-08 17:40:31] select u1 from sl_moxing where id=66
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_zoufangjilu
+[2017-09-08 17:40:31] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_column
+[2017-09-08 17:40:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_column
+[2017-09-08 17:40:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_filed
+[2017-09-08 17:40:31] select * from `sl_filed` where `id`=478
+[2017-09-08 17:40:31] select u8 from sl_filed where id=478
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_canshu
+[2017-09-08 17:40:31] select * from sl_canshu where id=27
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_canshu
+[2017-09-08 17:40:31] select * from sl_canshu where classid=23
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_canshu
+[2017-09-08 17:40:31] select * from sl_canshu where id=23
+[2017-09-08 17:40:31] set names utf8
+[2017-09-08 17:40:31] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=22
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=22
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=21
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=21
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=20
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=20
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=19
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=19
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_filed
+[2017-09-08 17:40:32] select * from `sl_filed` where `id`=477
+[2017-09-08 17:40:32] select u8 from sl_filed where id=477
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=23
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=22
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=22
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=21
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=21
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=20
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=20
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=19
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=19
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where id=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_canshu
+[2017-09-08 17:40:32] select * from sl_canshu where classid=17
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_filed
+[2017-09-08 17:40:32] select * from `sl_filed` where `id`=461
+[2017-09-08 17:40:32] select u8 from sl_filed where id=461
+[2017-09-08 17:40:32] set names utf8
+[2017-09-08 17:40:32] DESC sl_filed
+[2017-09-08 17:40:32] select * from `sl_filed` where `id`=359
+[2017-09-08 17:40:32] select u8 from sl_filed where id=359
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_filed
+[2017-09-08 17:55:09] select * from sl_filed where model_id='53'  order by  u10 asc,id desc 
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_moxing
+[2017-09-08 17:55:09] select u1 from sl_moxing where id=53
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_article
+[2017-09-08 17:55:09] select * from `sl_article` where `id`=2333
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_column
+[2017-09-08 17:55:09] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_column
+[2017-09-08 17:55:09] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:55:09] set names utf8
+[2017-09-08 17:55:09] DESC sl_filed
+[2017-09-08 17:55:09] select * from `sl_filed` where `id`=269
+[2017-09-08 17:55:09] select u8 from sl_filed where id=269
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_sort
+[2017-09-08 17:55:11] select * from sl_sort where id=17
+[2017-09-08 17:55:11] select * from sl_sort where id=0
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_moxing
+[2017-09-08 17:55:11] select u1 from sl_moxing where id=53
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_article
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_filed
+[2017-09-08 17:55:11] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-08 17:55:11] select status from sl_article where sort_id='17' group by status 
+[2017-09-08 17:55:11] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-08 17:55:11] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_column
+[2017-09-08 17:55:11] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:55:11] set names utf8
+[2017-09-08 17:55:11] DESC sl_column
+[2017-09-08 17:55:11] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:23] set names utf8
+[2017-09-08 17:56:23] DESC sl_moxing
+[2017-09-08 17:56:23] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:23] set names utf8
+[2017-09-08 17:56:23] DESC sl_zoufangjilu
+[2017-09-08 17:56:23] set names utf8
+[2017-09-08 17:56:23] DESC sl_filed
+[2017-09-08 17:56:23] select u1 from sl_filed where model_id='66' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='dtime' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='yonghuming' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zoufangqingkuang' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='cunzaidewenti' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='ruhurenyuan' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zutu' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='huhao' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='status' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='bianhao' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='jihuabianhao' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshucun' 
+[2017-09-08 17:56:23] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshuzu' 
+[2017-09-08 17:56:23] UPDATE `sl_zoufangjilu` SET `dtime`='2017-09-06 22:44:44',`yonghuming`='123456',`zoufangqingkuang`='户走访情况测试',`cunzaidewenti`='存在问题情况测试',`ruhurenyuan`='张华,刘宇',`zutu`='{next}{next}{next}',`huhao`='265001830123',`status`='终审',`bianhao`='2,1',`jihuabianhao`='17',`suoshucun`='23',`suoshuzu`='27' WHERE `id`=18
+[2017-09-08 17:56:24] set names utf8
+[2017-09-08 17:56:24] DESC sl_moxing
+[2017-09-08 17:56:24] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:24] set names utf8
+[2017-09-08 17:56:24] DESC sl_zoufangjilu
+[2017-09-08 17:56:24] set names utf8
+[2017-09-08 17:56:24] DESC sl_filed
+[2017-09-08 17:56:24] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-08 17:56:24] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-08 17:56:24] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:56:24] set names utf8
+[2017-09-08 17:56:24] DESC sl_column
+[2017-09-08 17:56:24] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:24] set names utf8
+[2017-09-08 17:56:24] DESC sl_column
+[2017-09-08 17:56:24] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_filed
+[2017-09-08 17:56:26] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_moxing
+[2017-09-08 17:56:26] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_zoufangjilu
+[2017-09-08 17:56:26] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_column
+[2017-09-08 17:56:26] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_column
+[2017-09-08 17:56:26] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_filed
+[2017-09-08 17:56:26] select * from `sl_filed` where `id`=478
+[2017-09-08 17:56:26] select u8 from sl_filed where id=478
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=27
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=23
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=23
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=22
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=22
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=21
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=21
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=20
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=20
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=19
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=19
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=17
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where id=17
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_canshu
+[2017-09-08 17:56:26] select * from sl_canshu where classid=17
+[2017-09-08 17:56:26] set names utf8
+[2017-09-08 17:56:26] DESC sl_filed
+[2017-09-08 17:56:27] select * from `sl_filed` where `id`=477
+[2017-09-08 17:56:27] select u8 from sl_filed where id=477
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=23
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=22
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=22
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=21
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=21
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=20
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=20
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=19
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=19
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=17
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where id=17
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_canshu
+[2017-09-08 17:56:27] select * from sl_canshu where classid=17
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_filed
+[2017-09-08 17:56:27] select * from `sl_filed` where `id`=461
+[2017-09-08 17:56:27] select u8 from sl_filed where id=461
+[2017-09-08 17:56:27] set names utf8
+[2017-09-08 17:56:27] DESC sl_filed
+[2017-09-08 17:56:27] select * from `sl_filed` where `id`=359
+[2017-09-08 17:56:27] select u8 from sl_filed where id=359
+[2017-09-08 17:56:29] set names utf8
+[2017-09-08 17:56:30] DESC sl_moxing
+[2017-09-08 17:56:30] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_zoufangjilu
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_filed
+[2017-09-08 17:56:30] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-08 17:56:30] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-08 17:56:30] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_column
+[2017-09-08 17:56:30] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_column
+[2017-09-08 17:56:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_filed
+[2017-09-08 17:56:30] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_moxing
+[2017-09-08 17:56:30] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_zoufangjilu
+[2017-09-08 17:56:30] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_column
+[2017-09-08 17:56:30] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_column
+[2017-09-08 17:56:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_filed
+[2017-09-08 17:56:30] select * from `sl_filed` where `id`=478
+[2017-09-08 17:56:30] select u8 from sl_filed where id=478
+[2017-09-08 17:56:30] set names utf8
+[2017-09-08 17:56:30] DESC sl_canshu
+[2017-09-08 17:56:30] select * from sl_canshu where id=27
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=23
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=23
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=22
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=22
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=21
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=21
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=20
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=20
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=19
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=19
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_filed
+[2017-09-08 17:56:31] select * from `sl_filed` where `id`=477
+[2017-09-08 17:56:31] select u8 from sl_filed where id=477
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=23
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=22
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=22
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=21
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=21
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=20
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=20
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=19
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=19
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where id=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_canshu
+[2017-09-08 17:56:31] select * from sl_canshu where classid=17
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_filed
+[2017-09-08 17:56:31] select * from `sl_filed` where `id`=461
+[2017-09-08 17:56:31] select u8 from sl_filed where id=461
+[2017-09-08 17:56:31] set names utf8
+[2017-09-08 17:56:31] DESC sl_filed
+[2017-09-08 17:56:31] select * from `sl_filed` where `id`=359
+[2017-09-08 17:56:31] select u8 from sl_filed where id=359
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_filed
+[2017-09-08 17:56:33] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_moxing
+[2017-09-08 17:56:33] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_zoufangjilu
+[2017-09-08 17:56:33] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_column
+[2017-09-08 17:56:33] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_column
+[2017-09-08 17:56:33] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_filed
+[2017-09-08 17:56:33] select * from `sl_filed` where `id`=478
+[2017-09-08 17:56:33] select u8 from sl_filed where id=478
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=27
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=23
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=23
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=22
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=22
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=21
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=21
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=20
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=20
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=19
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=19
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=17
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=17
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=17
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_filed
+[2017-09-08 17:56:33] select * from `sl_filed` where `id`=477
+[2017-09-08 17:56:33] select u8 from sl_filed where id=477
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=23
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=22
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=22
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=21
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=21
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=20
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where id=20
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:33] DESC sl_canshu
+[2017-09-08 17:56:33] select * from sl_canshu where classid=19
+[2017-09-08 17:56:33] set names utf8
+[2017-09-08 17:56:34] DESC sl_canshu
+[2017-09-08 17:56:34] select * from sl_canshu where id=19
+[2017-09-08 17:56:34] set names utf8
+[2017-09-08 17:56:34] DESC sl_canshu
+[2017-09-08 17:56:34] select * from sl_canshu where classid=17
+[2017-09-08 17:56:34] set names utf8
+[2017-09-08 17:56:34] DESC sl_canshu
+[2017-09-08 17:56:34] select * from sl_canshu where id=17
+[2017-09-08 17:56:34] set names utf8
+[2017-09-08 17:56:34] DESC sl_canshu
+[2017-09-08 17:56:34] select * from sl_canshu where classid=17
+[2017-09-08 17:56:34] set names utf8
+[2017-09-08 17:56:34] DESC sl_filed
+[2017-09-08 17:56:34] select * from `sl_filed` where `id`=461
+[2017-09-08 17:56:34] select u8 from sl_filed where id=461
+[2017-09-08 17:56:34] set names utf8
+[2017-09-08 17:56:34] DESC sl_filed
+[2017-09-08 17:56:34] select * from `sl_filed` where `id`=359
+[2017-09-08 17:56:34] select u8 from sl_filed where id=359
+[2017-09-08 17:56:44] set names utf8
+[2017-09-08 17:56:44] DESC sl_moxing
+[2017-09-08 17:56:44] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:44] set names utf8
+[2017-09-08 17:56:44] DESC sl_zoufangjilu
+[2017-09-08 17:56:44] set names utf8
+[2017-09-08 17:56:44] DESC sl_filed
+[2017-09-08 17:56:44] select u1 from sl_filed where model_id='66' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='dtime' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='yonghuming' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zoufangqingkuang' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='cunzaidewenti' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='ruhurenyuan' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='zutu' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='huhao' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='status' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='bianhao' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='jihuabianhao' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshucun' 
+[2017-09-08 17:56:44] select * from sl_filed where  u7='图片'  and model_id='66' and u1='suoshuzu' 
+[2017-09-08 17:56:44] UPDATE `sl_zoufangjilu` SET `dtime`='2017-09-06 22:44:44',`yonghuming`='123456',`zoufangqingkuang`='户走访情况测试',`cunzaidewenti`='存在问题情况测试',`ruhurenyuan`='张华,刘宇',`zutu`='{next}{next}{next}{next}public/webuploader/upload/8baddc91aeb713fd00d990b93df732ea.jpg{title}图片简介测试内容{next}public/webuploader/upload/50262d059f7af1824b9db8a03cb0aa89.jpeg{title}图片简介测试内容',`huhao`='265001830123',`status`='终审',`bianhao`='2,1',`jihuabianhao`='17',`suoshucun`='23',`suoshuzu`='27' WHERE `id`=18
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_moxing
+[2017-09-08 17:56:46] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_zoufangjilu
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_filed
+[2017-09-08 17:56:46] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-08 17:56:46] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-08 17:56:46] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_column
+[2017-09-08 17:56:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_column
+[2017-09-08 17:56:46] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_filed
+[2017-09-08 17:56:46] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_moxing
+[2017-09-08 17:56:46] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_zoufangjilu
+[2017-09-08 17:56:46] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:56:46] set names utf8
+[2017-09-08 17:56:46] DESC sl_column
+[2017-09-08 17:56:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_column
+[2017-09-08 17:56:47] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_filed
+[2017-09-08 17:56:47] select * from `sl_filed` where `id`=478
+[2017-09-08 17:56:47] select u8 from sl_filed where id=478
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=27
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=23
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=23
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=22
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=22
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=21
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=21
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=20
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=20
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=19
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=19
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_filed
+[2017-09-08 17:56:47] select * from `sl_filed` where `id`=477
+[2017-09-08 17:56:47] select u8 from sl_filed where id=477
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=23
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=22
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=22
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=21
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=21
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=20
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=20
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=19
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=19
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where id=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_canshu
+[2017-09-08 17:56:47] select * from sl_canshu where classid=17
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_filed
+[2017-09-08 17:56:47] select * from `sl_filed` where `id`=461
+[2017-09-08 17:56:47] select u8 from sl_filed where id=461
+[2017-09-08 17:56:47] set names utf8
+[2017-09-08 17:56:47] DESC sl_filed
+[2017-09-08 17:56:48] select * from `sl_filed` where `id`=359
+[2017-09-08 17:56:48] select u8 from sl_filed where id=359
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_filed
+[2017-09-08 17:56:49] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_moxing
+[2017-09-08 17:56:49] select u1 from sl_moxing where id=66
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_zoufangjilu
+[2017-09-08 17:56:49] select * from `sl_zoufangjilu` where `id`=18
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_column
+[2017-09-08 17:56:49] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_column
+[2017-09-08 17:56:49] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_filed
+[2017-09-08 17:56:49] select * from `sl_filed` where `id`=478
+[2017-09-08 17:56:49] select u8 from sl_filed where id=478
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=27
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=23
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=23
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=22
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=22
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=21
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=21
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=20
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=20
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=19
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=19
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=17
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=17
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=17
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_filed
+[2017-09-08 17:56:49] select * from `sl_filed` where `id`=477
+[2017-09-08 17:56:49] select u8 from sl_filed where id=477
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=23
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=22
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=22
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=21
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=21
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=20
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=20
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=19
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=19
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where classid=17
+[2017-09-08 17:56:49] set names utf8
+[2017-09-08 17:56:49] DESC sl_canshu
+[2017-09-08 17:56:49] select * from sl_canshu where id=17
+[2017-09-08 17:56:50] set names utf8
+[2017-09-08 17:56:50] DESC sl_canshu
+[2017-09-08 17:56:50] select * from sl_canshu where classid=17
+[2017-09-08 17:56:50] set names utf8
+[2017-09-08 17:56:50] DESC sl_filed
+[2017-09-08 17:56:50] select * from `sl_filed` where `id`=461
+[2017-09-08 17:56:50] select u8 from sl_filed where id=461
+[2017-09-08 17:56:50] set names utf8
+[2017-09-08 17:56:50] DESC sl_filed
+[2017-09-08 17:56:50] select * from `sl_filed` where `id`=359
+[2017-09-08 17:56:50] select u8 from sl_filed where id=359

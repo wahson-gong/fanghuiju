@@ -121,8 +121,8 @@ class IncController extends BaseController{
 	        die('{"jsonrpc" : "2.0", "result" : null, "id" : "id", "exist": 1}');
 	    }
 	    
-	    $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
-	    $uploadPath = $uploadDir . DIRECTORY_SEPARATOR . $fileName;
+	    $filePath = $targetDir . "/" . $fileName;
+	    $uploadPath = $uploadDir . "/". $fileName;
 	    
 	    // Chunking might be enabled
 	    $chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
