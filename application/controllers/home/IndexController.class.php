@@ -60,6 +60,29 @@ class IndexController extends   BaseController {
 		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
 		                $temp_arr[$k]["dtime1"]=$v["dtime"];
 		            }
+		            
+		            //给人员表添加姓名拼音首字母
+		            
+		            if($t=="sl_renyuan")
+		            {
+		                //生成首字母 start
+		                
+		                //挂载中文转拼音类
+		                include_once LIB_PATH . "CUtf8_PY.class.php";
+		                $ch2ypClass =new CUtf8_PY();
+		                //转换后的参数
+		                if($v["xingming"]=="")
+		                {
+		                    $shouzimu="";
+		                }
+		                else
+		                {
+		                    $shouzimu=substr( $ch2ypClass->encode($v["xingming"],"all"), 0, 1 );
+		                }
+		                
+		                $temp_arr[$k]["shouzimu"]=$shouzimu;
+		                //生成首字母 end
+		            }
 		            //echo $temp_arr[$k]["dtime"];
 		        }
 		        
@@ -142,11 +165,11 @@ class IndexController extends   BaseController {
 // 		        echo $minute."minute3<br>";
 // 		        die();
 		        
-// 		        if ($minute < 1) {
-// 		            $rdata['msg']="您的操作过于频繁";
-// 		            //返回接口数据
-// 		            $this->ajaxReturn($rdata);
-// 		        }
+		        if ($minute < 1) {
+		            $rdata['msg']="您的操作过于频繁";
+		            //返回接口数据
+		            $this->ajaxReturn($rdata);
+		        }
 		        // 验证和处理
 		        if (! ($Common->isName($username) || $Common->isName($password))) {
 		            // 写入日志
@@ -231,6 +254,13 @@ class IndexController extends   BaseController {
 		    }
 		    else if($type=="zoufangjilu")
 		    {
+		        /*
+		         * 走访记录
+		         * 
+		         * 
+		         * 
+		         * */
+		        
 		        //处理返回的列名称，用于多表查询
 		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
 		        //返回条数
@@ -276,6 +306,84 @@ class IndexController extends   BaseController {
 		            $canshu = $canshu_model->selectByPk($v["suoshucun"]);
 		            $temp_arr[$k]["cun"]=$canshu;
 		            //echo $temp_arr[$k]["dtime"];
+		        }
+		        
+		        //下面两个方法都是输出查询结果
+		        //var_dump($temp_model->select($_sql));
+		        //$print($temp_model->select($_sql));
+		        
+		        $rdata['status'] = "true";
+		        $rdata['msg']=json_encode($temp_arr);
+		        
+		    }else if($type=="hujiliebiao")
+		    {
+		        /*
+		         * 户籍列表
+		         *
+		         *
+		         *
+		         * */
+		        
+		        //处理返回的列名称，用于多表查询
+		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
+		        //返回条数
+		        $number=$this->NumberFilter($_GET["number"]);
+		        //当前页数
+		        $page=$this->NumberFilter($_GET["page"]);
+		        
+		        // 		   ordertype：排序字段，默认已有ID，如不需要排序请为空
+		        $ordertype=$commonClass->SafeFilterStr($_GET["ordertype"]);
+		        // 		   orderby：排序方式，升序和降序
+		        $orderby=$commonClass->SafeFilterStr($_GET["orderby"]);
+		        // 		   sqlvalue：默认查询方式,如果有多个用逗号分隔，“|”会替换成=号
+		        $sqlvalue=$this->SqlvalueFilter($_GET["sqlvalue"]);
+		        
+		        
+		        //拼接为sql语句
+		        $_sql=$this->getSql($t,$liemingcheng,$number,$page,$ordertype,$orderby,$sqlvalue);
+		        if($print=="yes")
+		        {
+		            echo $_sql;
+		            die();
+		        }
+		        
+		        $temp_model = new Model($t);
+		        $temp_arr=$temp_model->select($_sql);
+		        //处理多表数据
+		        foreach ($temp_arr as $k=>$v)
+		        {
+		            if($temp_arr[$k]["dtime"]!=null)
+		            {
+		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime1"]=$v["dtime"];
+		            }
+		            //户籍下的人员
+		            $renyuan_model= new Model("renyuan");
+		            $renyuan= $renyuan_model->select("select * from sl_renyuan where hukoubianhao='{$v["huhao"]}' ");
+		            $temp_arr[$k]["renyuan"]=$renyuan;
+		            //上次走访时间
+		            $zoufangjilu_model= new Model("zoufangjilu");
+		            $zoufangjilu= $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc limit 0 , 1 ");
+		            
+		            $temp_arr[$k]["zoufangjilu"]=$zoufangjilu;
+		            
+		            //生成首字母 start
+		            
+    		            //挂载中文转拼音类
+		            include_once LIB_PATH . "CUtf8_PY.class.php";
+    		            $ch2ypClass =new CUtf8_PY();
+    		            //转换后的参数
+    		            if($v["xingming"]=="")
+    		            {
+    		                $shouzimu="";
+    		            }
+    		            else 
+    		            {
+    		                $shouzimu=substr( $ch2ypClass->encode($v["allxingming"],"all"), 0, 1 );
+    		            }
+    		            
+    		            $temp_arr[$k]["shouzimu"]=$shouzimu;
+		            //生成首字母 end
 		        }
 		        
 		        //下面两个方法都是输出查询结果

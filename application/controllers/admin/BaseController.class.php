@@ -107,6 +107,12 @@ class BaseController extends Controller {
              $filedVal=$filedModel1->getFiledDefaultValue($filedId);
              $temp_radio_html=' ';
              $i=1; 
+             
+             if($filedVal==$selectValue || $selectValue=="")
+             {
+                 $temp_radio_html.='<input id="'.$filedName.'" type="radio" name="'.$filedName.'" checked="checked" value=" ">请选择  ';
+             }
+             
              foreach($filedVal as $key=>$val)
              {
                  if($selectValue==trim($val) ) 
