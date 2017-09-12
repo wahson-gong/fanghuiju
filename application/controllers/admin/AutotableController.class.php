@@ -6,6 +6,7 @@ class AutotableController extends BaseController{
 	public function indexAction(){
 	    
 	    $model_id = $_REQUEST['model_id'];
+	    //$sort_id = $_REQUEST['sort_id'];
 	    $u6 = $_REQUEST['u6'];
 	    $where = " 1=1 ";
 	    // 获得当前表名
@@ -54,10 +55,10 @@ class AutotableController extends BaseController{
 	    // 使用分页类获取分页信息
 	    $page = new Page($total, $pagesize, $current, "index.php", array(
 	        "p" => "admin",
-	        "c" => "wenzhang",
+	        "c" => "autotable",
 	        "a" => "index",
 	        "model_id" => "{$model_id}",
-	        "sort_id" => "{$sort_id}"
+	        //"sort_id" => "{$sort_id}"
 	    ));
 	    $pageinfo = $page->showPage();
 	    

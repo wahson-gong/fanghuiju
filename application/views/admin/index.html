@@ -27,7 +27,7 @@
 			<section>
 				<ul class="menu-list">
 					
-					<li class="bg-skyblue">
+					<!-- <li class="bg-skyblue">
 						<a href="/index.php?p=admin&c=yonghu&a=index">
 							<span class="ficon ficon-yzyonghuguanli"></span>
 							<br />用户管理
@@ -63,6 +63,45 @@
 						<span class="ficon ficon-cuxiaohuodong"></span>
 						<br />首页换图
 					</a>
+				   </li> -->
+				   
+				   
+				   <li class="bg-skyblue">
+						<a href="/index.php?p=admin&c=wenzhang&a=index&model_id=53&sort_id=17">
+							<span class="ficon ficon-yzyonghuguanli"></span>
+							<br />新闻资讯
+						</a>
+					</li>
+					
+					<li class="bg-green">
+						<a href="/index.php?p=admin&c=autotable&a=index&model_id=64">
+							<span class="ficon ficon-anquan"></span>
+							<br />户籍管理
+						</a>
+					</li>
+					<li class="bg-yellow">
+						<a href="/index.php?p=admin&c=autotable&a=index&model_id=71">
+							<span class="ficon ficon-wenzhang"></span>
+							<br />走访管理
+						</a>
+					</li>
+					<li class="bg-blue">
+						<a href="/index.php?p=admin&c=autotable&a=index&model_id=65">
+							<span class="ficon ficon-shop"></span>
+							<br />人员配置
+						</a>
+					</li>
+					<li class="bg-red">
+					<a href="/index.php?p=admin&c=autotable&a=index&model_id=66">
+						<span class="ficon ficon-kuozhanicon"></span>
+						<br />走访记录
+					</a>
+				    </li>
+					<li class="bg-watermelon-red">
+					<a href="/index.php?p=admin&c=autotable&a=index&model_id=68">
+						<span class="ficon ficon-cuxiaohuodong"></span>
+						<br />用户反馈
+					</a>
 				   </li>
 					
 					
@@ -83,20 +122,8 @@
 						<div class="data-type">
 							<ul class="data-type-list">
 
-								<li>
-									<a>
-										<span class="ficon ficon-zoomout"></span><br />
-										<span class="data-num">
-										<?php echo $systemMode->select(" SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   ")[0]['count_id'] ?></span>
-										<br /> 今日访问
-									</a>
-								</li>
-								<li>
-									<a>
-										<span class="ficon ficon-user"></span><br />
-										<span class="data-num"><?php echo $systemMode->select(" SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   ")[0]['count_id'] ?></span><br /> 总访问量
-									</a>
-								</li>
+								
+								
 								<li>
 									<a>
 										<span class="ficon ficon-dingdan"></span><br />
@@ -112,13 +139,13 @@
 								<li>
 									<a>
 										<span class="ficon ficon-diqiu"></span><br />
-										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    ")[0]['count_id'] ?></span><br /> 今日留言
+										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from 	sl_fankui where to_days(dtime) = to_days(now())    ")[0]['count_id'] ?></span><br /> 今日留言
 									</a>
 								</li>
 								<li>
 									<a>
 										<span class="ficon ficon-wait"></span><br />
-										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from sl_feedbook ")[0]['count_id'] ?></span><br /> 总留言
+										<span class="data-num"><?php echo $feedbookMode->select(" SELECT count(id) as count_id from 	sl_fankui ")[0]['count_id'] ?></span><br /> 总留言
 									</a>
 								</li>
 							</ul>

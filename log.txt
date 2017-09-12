@@ -43458,3 +43458,2810 @@
 [2017-09-11 12:37:02] set names utf8
 [2017-09-11 12:37:02] DESC sl_column
 [2017-09-11 12:37:02] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:15:04] set names utf8
+[2017-09-12 12:15:04] DESC sl_System
+[2017-09-12 12:15:04] set names utf8
+[2017-09-12 12:15:05] DESC sl_System
+[2017-09-12 12:15:05] select dtime from sl_System where  u3='::1' and u4='管理员登录' order by id desc 
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_admin
+[2017-09-12 12:15:05] SELECT * FROM sl_admin WHERE 
+		       username = 'admin' AND password = 'e10adc3949ba59abbe56e057f20f883e'
+		       LIMIT 1
+[2017-09-12 12:15:05] select * from `sl_admin` where `username`='admin'
+[2017-09-12 12:15:05] INSERT INTO `sl_System` (`u1`,`u2`,`u3`,`u4`) VALUES ('admin','admin:登录成功,操作页面:fanghuiju/index.php?p=admin&amp;c=login&amp;a=signin','::1','管理员登录')
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_sort
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_article
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_system
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_feedbook
+[2017-09-12 12:15:05] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:15:05] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_column
+[2017-09-12 12:15:05] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:15:05] set names utf8
+[2017-09-12 12:15:05] DESC sl_column
+[2017-09-12 12:15:05] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:15:05]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:15:05]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:15:05]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:15:05]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:15:05]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:15:05]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:15:05]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:15:06]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:15:06]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:16:11] set names utf8
+[2017-09-12 12:16:11] DESC sl_sort
+[2017-09-12 12:17:20] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='53' and sort_id='17' order by paixu asc, id desc 
+[2017-09-12 12:17:20] SELECT * from sl_sort where sort_id='17' and model_id='53' order by id desc 
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_column
+[2017-09-12 12:17:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_column
+[2017-09-12 12:17:20] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_sort
+[2017-09-12 12:17:20] select * from sl_sort where id=17
+[2017-09-12 12:17:20] select * from sl_sort where id=0
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_moxing
+[2017-09-12 12:17:20] select u1 from sl_moxing where id=53
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_article
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_filed
+[2017-09-12 12:17:20] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 12:17:20] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 12:17:20] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 12:17:20] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:17:20] set names utf8
+[2017-09-12 12:17:20] DESC sl_column
+[2017-09-12 12:17:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:17:21] set names utf8
+[2017-09-12 12:17:21] DESC sl_column
+[2017-09-12 12:17:21] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:21:25] set names utf8
+[2017-09-12 12:21:25] DESC sl_sort
+[2017-09-12 12:21:25] set names utf8
+[2017-09-12 12:21:25] DESC sl_article
+[2017-09-12 12:21:25] set names utf8
+[2017-09-12 12:21:25] DESC sl_system
+[2017-09-12 12:21:25] set names utf8
+[2017-09-12 12:21:25] DESC sl_feedbook
+[2017-09-12 12:21:25] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:21:26] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:21:26] set names utf8
+[2017-09-12 12:21:26] DESC sl_column
+[2017-09-12 12:21:26] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:21:26] set names utf8
+[2017-09-12 12:21:26] DESC sl_column
+[2017-09-12 12:21:26] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:21:26]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:21:26]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:21:26]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_sort
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_article
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_system
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_feedbook
+[2017-09-12 12:22:41] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:22:41] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_column
+[2017-09-12 12:22:41] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:41] set names utf8
+[2017-09-12 12:22:41] DESC sl_column
+[2017-09-12 12:22:41] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:41]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:22:41]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:41]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:43] set names utf8
+[2017-09-12 12:22:43] DESC sl_sort
+[2017-09-12 12:22:43] select * from sl_sort where id=26
+[2017-09-12 12:22:43] select * from sl_sort where id=
+[2017-09-12 12:22:45] set names utf8
+[2017-09-12 12:22:45] DESC sl_sort
+[2017-09-12 12:22:45] set names utf8
+[2017-09-12 12:22:45] DESC sl_article
+[2017-09-12 12:22:45] set names utf8
+[2017-09-12 12:22:45] DESC sl_system
+[2017-09-12 12:22:45] set names utf8
+[2017-09-12 12:22:45] DESC sl_feedbook
+[2017-09-12 12:22:45] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:22:46] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:22:46] set names utf8
+[2017-09-12 12:22:46] DESC sl_column
+[2017-09-12 12:22:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:46] set names utf8
+[2017-09-12 12:22:46] DESC sl_column
+[2017-09-12 12:22:46] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:46]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:22:46]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:46]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:22:52] set names utf8
+[2017-09-12 12:22:52] DESC sl_moxing
+[2017-09-12 12:22:52] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:22:52] set names utf8
+[2017-09-12 12:22:52] DESC sl_column
+[2017-09-12 12:22:52] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:52] set names utf8
+[2017-09-12 12:22:52] DESC sl_column
+[2017-09-12 12:22:52] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:56] set names utf8
+[2017-09-12 12:22:56] DESC sl_filed
+[2017-09-12 12:22:56] select * from sl_filed where model_id='70' 
+[2017-09-12 12:22:56] set names utf8
+[2017-09-12 12:22:56] DESC sl_column
+[2017-09-12 12:22:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:56] set names utf8
+[2017-09-12 12:22:56] DESC sl_column
+[2017-09-12 12:22:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:59] set names utf8
+[2017-09-12 12:22:59] DESC sl_moxing
+[2017-09-12 12:22:59] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:22:59] set names utf8
+[2017-09-12 12:22:59] DESC sl_column
+[2017-09-12 12:22:59] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:22:59] set names utf8
+[2017-09-12 12:22:59] DESC sl_column
+[2017-09-12 12:22:59] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:01] set names utf8
+[2017-09-12 12:23:01] DESC sl_sort
+[2017-09-12 12:23:02] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='70' and sort_id='0' order by paixu asc, id desc 
+[2017-09-12 12:23:02] SELECT * from sl_sort where sort_id='' and model_id='70' order by id desc 
+[2017-09-12 12:23:02] set names utf8
+[2017-09-12 12:23:02] DESC sl_column
+[2017-09-12 12:23:02] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:02] set names utf8
+[2017-09-12 12:23:02] DESC sl_column
+[2017-09-12 12:23:02] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:05] set names utf8
+[2017-09-12 12:23:05] DESC sl_moxing
+[2017-09-12 12:23:05] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:23:06] set names utf8
+[2017-09-12 12:23:06] DESC sl_column
+[2017-09-12 12:23:06] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:06] set names utf8
+[2017-09-12 12:23:06] DESC sl_column
+[2017-09-12 12:23:06] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:08] set names utf8
+[2017-09-12 12:23:08] DESC sl_sort
+[2017-09-12 12:23:08] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='70' and sort_id='0' order by paixu asc, id desc 
+[2017-09-12 12:23:08] SELECT * from sl_sort where sort_id='' and model_id='70' order by id desc 
+[2017-09-12 12:23:08] set names utf8
+[2017-09-12 12:23:08] DESC sl_column
+[2017-09-12 12:23:08] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:08] set names utf8
+[2017-09-12 12:23:08] DESC sl_column
+[2017-09-12 12:23:08] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:34] set names utf8
+[2017-09-12 12:23:34] DESC sl_moxing
+[2017-09-12 12:23:34] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:23:34] set names utf8
+[2017-09-12 12:23:34] DESC sl_column
+[2017-09-12 12:23:34] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:34] set names utf8
+[2017-09-12 12:23:34] DESC sl_column
+[2017-09-12 12:23:34] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:52] set names utf8
+[2017-09-12 12:23:52] DESC sl_sort
+[2017-09-12 12:23:52] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='70' and sort_id='0' order by paixu asc, id desc 
+[2017-09-12 12:23:52] SELECT * from sl_sort where sort_id='' and model_id='70' order by id desc 
+[2017-09-12 12:23:52] set names utf8
+[2017-09-12 12:23:52] DESC sl_column
+[2017-09-12 12:23:52] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:52] set names utf8
+[2017-09-12 12:23:52] DESC sl_column
+[2017-09-12 12:23:52] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:55] set names utf8
+[2017-09-12 12:23:56] DESC sl_moxing
+[2017-09-12 12:23:56] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:23:56] set names utf8
+[2017-09-12 12:23:56] DESC sl_column
+[2017-09-12 12:23:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:56] set names utf8
+[2017-09-12 12:23:56] DESC sl_column
+[2017-09-12 12:23:56] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:58] set names utf8
+[2017-09-12 12:23:58] DESC sl_filed
+[2017-09-12 12:23:58] select * from sl_filed where model_id='70' 
+[2017-09-12 12:23:58] set names utf8
+[2017-09-12 12:23:58] DESC sl_column
+[2017-09-12 12:23:58] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:23:58] set names utf8
+[2017-09-12 12:23:58] DESC sl_column
+[2017-09-12 12:23:58] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:03] set names utf8
+[2017-09-12 12:24:03] DESC sl_moxing
+[2017-09-12 12:24:03] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:24:03] set names utf8
+[2017-09-12 12:24:03] DESC sl_column
+[2017-09-12 12:24:03] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:03] set names utf8
+[2017-09-12 12:24:03] DESC sl_column
+[2017-09-12 12:24:03] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:44] set names utf8
+[2017-09-12 12:24:44] DESC sl_sort
+[2017-09-12 12:24:44] set names utf8
+[2017-09-12 12:24:44] DESC sl_article
+[2017-09-12 12:24:44] set names utf8
+[2017-09-12 12:24:44] DESC sl_system
+[2017-09-12 12:24:44] set names utf8
+[2017-09-12 12:24:44] DESC sl_feedbook
+[2017-09-12 12:24:44] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:24:45] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:24:45] set names utf8
+[2017-09-12 12:24:45] DESC sl_column
+[2017-09-12 12:24:45] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:45] set names utf8
+[2017-09-12 12:24:45] DESC sl_column
+[2017-09-12 12:24:45] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:45]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:24:45]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:24:45]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:24:47] set names utf8
+[2017-09-12 12:24:47] DESC sl_column
+[2017-09-12 12:24:47] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:47] set names utf8
+[2017-09-12 12:24:47] DESC sl_column
+[2017-09-12 12:24:47] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:56] DESC sl_sort
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:56] DESC sl_article
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:56] DESC sl_system
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:56] DESC sl_feedbook
+[2017-09-12 12:24:56] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:24:56] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:56] DESC sl_column
+[2017-09-12 12:24:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:56] set names utf8
+[2017-09-12 12:24:57] DESC sl_column
+[2017-09-12 12:24:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:24:57]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:24:57]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:24:57]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:10] set names utf8
+[2017-09-12 12:25:10] DESC sl_sort
+[2017-09-12 12:25:10] set names utf8
+[2017-09-12 12:25:10] DESC sl_article
+[2017-09-12 12:25:10] set names utf8
+[2017-09-12 12:25:10] DESC sl_system
+[2017-09-12 12:25:10] set names utf8
+[2017-09-12 12:25:10] DESC sl_feedbook
+[2017-09-12 12:25:10] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:25:11] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:25:11] set names utf8
+[2017-09-12 12:25:11] DESC sl_column
+[2017-09-12 12:25:11] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:11] set names utf8
+[2017-09-12 12:25:11] DESC sl_column
+[2017-09-12 12:25:11] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:11]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:25:11]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:11]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:19] set names utf8
+[2017-09-12 12:25:19] DESC sl_admin
+[2017-09-12 12:25:19] select * from sl_admin where username='admin'
+[2017-09-12 12:25:19] set names utf8
+[2017-09-12 12:25:19] DESC sl_column
+[2017-09-12 12:25:19] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:19] set names utf8
+[2017-09-12 12:25:19] DESC sl_column
+[2017-09-12 12:25:19] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:21] set names utf8
+[2017-09-12 12:25:21] DESC sl_sort
+[2017-09-12 12:25:21] set names utf8
+[2017-09-12 12:25:21] DESC sl_article
+[2017-09-12 12:25:21] set names utf8
+[2017-09-12 12:25:21] DESC sl_system
+[2017-09-12 12:25:21] set names utf8
+[2017-09-12 12:25:22] DESC sl_feedbook
+[2017-09-12 12:25:22] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:25:22] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:25:22] set names utf8
+[2017-09-12 12:25:22] DESC sl_column
+[2017-09-12 12:25:22] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:22] set names utf8
+[2017-09-12 12:25:22] DESC sl_column
+[2017-09-12 12:25:22] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:22]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:25:22]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:22]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:25:30] set names utf8
+[2017-09-12 12:25:30] DESC sl_system
+[2017-09-12 12:25:30] SELECT u4 from sl_system GROUP BY u4
+[2017-09-12 12:25:30] select count(*) from sl_system where  1=1 
+[2017-09-12 12:25:30] select * from sl_system  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:25:30] set names utf8
+[2017-09-12 12:25:30] DESC sl_column
+[2017-09-12 12:25:30] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:25:30] set names utf8
+[2017-09-12 12:25:30] DESC sl_column
+[2017-09-12 12:25:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:01] set names utf8
+[2017-09-12 12:26:01] DESC sl_system
+[2017-09-12 12:26:01] SELECT u4 from sl_system GROUP BY u4
+[2017-09-12 12:26:01] select count(*) from sl_system where  1=1  and u4='用户登录' and  1=1 
+[2017-09-12 12:26:01] select * from sl_system  where  1=1  and u4='用户登录' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:26:01] set names utf8
+[2017-09-12 12:26:01] DESC sl_column
+[2017-09-12 12:26:01] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:01] set names utf8
+[2017-09-12 12:26:01] DESC sl_column
+[2017-09-12 12:26:01] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:06] set names utf8
+[2017-09-12 12:26:06] DESC sl_system
+[2017-09-12 12:26:06] SELECT u4 from sl_system GROUP BY u4
+[2017-09-12 12:26:06] select count(*) from sl_system where  1=1 
+[2017-09-12 12:26:06] select * from sl_system  where  1=1    order by   id desc  limit 30, 10
+[2017-09-12 12:26:06] set names utf8
+[2017-09-12 12:26:06] DESC sl_column
+[2017-09-12 12:26:06] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:06] set names utf8
+[2017-09-12 12:26:06] DESC sl_column
+[2017-09-12 12:26:06] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:59] set names utf8
+[2017-09-12 12:26:59] DESC sl_sort
+[2017-09-12 12:26:59] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='53' and sort_id='17' order by paixu asc, id desc 
+[2017-09-12 12:26:59] SELECT * from sl_sort where sort_id='17' and model_id='53' order by id desc 
+[2017-09-12 12:26:59] set names utf8
+[2017-09-12 12:26:59] DESC sl_column
+[2017-09-12 12:26:59] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:26:59] set names utf8
+[2017-09-12 12:27:00] DESC sl_column
+[2017-09-12 12:27:00] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_sort
+[2017-09-12 12:27:00] select * from sl_sort where id=17
+[2017-09-12 12:27:00] select * from sl_sort where id=0
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_moxing
+[2017-09-12 12:27:00] select u1 from sl_moxing where id=53
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_article
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_filed
+[2017-09-12 12:27:00] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 12:27:00] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 12:27:00] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 12:27:00] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_column
+[2017-09-12 12:27:00] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:00] set names utf8
+[2017-09-12 12:27:00] DESC sl_column
+[2017-09-12 12:27:00] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:34] set names utf8
+[2017-09-12 12:27:34] DESC sl_moxing
+[2017-09-12 12:27:34] select u1 from sl_moxing where id=64
+[2017-09-12 12:27:34] set names utf8
+[2017-09-12 12:27:34] DESC sl_huji
+[2017-09-12 12:27:34] set names utf8
+[2017-09-12 12:27:34] DESC sl_filed
+[2017-09-12 12:27:34] select * from sl_filed where model_id='64' and u5='是' order by u10 asc 
+[2017-09-12 12:27:34] select count(*) from sl_huji where  1=1 
+[2017-09-12 12:27:34] select * from sl_huji  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:27:34] set names utf8
+[2017-09-12 12:27:34] DESC sl_column
+[2017-09-12 12:27:34] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:34] set names utf8
+[2017-09-12 12:27:34] DESC sl_column
+[2017-09-12 12:27:34] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:57] set names utf8
+[2017-09-12 12:27:57] DESC sl_moxing
+[2017-09-12 12:27:57] select u1 from sl_moxing where id=71
+[2017-09-12 12:27:57] set names utf8
+[2017-09-12 12:27:57] DESC sl_zoufangjihua
+[2017-09-12 12:27:57] set names utf8
+[2017-09-12 12:27:57] DESC sl_filed
+[2017-09-12 12:27:57] select * from sl_filed where model_id='71' and u5='是' order by u10 asc 
+[2017-09-12 12:27:57] select count(*) from sl_zoufangjihua where  1=1 
+[2017-09-12 12:27:57] select * from sl_zoufangjihua  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:27:57] set names utf8
+[2017-09-12 12:27:57] DESC sl_column
+[2017-09-12 12:27:57] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:27:57] set names utf8
+[2017-09-12 12:27:57] DESC sl_column
+[2017-09-12 12:27:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:20] set names utf8
+[2017-09-12 12:28:20] DESC sl_moxing
+[2017-09-12 12:28:20] select u1 from sl_moxing where id=65
+[2017-09-12 12:28:20] set names utf8
+[2017-09-12 12:28:20] DESC sl_renyuan
+[2017-09-12 12:28:20] set names utf8
+[2017-09-12 12:28:20] DESC sl_filed
+[2017-09-12 12:28:20] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 12:28:20] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 12:28:20] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:28:20] set names utf8
+[2017-09-12 12:28:20] DESC sl_column
+[2017-09-12 12:28:21] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:21] set names utf8
+[2017-09-12 12:28:21] DESC sl_column
+[2017-09-12 12:28:21] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:30] set names utf8
+[2017-09-12 12:28:30] DESC sl_moxing
+[2017-09-12 12:28:30] select u1 from sl_moxing where id=65
+[2017-09-12 12:28:30] set names utf8
+[2017-09-12 12:28:30] DESC sl_renyuan
+[2017-09-12 12:28:30] set names utf8
+[2017-09-12 12:28:30] DESC sl_filed
+[2017-09-12 12:28:30] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 12:28:30] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 12:28:30] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:28:30] set names utf8
+[2017-09-12 12:28:30] DESC sl_column
+[2017-09-12 12:28:30] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:30] set names utf8
+[2017-09-12 12:28:30] DESC sl_column
+[2017-09-12 12:28:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:56] set names utf8
+[2017-09-12 12:28:56] DESC sl_moxing
+[2017-09-12 12:28:56] select u1 from sl_moxing where id=66
+[2017-09-12 12:28:57] set names utf8
+[2017-09-12 12:28:57] DESC sl_zoufangjilu
+[2017-09-12 12:28:57] set names utf8
+[2017-09-12 12:28:57] DESC sl_filed
+[2017-09-12 12:28:57] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-12 12:28:57] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-12 12:28:57] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:28:57] set names utf8
+[2017-09-12 12:28:57] DESC sl_column
+[2017-09-12 12:28:57] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:28:57] set names utf8
+[2017-09-12 12:28:57] DESC sl_column
+[2017-09-12 12:28:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:29:32] set names utf8
+[2017-09-12 12:29:32] DESC sl_moxing
+[2017-09-12 12:29:32] select u1 from sl_moxing where id=68
+[2017-09-12 12:29:32] set names utf8
+[2017-09-12 12:29:32] DESC sl_fankui
+[2017-09-12 12:29:32] set names utf8
+[2017-09-12 12:29:32] DESC sl_filed
+[2017-09-12 12:29:32] select * from sl_filed where model_id='68' and u5='是' order by u10 asc 
+[2017-09-12 12:29:32] select count(*) from sl_fankui where  1=1 
+[2017-09-12 12:29:32] select * from sl_fankui  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:29:32] set names utf8
+[2017-09-12 12:29:32] DESC sl_column
+[2017-09-12 12:29:32] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:29:32] set names utf8
+[2017-09-12 12:29:32] DESC sl_column
+[2017-09-12 12:29:32] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:29:58] set names utf8
+[2017-09-12 12:29:58] DESC sl_sort
+[2017-09-12 12:29:58] set names utf8
+[2017-09-12 12:29:58] DESC sl_article
+[2017-09-12 12:29:58] set names utf8
+[2017-09-12 12:29:58] DESC sl_system
+[2017-09-12 12:29:59] set names utf8
+[2017-09-12 12:29:59] DESC sl_feedbook
+[2017-09-12 12:29:59] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:29:59] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:29:59] set names utf8
+[2017-09-12 12:29:59] DESC sl_column
+[2017-09-12 12:29:59] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:29:59] set names utf8
+[2017-09-12 12:29:59] DESC sl_column
+[2017-09-12 12:29:59] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:29:59]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录' and to_days(dtime) = to_days(now())  GROUP BY u3 )as t   
+[2017-09-12 12:29:59]  SELECT COUNT(*) as count_id from (SELECT  u3,dtime from sl_system where u1='访客' and u4='访客记录'  GROUP BY u3 )as t   
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:29:59]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:34:14] set names utf8
+[2017-09-12 12:34:14] DESC sl_sort
+[2017-09-12 12:34:14] set names utf8
+[2017-09-12 12:34:14] DESC sl_article
+[2017-09-12 12:34:14] set names utf8
+[2017-09-12 12:34:14] DESC sl_system
+[2017-09-12 12:34:14] set names utf8
+[2017-09-12 12:34:14] DESC sl_feedbook
+[2017-09-12 12:34:14] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:34:14] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:34:15] set names utf8
+[2017-09-12 12:34:15] DESC sl_column
+[2017-09-12 12:34:15] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:34:15] set names utf8
+[2017-09-12 12:34:15] DESC sl_column
+[2017-09-12 12:34:15] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:34:15]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:35:08] set names utf8
+[2017-09-12 12:35:08] DESC sl_moxing
+[2017-09-12 12:35:08] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:35:08] set names utf8
+[2017-09-12 12:35:08] DESC sl_column
+[2017-09-12 12:35:08] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:08] set names utf8
+[2017-09-12 12:35:08] DESC sl_column
+[2017-09-12 12:35:08] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:18] set names utf8
+[2017-09-12 12:35:18] DESC sl_moxing
+[2017-09-12 12:35:18] select u1 from sl_moxing where id=68
+[2017-09-12 12:35:18] set names utf8
+[2017-09-12 12:35:18] DESC sl_fankui
+[2017-09-12 12:35:18] set names utf8
+[2017-09-12 12:35:18] DESC sl_filed
+[2017-09-12 12:35:18] select * from sl_filed where model_id='68' and u5='是' order by u10 asc 
+[2017-09-12 12:35:18] select count(*) from sl_fankui where  1=1 
+[2017-09-12 12:35:18] select * from sl_fankui  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:35:19] set names utf8
+[2017-09-12 12:35:19] DESC sl_column
+[2017-09-12 12:35:19] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:19] set names utf8
+[2017-09-12 12:35:19] DESC sl_column
+[2017-09-12 12:35:19] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:22] set names utf8
+[2017-09-12 12:35:22] DESC sl_moxing
+[2017-09-12 12:35:22] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:35:22] set names utf8
+[2017-09-12 12:35:22] DESC sl_column
+[2017-09-12 12:35:22] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:22] set names utf8
+[2017-09-12 12:35:22] DESC sl_column
+[2017-09-12 12:35:22] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:30] set names utf8
+[2017-09-12 12:35:30] DESC sl_sort
+[2017-09-12 12:35:30] set names utf8
+[2017-09-12 12:35:30] DESC sl_article
+[2017-09-12 12:35:30] set names utf8
+[2017-09-12 12:35:30] DESC sl_system
+[2017-09-12 12:35:31] set names utf8
+[2017-09-12 12:35:31] DESC sl_feedbook
+[2017-09-12 12:35:31] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:35:31] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:35:31] set names utf8
+[2017-09-12 12:35:31] DESC sl_column
+[2017-09-12 12:35:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:31] set names utf8
+[2017-09-12 12:35:31] DESC sl_column
+[2017-09-12 12:35:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_feedbook where to_days(dtime) = to_days(now())    
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_feedbook 
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:35:31]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:00] set names utf8
+[2017-09-12 12:36:00] DESC sl_sort
+[2017-09-12 12:36:00] set names utf8
+[2017-09-12 12:36:00] DESC sl_article
+[2017-09-12 12:36:00] set names utf8
+[2017-09-12 12:36:00] DESC sl_system
+[2017-09-12 12:36:00] set names utf8
+[2017-09-12 12:36:00] DESC sl_feedbook
+[2017-09-12 12:36:00] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:36:01] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:36:01] set names utf8
+[2017-09-12 12:36:01] DESC sl_column
+[2017-09-12 12:36:01] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:36:01] set names utf8
+[2017-09-12 12:36:01] DESC sl_column
+[2017-09-12 12:36:01] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from 	sl_fankui where to_days(dtime) = to_days(now())    
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from 	sl_fankui 
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:01]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_sort
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_article
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_system
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_feedbook
+[2017-09-12 12:36:30] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 12:36:30] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_column
+[2017-09-12 12:36:30] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:36:30] set names utf8
+[2017-09-12 12:36:30] DESC sl_column
+[2017-09-12 12:36:30] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from 	sl_fankui where to_days(dtime) = to_days(now())    
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from 	sl_fankui 
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:36:30]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 12:37:51] set names utf8
+[2017-09-12 12:37:51] DESC sl_system
+[2017-09-12 12:37:51] SELECT u4 from sl_system GROUP BY u4
+[2017-09-12 12:37:51] select count(*) from sl_system where  1=1 
+[2017-09-12 12:37:51] select * from sl_system  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:37:51] set names utf8
+[2017-09-12 12:37:51] DESC sl_column
+[2017-09-12 12:37:51] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:37:51] set names utf8
+[2017-09-12 12:37:51] DESC sl_column
+[2017-09-12 12:37:51] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:37:53] set names utf8
+[2017-09-12 12:37:53] DESC sl_moxing
+[2017-09-12 12:37:53] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 12:37:53] set names utf8
+[2017-09-12 12:37:53] DESC sl_column
+[2017-09-12 12:37:53] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:37:53] set names utf8
+[2017-09-12 12:37:53] DESC sl_column
+[2017-09-12 12:37:53] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:37:55] set names utf8
+[2017-09-12 12:37:55] DESC sl_moxing
+[2017-09-12 12:37:55] select u1 from sl_moxing where id=69
+[2017-09-12 12:37:55] set names utf8
+[2017-09-12 12:37:55] DESC sl_tianqibeijing
+[2017-09-12 12:37:56] set names utf8
+[2017-09-12 12:37:56] DESC sl_filed
+[2017-09-12 12:37:56] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:37:56] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:37:56] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:37:56] set names utf8
+[2017-09-12 12:37:56] DESC sl_column
+[2017-09-12 12:37:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:37:56] set names utf8
+[2017-09-12 12:37:56] DESC sl_column
+[2017-09-12 12:37:56] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:38:04] set names utf8
+[2017-09-12 12:38:04] DESC sl_sort
+[2017-09-12 12:38:04] select * from sl_sort where id=
+[2017-09-12 12:55:28] set names utf8
+[2017-09-12 12:55:28] DESC sl_sort
+[2017-09-12 12:55:28] select * from sl_sort where id=
+[2017-09-12 12:55:33] set names utf8
+[2017-09-12 12:55:33] DESC sl_sort
+[2017-09-12 12:55:33] select * from sl_sort where id=
+[2017-09-12 12:56:27] set names utf8
+[2017-09-12 12:56:27] DESC sl_moxing
+[2017-09-12 12:56:27] select u1 from sl_moxing where id=69
+[2017-09-12 12:56:27] set names utf8
+[2017-09-12 12:56:27] DESC sl_tianqibeijing
+[2017-09-12 12:56:27] set names utf8
+[2017-09-12 12:56:27] DESC sl_filed
+[2017-09-12 12:56:27] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:56:27] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:56:27] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:56:27] set names utf8
+[2017-09-12 12:56:27] DESC sl_column
+[2017-09-12 12:56:27] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:56:27] set names utf8
+[2017-09-12 12:56:27] DESC sl_column
+[2017-09-12 12:56:27] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:56:36] set names utf8
+[2017-09-12 12:56:36] DESC sl_sort
+[2017-09-12 12:56:36] select * from sl_sort where id=
+[2017-09-12 12:57:14] set names utf8
+[2017-09-12 12:57:14] DESC sl_sort
+[2017-09-12 12:57:14] select * from sl_sort where id=
+[2017-09-12 12:57:15] set names utf8
+[2017-09-12 12:57:16] DESC sl_moxing
+[2017-09-12 12:57:16] select u1 from sl_moxing where id=69
+[2017-09-12 12:57:16] set names utf8
+[2017-09-12 12:57:16] DESC sl_tianqibeijing
+[2017-09-12 12:57:16] set names utf8
+[2017-09-12 12:57:16] DESC sl_filed
+[2017-09-12 12:57:16] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:57:16] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:57:16] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:57:16] set names utf8
+[2017-09-12 12:57:16] DESC sl_column
+[2017-09-12 12:57:16] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:16] set names utf8
+[2017-09-12 12:57:16] DESC sl_column
+[2017-09-12 12:57:16] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:17] set names utf8
+[2017-09-12 12:57:17] DESC sl_moxing
+[2017-09-12 12:57:17] select u1 from sl_moxing where id=69
+[2017-09-12 12:57:17] set names utf8
+[2017-09-12 12:57:17] DESC sl_tianqibeijing
+[2017-09-12 12:57:17] set names utf8
+[2017-09-12 12:57:17] DESC sl_filed
+[2017-09-12 12:57:17] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:57:17] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:57:17] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:57:17] set names utf8
+[2017-09-12 12:57:17] DESC sl_column
+[2017-09-12 12:57:17] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:17] set names utf8
+[2017-09-12 12:57:17] DESC sl_column
+[2017-09-12 12:57:17] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:18] set names utf8
+[2017-09-12 12:57:18] DESC sl_sort
+[2017-09-12 12:57:19] select * from sl_sort where id=
+[2017-09-12 12:57:30] set names utf8
+[2017-09-12 12:57:30] DESC sl_moxing
+[2017-09-12 12:57:31] select u1 from sl_moxing where id=69
+[2017-09-12 12:57:31] set names utf8
+[2017-09-12 12:57:31] DESC sl_tianqibeijing
+[2017-09-12 12:57:31] set names utf8
+[2017-09-12 12:57:31] DESC sl_filed
+[2017-09-12 12:57:31] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:57:31] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:57:31] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:57:31] set names utf8
+[2017-09-12 12:57:31] DESC sl_column
+[2017-09-12 12:57:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:31] set names utf8
+[2017-09-12 12:57:31] DESC sl_column
+[2017-09-12 12:57:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:32] set names utf8
+[2017-09-12 12:57:32] DESC sl_moxing
+[2017-09-12 12:57:32] select u1 from sl_moxing where id=69
+[2017-09-12 12:57:32] set names utf8
+[2017-09-12 12:57:32] DESC sl_tianqibeijing
+[2017-09-12 12:57:32] set names utf8
+[2017-09-12 12:57:32] DESC sl_filed
+[2017-09-12 12:57:32] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:57:32] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:57:32] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:57:32] set names utf8
+[2017-09-12 12:57:32] DESC sl_column
+[2017-09-12 12:57:32] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:32] set names utf8
+[2017-09-12 12:57:32] DESC sl_column
+[2017-09-12 12:57:32] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:34] set names utf8
+[2017-09-12 12:57:34] DESC sl_sort
+[2017-09-12 12:57:34] select * from sl_sort where id=
+[2017-09-12 12:57:36] set names utf8
+[2017-09-12 12:57:36] DESC sl_moxing
+[2017-09-12 12:57:36] select u1 from sl_moxing where id=69
+[2017-09-12 12:57:36] set names utf8
+[2017-09-12 12:57:36] DESC sl_tianqibeijing
+[2017-09-12 12:57:36] set names utf8
+[2017-09-12 12:57:36] DESC sl_filed
+[2017-09-12 12:57:36] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:57:36] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:57:36] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:57:36] set names utf8
+[2017-09-12 12:57:36] DESC sl_column
+[2017-09-12 12:57:36] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:57:36] set names utf8
+[2017-09-12 12:57:36] DESC sl_column
+[2017-09-12 12:57:36] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:23] set names utf8
+[2017-09-12 12:58:23] DESC sl_moxing
+[2017-09-12 12:58:23] select u1 from sl_moxing where id=69
+[2017-09-12 12:58:23] set names utf8
+[2017-09-12 12:58:23] DESC sl_tianqibeijing
+[2017-09-12 12:58:23] set names utf8
+[2017-09-12 12:58:23] DESC sl_filed
+[2017-09-12 12:58:23] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:58:23] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:58:24] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:58:24] set names utf8
+[2017-09-12 12:58:24] DESC sl_column
+[2017-09-12 12:58:24] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:24] set names utf8
+[2017-09-12 12:58:24] DESC sl_column
+[2017-09-12 12:58:24] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:25] set names utf8
+[2017-09-12 12:58:25] DESC sl_sort
+[2017-09-12 12:58:25] select * from sl_sort where id=
+[2017-09-12 12:58:28] set names utf8
+[2017-09-12 12:58:28] DESC sl_moxing
+[2017-09-12 12:58:28] select u1 from sl_moxing where id=69
+[2017-09-12 12:58:28] set names utf8
+[2017-09-12 12:58:28] DESC sl_tianqibeijing
+[2017-09-12 12:58:28] set names utf8
+[2017-09-12 12:58:28] DESC sl_filed
+[2017-09-12 12:58:28] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:58:28] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:58:28] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:58:28] set names utf8
+[2017-09-12 12:58:28] DESC sl_column
+[2017-09-12 12:58:28] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:28] set names utf8
+[2017-09-12 12:58:28] DESC sl_column
+[2017-09-12 12:58:28] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:32] set names utf8
+[2017-09-12 12:58:32] DESC sl_moxing
+[2017-09-12 12:58:33] select u1 from sl_moxing where id=69
+[2017-09-12 12:58:33] set names utf8
+[2017-09-12 12:58:33] DESC sl_tianqibeijing
+[2017-09-12 12:58:33] set names utf8
+[2017-09-12 12:58:33] DESC sl_filed
+[2017-09-12 12:58:33] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:58:33] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:58:33] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:58:33] set names utf8
+[2017-09-12 12:58:33] DESC sl_column
+[2017-09-12 12:58:33] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:33] set names utf8
+[2017-09-12 12:58:33] DESC sl_column
+[2017-09-12 12:58:33] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:34] set names utf8
+[2017-09-12 12:58:34] DESC sl_sort
+[2017-09-12 12:58:34] select * from sl_sort where id=
+[2017-09-12 12:58:38] set names utf8
+[2017-09-12 12:58:38] DESC sl_moxing
+[2017-09-12 12:58:38] select u1 from sl_moxing where id=69
+[2017-09-12 12:58:38] set names utf8
+[2017-09-12 12:58:38] DESC sl_tianqibeijing
+[2017-09-12 12:58:38] set names utf8
+[2017-09-12 12:58:38] DESC sl_filed
+[2017-09-12 12:58:38] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:58:38] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:58:38] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:58:38] set names utf8
+[2017-09-12 12:58:38] DESC sl_column
+[2017-09-12 12:58:38] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:58:38] set names utf8
+[2017-09-12 12:58:38] DESC sl_column
+[2017-09-12 12:58:38] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:10] set names utf8
+[2017-09-12 12:59:10] DESC sl_moxing
+[2017-09-12 12:59:10] select u1 from sl_moxing where id=69
+[2017-09-12 12:59:10] set names utf8
+[2017-09-12 12:59:10] DESC sl_tianqibeijing
+[2017-09-12 12:59:10] set names utf8
+[2017-09-12 12:59:10] DESC sl_filed
+[2017-09-12 12:59:10] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:59:10] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:59:10] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:59:10] set names utf8
+[2017-09-12 12:59:10] DESC sl_column
+[2017-09-12 12:59:10] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:10] set names utf8
+[2017-09-12 12:59:10] DESC sl_column
+[2017-09-12 12:59:10] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:23] set names utf8
+[2017-09-12 12:59:23] DESC sl_sort
+[2017-09-12 12:59:23] select * from sl_sort where id=
+[2017-09-12 12:59:52] set names utf8
+[2017-09-12 12:59:52] DESC sl_moxing
+[2017-09-12 12:59:52] select u1 from sl_moxing where id=69
+[2017-09-12 12:59:52] set names utf8
+[2017-09-12 12:59:52] DESC sl_tianqibeijing
+[2017-09-12 12:59:52] set names utf8
+[2017-09-12 12:59:52] DESC sl_filed
+[2017-09-12 12:59:52] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:59:52] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:59:52] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:59:52] set names utf8
+[2017-09-12 12:59:52] DESC sl_column
+[2017-09-12 12:59:52] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:52] set names utf8
+[2017-09-12 12:59:52] DESC sl_column
+[2017-09-12 12:59:52] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:54] set names utf8
+[2017-09-12 12:59:54] DESC sl_moxing
+[2017-09-12 12:59:54] select u1 from sl_moxing where id=69
+[2017-09-12 12:59:54] set names utf8
+[2017-09-12 12:59:54] DESC sl_tianqibeijing
+[2017-09-12 12:59:54] set names utf8
+[2017-09-12 12:59:54] DESC sl_filed
+[2017-09-12 12:59:54] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 12:59:54] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 12:59:54] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 12:59:54] set names utf8
+[2017-09-12 12:59:54] DESC sl_column
+[2017-09-12 12:59:54] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:54] set names utf8
+[2017-09-12 12:59:54] DESC sl_column
+[2017-09-12 12:59:54] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 12:59:55] set names utf8
+[2017-09-12 12:59:55] DESC sl_sort
+[2017-09-12 12:59:55] select * from sl_sort where id=
+[2017-09-12 13:00:01] set names utf8
+[2017-09-12 13:00:01] DESC sl_moxing
+[2017-09-12 13:00:01] select u1 from sl_moxing where id=69
+[2017-09-12 13:00:01] set names utf8
+[2017-09-12 13:00:01] DESC sl_tianqibeijing
+[2017-09-12 13:00:01] set names utf8
+[2017-09-12 13:00:01] DESC sl_filed
+[2017-09-12 13:00:01] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 13:00:01] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 13:00:01] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:00:01] set names utf8
+[2017-09-12 13:00:01] DESC sl_column
+[2017-09-12 13:00:01] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:01] set names utf8
+[2017-09-12 13:00:01] DESC sl_column
+[2017-09-12 13:00:01] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:13] set names utf8
+[2017-09-12 13:00:13] DESC sl_moxing
+[2017-09-12 13:00:13] select u1 from sl_moxing where id=69
+[2017-09-12 13:00:13] set names utf8
+[2017-09-12 13:00:13] DESC sl_tianqibeijing
+[2017-09-12 13:00:13] set names utf8
+[2017-09-12 13:00:13] DESC sl_filed
+[2017-09-12 13:00:13] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 13:00:13] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 13:00:13] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:00:13] set names utf8
+[2017-09-12 13:00:13] DESC sl_column
+[2017-09-12 13:00:13] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:13] set names utf8
+[2017-09-12 13:00:13] DESC sl_column
+[2017-09-12 13:00:13] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:14] set names utf8
+[2017-09-12 13:00:14] DESC sl_moxing
+[2017-09-12 13:00:14] select u1 from sl_moxing where id=69
+[2017-09-12 13:00:14] set names utf8
+[2017-09-12 13:00:14] DESC sl_tianqibeijing
+[2017-09-12 13:00:14] set names utf8
+[2017-09-12 13:00:14] DESC sl_filed
+[2017-09-12 13:00:14] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 13:00:14] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 13:00:14] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 10, 10
+[2017-09-12 13:00:14] set names utf8
+[2017-09-12 13:00:14] DESC sl_column
+[2017-09-12 13:00:14] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:14] set names utf8
+[2017-09-12 13:00:14] DESC sl_column
+[2017-09-12 13:00:14] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:17] set names utf8
+[2017-09-12 13:00:17] DESC sl_moxing
+[2017-09-12 13:00:17] select u1 from sl_moxing where id=69
+[2017-09-12 13:00:17] set names utf8
+[2017-09-12 13:00:17] DESC sl_tianqibeijing
+[2017-09-12 13:00:17] set names utf8
+[2017-09-12 13:00:17] DESC sl_filed
+[2017-09-12 13:00:17] select * from sl_filed where model_id='69' and u5='是' order by u10 asc 
+[2017-09-12 13:00:17] select count(*) from sl_tianqibeijing where  1=1 
+[2017-09-12 13:00:17] select * from sl_tianqibeijing  where  1=1    order by   id desc  limit 20, 10
+[2017-09-12 13:00:18] set names utf8
+[2017-09-12 13:00:18] DESC sl_column
+[2017-09-12 13:00:18] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:00:18] set names utf8
+[2017-09-12 13:00:18] DESC sl_column
+[2017-09-12 13:00:18] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:32] set names utf8
+[2017-09-12 13:08:32] DESC sl_sort
+[2017-09-12 13:08:32] set names utf8
+[2017-09-12 13:08:32] DESC sl_article
+[2017-09-12 13:08:32] set names utf8
+[2017-09-12 13:08:32] DESC sl_system
+[2017-09-12 13:08:32] set names utf8
+[2017-09-12 13:08:32] DESC sl_feedbook
+[2017-09-12 13:08:32] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 13:08:33] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 13:08:33] set names utf8
+[2017-09-12 13:08:33] DESC sl_column
+[2017-09-12 13:08:33] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:33] set names utf8
+[2017-09-12 13:08:33] DESC sl_column
+[2017-09-12 13:08:33] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from 	sl_fankui where to_days(dtime) = to_days(now())    
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from 	sl_fankui 
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:08:33]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:08:45] set names utf8
+[2017-09-12 13:08:45] DESC sl_moxing
+[2017-09-12 13:08:45] select u1 from sl_moxing where id=65
+[2017-09-12 13:08:45] set names utf8
+[2017-09-12 13:08:45] DESC sl_renyuan
+[2017-09-12 13:08:45] set names utf8
+[2017-09-12 13:08:45] DESC sl_filed
+[2017-09-12 13:08:45] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:08:45] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:08:45] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:08:45] set names utf8
+[2017-09-12 13:08:45] DESC sl_column
+[2017-09-12 13:08:45] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:45] set names utf8
+[2017-09-12 13:08:45] DESC sl_column
+[2017-09-12 13:08:45] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:51] set names utf8
+[2017-09-12 13:08:51] DESC sl_moxing
+[2017-09-12 13:08:51] select u1 from sl_moxing where id=65
+[2017-09-12 13:08:51] set names utf8
+[2017-09-12 13:08:51] DESC sl_renyuan
+[2017-09-12 13:08:51] DELETE FROM `sl_renyuan` WHERE `id` in (8)
+[2017-09-12 13:08:53] set names utf8
+[2017-09-12 13:08:53] DESC sl_moxing
+[2017-09-12 13:08:53] select u1 from sl_moxing where id=65
+[2017-09-12 13:08:53] set names utf8
+[2017-09-12 13:08:53] DESC sl_renyuan
+[2017-09-12 13:08:53] set names utf8
+[2017-09-12 13:08:53] DESC sl_filed
+[2017-09-12 13:08:53] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:08:53] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:08:53] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:08:53] set names utf8
+[2017-09-12 13:08:53] DESC sl_column
+[2017-09-12 13:08:53] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:08:53] set names utf8
+[2017-09-12 13:08:53] DESC sl_column
+[2017-09-12 13:08:53] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from sl_filed where model_id='65'  order by  u10 asc,id desc 
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_column
+[2017-09-12 13:09:00] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_column
+[2017-09-12 13:09:00] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from `sl_filed` where `id`=482
+[2017-09-12 13:09:00] select u8 from sl_filed where id=482
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_canshu
+[2017-09-12 13:09:00] select * from sl_canshu where classid=17
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from `sl_filed` where `id`=481
+[2017-09-12 13:09:00] select u8 from sl_filed where id=481
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_canshu
+[2017-09-12 13:09:00] select * from sl_canshu where classid=17
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from `sl_filed` where `id`=469
+[2017-09-12 13:09:00] select u8 from sl_filed where id=469
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_canshu
+[2017-09-12 13:09:00]  select u1 from   sl_canshu where classid=29  order by id desc
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from `sl_filed` where `id`=460
+[2017-09-12 13:09:00] select u8 from sl_filed where id=460
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:00] select * from `sl_filed` where `id`=427
+[2017-09-12 13:09:00] select u8 from sl_filed where id=427
+[2017-09-12 13:09:00] set names utf8
+[2017-09-12 13:09:00] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=418
+[2017-09-12 13:09:01] select u8 from sl_filed where id=418
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_canshu
+[2017-09-12 13:09:01]  select u1 from   sl_canshu where classid=77 order by id asc
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=415
+[2017-09-12 13:09:01] select u8 from sl_filed where id=415
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_canshu
+[2017-09-12 13:09:01]  select u1 from   sl_canshu where classid=76 order by id asc
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=414
+[2017-09-12 13:09:01] select u8 from sl_filed where id=414
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_canshu
+[2017-09-12 13:09:01]  select u1 from   sl_canshu where classid=75 order by id asc
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=410
+[2017-09-12 13:09:01] select u8 from sl_filed where id=410
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=409
+[2017-09-12 13:09:01] select u8 from sl_filed where id=409
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=405
+[2017-09-12 13:09:01] select u8 from sl_filed where id=405
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_canshu
+[2017-09-12 13:09:01]  select u1 from   sl_canshu where classid=74 order by id asc
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=404
+[2017-09-12 13:09:01] select u8 from sl_filed where id=404
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=403
+[2017-09-12 13:09:01] select u8 from sl_filed where id=403
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_canshu
+[2017-09-12 13:09:01]  select u1 from   sl_canshu where classid=73 order by id asc
+[2017-09-12 13:09:01] set names utf8
+[2017-09-12 13:09:01] DESC sl_filed
+[2017-09-12 13:09:01] select * from `sl_filed` where `id`=401
+[2017-09-12 13:09:02] select u8 from sl_filed where id=401
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=399
+[2017-09-12 13:09:02] select u8 from sl_filed where id=399
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=72 order by id asc
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=398
+[2017-09-12 13:09:02] select u8 from sl_filed where id=398
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=71 order by id asc
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=397
+[2017-09-12 13:09:02] select u8 from sl_filed where id=397
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=70 order by id asc
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=396
+[2017-09-12 13:09:02] select u8 from sl_filed where id=396
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=69  order by id asc
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=384
+[2017-09-12 13:09:02] select u8 from sl_filed where id=384
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=67  order by id asc
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=381
+[2017-09-12 13:09:02] select u8 from sl_filed where id=381
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_filed
+[2017-09-12 13:09:02] select * from `sl_filed` where `id`=379
+[2017-09-12 13:09:02] select u8 from sl_filed where id=379
+[2017-09-12 13:09:02] set names utf8
+[2017-09-12 13:09:02] DESC sl_canshu
+[2017-09-12 13:09:02]  select u1 from   sl_canshu where classid=65  order by id asc
+[2017-09-12 13:09:20] set names utf8
+[2017-09-12 13:09:20] DESC sl_moxing
+[2017-09-12 13:09:20] select u1 from sl_moxing where id=65
+[2017-09-12 13:09:20] set names utf8
+[2017-09-12 13:09:20] DESC sl_renyuan
+[2017-09-12 13:09:20] set names utf8
+[2017-09-12 13:09:20] DESC sl_filed
+[2017-09-12 13:09:20] select u1 from sl_filed where model_id='65' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='dtime' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='yonghuming' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='suozaihuji' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='juzhuqingkuang' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='xingming' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='xingbie' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='minzu' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shenfenzhenghao' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='renyuanleibie' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='touxiang' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zhongdianleibie' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shenfenzhengqianfariqi' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shenfenzhengdaoqiriqi' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shenfenzhengyouxiaoqi' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='chushengriqi' 
+[2017-09-12 13:09:20] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shenfenzhengdizhi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jiguan' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='qitajuzhudi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shengao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='wenhuachengdu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='hunyinzhuangkuang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zhengzhimianmao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zongjiaoxinyang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zongjiaozhiwu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zjnonghou' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zengyongming' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='bingyiqingkuang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shifoucanji' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zhiye' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='gudingdianhua' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shouji' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='huzhaobianhao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='fanzuishi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='sfyqqzgw' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jianhurenxingming' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jianhurenshenfenzhenghao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jianhurenlianxifangshi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='hukouleibie' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='hukouxingzhi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='hukoubianhao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='zanzhuliyou' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='xuexing' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jidongcheshuliang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jidongchepinpai' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jidongcheyanse' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='chepai' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='daojushuliang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='daojumiaoshu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='guanzhiqiju' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='dnshuliang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='shifoukuandai' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='beizhu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='status' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='ceshi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='ceshier' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='suoshucun' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='suoshuzu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='65' and u1='jiguanxiangxidizhi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='dtime' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='yonghuming' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='suozaihuji' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='juzhuqingkuang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='xingming' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='xingbie' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='minzu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shenfenzhenghao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='renyuanleibie' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='touxiang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zhongdianleibie' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shenfenzhengqianfariqi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shenfenzhengdaoqiriqi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shenfenzhengyouxiaoqi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='chushengriqi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shenfenzhengdizhi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jiguan' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='qitajuzhudi' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shengao' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='wenhuachengdu' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='hunyinzhuangkuang' 
+[2017-09-12 13:09:21] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zhengzhimianmao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zongjiaoxinyang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zongjiaozhiwu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zjnonghou' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zengyongming' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='bingyiqingkuang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shifoucanji' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zhiye' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='gudingdianhua' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shouji' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='huzhaobianhao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='fanzuishi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='sfyqqzgw' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jianhurenxingming' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jianhurenshenfenzhenghao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jianhurenlianxifangshi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='hukouleibie' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='hukouxingzhi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='hukoubianhao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='zanzhuliyou' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='xuexing' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jidongcheshuliang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jidongchepinpai' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jidongcheyanse' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='chepai' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='daojushuliang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='daojumiaoshu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='guanzhiqiju' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='dnshuliang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='shifoukuandai' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='beizhu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='status' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='ceshi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='ceshier' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='suoshucun' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='suoshuzu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='图片'  and model_id='65' and u1='jiguanxiangxidizhi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='dtime' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='yonghuming' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='suozaihuji' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='juzhuqingkuang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='xingming' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='xingbie' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='minzu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shenfenzhenghao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='renyuanleibie' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='touxiang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zhongdianleibie' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shenfenzhengqianfariqi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shenfenzhengdaoqiriqi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shenfenzhengyouxiaoqi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='chushengriqi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shenfenzhengdizhi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='jiguan' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='qitajuzhudi' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shengao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='wenhuachengdu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='hunyinzhuangkuang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zhengzhimianmao' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zongjiaoxinyang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zongjiaozhiwu' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zjnonghou' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='zengyongming' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='bingyiqingkuang' 
+[2017-09-12 13:09:22] select * from sl_filed where  u7='密码' and model_id='65' and u1='shifoucanji' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='zhiye' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='gudingdianhua' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='shouji' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='huzhaobianhao' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='fanzuishi' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='sfyqqzgw' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jianhurenxingming' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jianhurenshenfenzhenghao' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jianhurenlianxifangshi' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='hukouleibie' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='hukouxingzhi' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='hukoubianhao' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='zanzhuliyou' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='xuexing' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jidongcheshuliang' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jidongchepinpai' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jidongcheyanse' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='chepai' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='daojushuliang' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='daojumiaoshu' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='guanzhiqiju' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='dnshuliang' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='shifoukuandai' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='beizhu' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='status' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='ceshi' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='ceshier' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='suoshucun' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='suoshuzu' 
+[2017-09-12 13:09:23] select * from sl_filed where  u7='密码' and model_id='65' and u1='jiguanxiangxidizhi' 
+[2017-09-12 13:09:23] INSERT INTO `sl_renyuan` (`juzhuqingkuang`,`xingbie`,`renyuanleibie`,`wenhuachengdu`,`hunyinzhuangkuang`,`zhengzhimianmao`,`zongjiaoxinyang`,`zjnonghou`,`bingyiqingkuang`,`shifoucanji`,`zhiye`,`fanzuishi`,`sfyqqzgw`,`hukouleibie`,`hukouxingzhi`,`xuexing`,`shifoukuandai`,`status`,`ceshi`,`dtime`) VALUES (' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','2017-09-12 13:09:20')
+[2017-09-12 13:09:24] set names utf8
+[2017-09-12 13:09:24] DESC sl_moxing
+[2017-09-12 13:09:24] select u1 from sl_moxing where id=65
+[2017-09-12 13:09:24] set names utf8
+[2017-09-12 13:09:24] DESC sl_renyuan
+[2017-09-12 13:09:24] set names utf8
+[2017-09-12 13:09:24] DESC sl_filed
+[2017-09-12 13:09:24] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:09:24] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:09:24] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:09:24] set names utf8
+[2017-09-12 13:09:24] DESC sl_column
+[2017-09-12 13:09:24] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:25] set names utf8
+[2017-09-12 13:09:25] DESC sl_column
+[2017-09-12 13:09:25] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:31] set names utf8
+[2017-09-12 13:09:31] DESC sl_moxing
+[2017-09-12 13:09:31] select u1 from sl_moxing where id=65
+[2017-09-12 13:09:31] set names utf8
+[2017-09-12 13:09:31] DESC sl_renyuan
+[2017-09-12 13:09:31] DELETE FROM `sl_renyuan` WHERE `id` in (10)
+[2017-09-12 13:09:32] set names utf8
+[2017-09-12 13:09:32] DESC sl_moxing
+[2017-09-12 13:09:32] select u1 from sl_moxing where id=65
+[2017-09-12 13:09:32] set names utf8
+[2017-09-12 13:09:32] DESC sl_renyuan
+[2017-09-12 13:09:32] set names utf8
+[2017-09-12 13:09:32] DESC sl_filed
+[2017-09-12 13:09:32] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:09:32] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:09:32] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:09:32] set names utf8
+[2017-09-12 13:09:32] DESC sl_column
+[2017-09-12 13:09:33] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:09:33] set names utf8
+[2017-09-12 13:09:33] DESC sl_column
+[2017-09-12 13:09:33] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:00] set names utf8
+[2017-09-12 13:12:00] DESC sl_moxing
+[2017-09-12 13:12:00] select u1 from sl_moxing where id=65
+[2017-09-12 13:12:00] set names utf8
+[2017-09-12 13:12:00] DESC sl_renyuan
+[2017-09-12 13:12:00] set names utf8
+[2017-09-12 13:12:00] DESC sl_filed
+[2017-09-12 13:12:00] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:12:00] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:12:00] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:00] set names utf8
+[2017-09-12 13:12:00] DESC sl_column
+[2017-09-12 13:12:00] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:00] set names utf8
+[2017-09-12 13:12:00] DESC sl_column
+[2017-09-12 13:12:00] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:06] set names utf8
+[2017-09-12 13:12:06] DESC sl_moxing
+[2017-09-12 13:12:06] select u1 from sl_moxing where id=65
+[2017-09-12 13:12:06] set names utf8
+[2017-09-12 13:12:06] DESC sl_renyuan
+[2017-09-12 13:12:06] set names utf8
+[2017-09-12 13:12:06] DESC sl_filed
+[2017-09-12 13:12:06] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:12:06] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:12:06] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:06] set names utf8
+[2017-09-12 13:12:06] DESC sl_column
+[2017-09-12 13:12:06] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:06] set names utf8
+[2017-09-12 13:12:06] DESC sl_column
+[2017-09-12 13:12:06] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:09] set names utf8
+[2017-09-12 13:12:09] DESC sl_moxing
+[2017-09-12 13:12:09] select u1 from sl_moxing where id=64
+[2017-09-12 13:12:09] set names utf8
+[2017-09-12 13:12:09] DESC sl_huji
+[2017-09-12 13:12:10] set names utf8
+[2017-09-12 13:12:10] DESC sl_filed
+[2017-09-12 13:12:10] select * from sl_filed where model_id='64' and u5='是' order by u10 asc 
+[2017-09-12 13:12:10] select count(*) from sl_huji where  1=1 
+[2017-09-12 13:12:10] select * from sl_huji  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:10] set names utf8
+[2017-09-12 13:12:10] DESC sl_column
+[2017-09-12 13:12:10] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:10] set names utf8
+[2017-09-12 13:12:10] DESC sl_column
+[2017-09-12 13:12:10] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:12] set names utf8
+[2017-09-12 13:12:12] DESC sl_moxing
+[2017-09-12 13:12:12] select u1 from sl_moxing where id=71
+[2017-09-12 13:12:12] set names utf8
+[2017-09-12 13:12:12] DESC sl_zoufangjihua
+[2017-09-12 13:12:12] set names utf8
+[2017-09-12 13:12:12] DESC sl_filed
+[2017-09-12 13:12:12] select * from sl_filed where model_id='71' and u5='是' order by u10 asc 
+[2017-09-12 13:12:12] select count(*) from sl_zoufangjihua where  1=1 
+[2017-09-12 13:12:12] select * from sl_zoufangjihua  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:12] set names utf8
+[2017-09-12 13:12:12] DESC sl_column
+[2017-09-12 13:12:12] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:12] set names utf8
+[2017-09-12 13:12:12] DESC sl_column
+[2017-09-12 13:12:12] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:13] set names utf8
+[2017-09-12 13:12:13] DESC sl_moxing
+[2017-09-12 13:12:13] select u1 from sl_moxing where id=65
+[2017-09-12 13:12:14] set names utf8
+[2017-09-12 13:12:14] DESC sl_renyuan
+[2017-09-12 13:12:14] set names utf8
+[2017-09-12 13:12:14] DESC sl_filed
+[2017-09-12 13:12:14] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:12:14] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:12:14] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:14] set names utf8
+[2017-09-12 13:12:14] DESC sl_column
+[2017-09-12 13:12:14] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:14] set names utf8
+[2017-09-12 13:12:14] DESC sl_column
+[2017-09-12 13:12:14] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:16] set names utf8
+[2017-09-12 13:12:16] DESC sl_moxing
+[2017-09-12 13:12:16] select u1 from sl_moxing where id=66
+[2017-09-12 13:12:16] set names utf8
+[2017-09-12 13:12:16] DESC sl_zoufangjilu
+[2017-09-12 13:12:16] set names utf8
+[2017-09-12 13:12:16] DESC sl_filed
+[2017-09-12 13:12:16] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-12 13:12:16] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-12 13:12:16] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:16] set names utf8
+[2017-09-12 13:12:16] DESC sl_column
+[2017-09-12 13:12:16] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_column
+[2017-09-12 13:12:17] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_moxing
+[2017-09-12 13:12:17] select u1 from sl_moxing where id=67
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_minqingriji
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_filed
+[2017-09-12 13:12:17] select * from sl_filed where model_id='67' and u5='是' order by u10 asc 
+[2017-09-12 13:12:17] select count(*) from sl_minqingriji where  1=1 
+[2017-09-12 13:12:17] select * from sl_minqingriji  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_column
+[2017-09-12 13:12:17] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:17] set names utf8
+[2017-09-12 13:12:17] DESC sl_column
+[2017-09-12 13:12:18] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:19] set names utf8
+[2017-09-12 13:12:19] DESC sl_moxing
+[2017-09-12 13:12:19] select u1 from sl_moxing where id=66
+[2017-09-12 13:12:19] set names utf8
+[2017-09-12 13:12:19] DESC sl_zoufangjilu
+[2017-09-12 13:12:19] set names utf8
+[2017-09-12 13:12:19] DESC sl_filed
+[2017-09-12 13:12:19] select * from sl_filed where model_id='66' and u5='是' order by u10 asc 
+[2017-09-12 13:12:19] select count(*) from sl_zoufangjilu where  1=1 
+[2017-09-12 13:12:19] select * from sl_zoufangjilu  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:12:19] set names utf8
+[2017-09-12 13:12:19] DESC sl_column
+[2017-09-12 13:12:19] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:19] set names utf8
+[2017-09-12 13:12:19] DESC sl_column
+[2017-09-12 13:12:19] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_filed
+[2017-09-12 13:12:35] select * from sl_filed where model_id='66'  order by  u10 asc,id desc 
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_moxing
+[2017-09-12 13:12:35] select u1 from sl_moxing where id=66
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_zoufangjilu
+[2017-09-12 13:12:35] select * from `sl_zoufangjilu` where `id`=34
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_column
+[2017-09-12 13:12:35] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_column
+[2017-09-12 13:12:35] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_filed
+[2017-09-12 13:12:35] select * from `sl_filed` where `id`=478
+[2017-09-12 13:12:35] select u8 from sl_filed where id=478
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_canshu
+[2017-09-12 13:12:35] select * from sl_canshu where id=26
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_canshu
+[2017-09-12 13:12:35] select * from sl_canshu where classid=23
+[2017-09-12 13:12:35] set names utf8
+[2017-09-12 13:12:35] DESC sl_canshu
+[2017-09-12 13:12:35] select * from sl_canshu where id=23
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=22
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=22
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=21
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=21
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=20
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=20
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=19
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=19
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=17
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=17
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=17
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_filed
+[2017-09-12 13:12:36] select * from `sl_filed` where `id`=477
+[2017-09-12 13:12:36] select u8 from sl_filed where id=477
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=23
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=22
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where id=22
+[2017-09-12 13:12:36] set names utf8
+[2017-09-12 13:12:36] DESC sl_canshu
+[2017-09-12 13:12:36] select * from sl_canshu where classid=21
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where id=21
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where classid=20
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where id=20
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where classid=19
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where id=19
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where classid=17
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where id=17
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_canshu
+[2017-09-12 13:12:37] select * from sl_canshu where classid=17
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_filed
+[2017-09-12 13:12:37] select * from `sl_filed` where `id`=461
+[2017-09-12 13:12:37] select u8 from sl_filed where id=461
+[2017-09-12 13:12:37] set names utf8
+[2017-09-12 13:12:37] DESC sl_filed
+[2017-09-12 13:12:37] select * from `sl_filed` where `id`=359
+[2017-09-12 13:12:37] select u8 from sl_filed where id=359
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:13] DESC sl_sort
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:13] DESC sl_article
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:13] DESC sl_system
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:13] DESC sl_feedbook
+[2017-09-12 13:13:13] select * from sl_sort where id in ( SELECT sort_id from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime) GROUP BY sort_id) order by id desc 
+[2017-09-12 13:13:13] SELECT distinct  date_format(dtime,'%y-%m-%d') as dtime  from sl_article where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(dtime)  ORDER BY dtime desc
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:13] DESC sl_column
+[2017-09-12 13:13:13] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:13:13] set names utf8
+[2017-09-12 13:13:14] DESC sl_column
+[2017-09-12 13:13:14] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from sl_article where to_days(dtime) = to_days(now())    
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from sl_article  
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from 	sl_fankui where to_days(dtime) = to_days(now())    
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from 	sl_fankui 
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-09-01', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-31', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:13:14]  SELECT count(id) as count_id from sl_article where sort_id=17  and DATE_SUB('17-08-27', INTERVAL 0 DAY) = date(dtime) 
+[2017-09-12 13:17:08] set names utf8
+[2017-09-12 13:17:08] DESC sl_moxing
+[2017-09-12 13:17:08] select u1 from sl_moxing where id=65
+[2017-09-12 13:17:08] set names utf8
+[2017-09-12 13:17:08] DESC sl_renyuan
+[2017-09-12 13:17:08] set names utf8
+[2017-09-12 13:17:08] DESC sl_filed
+[2017-09-12 13:17:08] select * from sl_filed where model_id='65' and u5='是' order by u10 asc 
+[2017-09-12 13:17:08] select count(*) from sl_renyuan where  1=1 
+[2017-09-12 13:17:08] select * from sl_renyuan  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:17:08] set names utf8
+[2017-09-12 13:17:08] DESC sl_column
+[2017-09-12 13:17:08] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:08] set names utf8
+[2017-09-12 13:17:08] DESC sl_column
+[2017-09-12 13:17:08] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:11] set names utf8
+[2017-09-12 13:17:11] DESC sl_moxing
+[2017-09-12 13:17:11] select u1 from sl_moxing where id=60
+[2017-09-12 13:17:11] set names utf8
+[2017-09-12 13:17:11] DESC sl_user
+[2017-09-12 13:17:11] set names utf8
+[2017-09-12 13:17:11] DESC sl_filed
+[2017-09-12 13:17:11] select * from sl_filed where model_id='60' and u5='是' order by u10 asc 
+[2017-09-12 13:17:11] select count(*) from sl_user where  1=1 
+[2017-09-12 13:17:11] select * from sl_user  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:17:11] set names utf8
+[2017-09-12 13:17:11] DESC sl_column
+[2017-09-12 13:17:11] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:11] set names utf8
+[2017-09-12 13:17:12] DESC sl_column
+[2017-09-12 13:17:12] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:14] set names utf8
+[2017-09-12 13:17:14] DESC sl_moxing
+[2017-09-12 13:17:14] select u1 from sl_moxing where id=60
+[2017-09-12 13:17:14] set names utf8
+[2017-09-12 13:17:14] DESC sl_user
+[2017-09-12 13:17:14] set names utf8
+[2017-09-12 13:17:14] DESC sl_filed
+[2017-09-12 13:17:14] select * from sl_filed where model_id='60' and u5='是' order by u10 asc 
+[2017-09-12 13:17:14] select count(*) from sl_user where  1=1 
+[2017-09-12 13:17:14] select * from sl_user  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:17:14] set names utf8
+[2017-09-12 13:17:14] DESC sl_column
+[2017-09-12 13:17:14] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:14] set names utf8
+[2017-09-12 13:17:14] DESC sl_column
+[2017-09-12 13:17:14] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:54] set names utf8
+[2017-09-12 13:17:54] DESC sl_sort
+[2017-09-12 13:17:54] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='53' and sort_id='17' order by paixu asc, id desc 
+[2017-09-12 13:17:54] SELECT * from sl_sort where sort_id='17' and model_id='53' order by id desc 
+[2017-09-12 13:17:54] set names utf8
+[2017-09-12 13:17:54] DESC sl_column
+[2017-09-12 13:17:54] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:54] set names utf8
+[2017-09-12 13:17:54] DESC sl_column
+[2017-09-12 13:17:54] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:54] set names utf8
+[2017-09-12 13:17:55] DESC sl_sort
+[2017-09-12 13:17:55] select * from sl_sort where id=17
+[2017-09-12 13:17:55] select * from sl_sort where id=0
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_moxing
+[2017-09-12 13:17:55] select u1 from sl_moxing where id=53
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_article
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_filed
+[2017-09-12 13:17:55] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 13:17:55] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 13:17:55] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 13:17:55] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_column
+[2017-09-12 13:17:55] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_column
+[2017-09-12 13:17:55] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_sort
+[2017-09-12 13:17:55] select *,(SELECT u1 FROM sl_sort as s1 where s1.id=s.sort_id ) as sort_name from sl_sort as s where model_id='53' and sort_id='17' order by paixu asc, id desc 
+[2017-09-12 13:17:55] SELECT * from sl_sort where sort_id='17' and model_id='53' order by id desc 
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_column
+[2017-09-12 13:17:55] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_column
+[2017-09-12 13:17:55] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_sort
+[2017-09-12 13:17:55] select * from sl_sort where id=17
+[2017-09-12 13:17:55] select * from sl_sort where id=0
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_moxing
+[2017-09-12 13:17:55] select u1 from sl_moxing where id=53
+[2017-09-12 13:17:55] set names utf8
+[2017-09-12 13:17:55] DESC sl_article
+[2017-09-12 13:17:56] set names utf8
+[2017-09-12 13:17:56] DESC sl_filed
+[2017-09-12 13:17:56] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 13:17:56] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 13:17:56] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 13:17:56] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:17:56] set names utf8
+[2017-09-12 13:17:56] DESC sl_column
+[2017-09-12 13:17:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:17:56] set names utf8
+[2017-09-12 13:17:56] DESC sl_column
+[2017-09-12 13:17:56] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_filed
+[2017-09-12 13:18:21] select * from sl_filed where model_id='53'  order by  u10 asc,id desc 
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_moxing
+[2017-09-12 13:18:21] select u1 from sl_moxing where id=53
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_article
+[2017-09-12 13:18:21] select * from `sl_article` where `id`=2334
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_column
+[2017-09-12 13:18:21] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_column
+[2017-09-12 13:18:21] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:18:21] set names utf8
+[2017-09-12 13:18:21] DESC sl_filed
+[2017-09-12 13:18:21] select * from `sl_filed` where `id`=269
+[2017-09-12 13:18:21] select u8 from sl_filed where id=269
+[2017-09-12 13:18:35] set names utf8
+[2017-09-12 13:18:35] DESC sl_sort
+[2017-09-12 13:18:35] select * from sl_sort where id=17
+[2017-09-12 13:18:35] select * from sl_sort where id=0
+[2017-09-12 13:18:35] set names utf8
+[2017-09-12 13:18:35] DESC sl_moxing
+[2017-09-12 13:18:35] select u1 from sl_moxing where id=53
+[2017-09-12 13:18:35] set names utf8
+[2017-09-12 13:18:35] DESC sl_article
+[2017-09-12 13:18:35] set names utf8
+[2017-09-12 13:18:36] DESC sl_filed
+[2017-09-12 13:18:36] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 13:18:36] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 13:18:36] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 13:18:36] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:18:36] set names utf8
+[2017-09-12 13:18:36] DESC sl_column
+[2017-09-12 13:18:36] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:18:36] set names utf8
+[2017-09-12 13:18:36] DESC sl_column
+[2017-09-12 13:18:36] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:22:47] set names utf8
+[2017-09-12 13:22:47] DESC sl_sort
+[2017-09-12 13:22:47] select * from sl_sort where id=17
+[2017-09-12 13:22:47] select * from sl_sort where id=0
+[2017-09-12 13:22:47] set names utf8
+[2017-09-12 13:22:47] DESC sl_moxing
+[2017-09-12 13:22:47] select u1 from sl_moxing where id=53
+[2017-09-12 13:22:47] set names utf8
+[2017-09-12 13:22:47] DESC sl_article
+[2017-09-12 13:22:47] set names utf8
+[2017-09-12 13:22:48] DESC sl_filed
+[2017-09-12 13:22:48] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 13:22:48] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 13:22:48] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 13:22:48] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:22:48] set names utf8
+[2017-09-12 13:22:48] DESC sl_column
+[2017-09-12 13:22:48] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:22:48] set names utf8
+[2017-09-12 13:22:48] DESC sl_column
+[2017-09-12 13:22:48] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:23:03] set names utf8
+[2017-09-12 13:23:03] DESC sl_sort
+[2017-09-12 13:23:03] select * from sl_sort where id=17
+[2017-09-12 13:23:03] select * from sl_sort where id=0
+[2017-09-12 13:23:03] set names utf8
+[2017-09-12 13:23:03] DESC sl_moxing
+[2017-09-12 13:23:03] select u1 from sl_moxing where id=53
+[2017-09-12 13:23:03] set names utf8
+[2017-09-12 13:23:03] DESC sl_article
+[2017-09-12 13:23:03] set names utf8
+[2017-09-12 13:23:03] DESC sl_filed
+[2017-09-12 13:23:03] select * from sl_filed where model_id='53' and u5='是' order by u10 asc 
+[2017-09-12 13:23:03] select status from sl_article where sort_id='17' group by status 
+[2017-09-12 13:23:03] select count(*) from sl_article where  1=1  and sort_id='17' and  1=1 
+[2017-09-12 13:23:03] select * from sl_article  where  1=1  and sort_id='17' and  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:23:04] set names utf8
+[2017-09-12 13:23:04] DESC sl_column
+[2017-09-12 13:23:04] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:23:04] set names utf8
+[2017-09-12 13:23:04] DESC sl_column
+[2017-09-12 13:23:04] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:40:43] set names utf8
+[2017-09-12 13:40:43] DESC sl_moxing
+[2017-09-12 13:40:43] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:40:43] set names utf8
+[2017-09-12 13:40:43] DESC sl_column
+[2017-09-12 13:40:43] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:40:43] set names utf8
+[2017-09-12 13:40:43] DESC sl_column
+[2017-09-12 13:40:43] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:40:44] set names utf8
+[2017-09-12 13:40:44] DESC sl_canshu
+[2017-09-12 13:40:44] SELECT * from sl_canshu where classid='1' order by id desc
+[2017-09-12 13:40:44] set names utf8
+[2017-09-12 13:40:44] DESC sl_column
+[2017-09-12 13:40:45] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:40:45] set names utf8
+[2017-09-12 13:40:45] DESC sl_column
+[2017-09-12 13:40:45] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:18] set names utf8
+[2017-09-12 13:41:18] DESC sl_moxing
+[2017-09-12 13:41:18] SELECT * from sl_moxing where u1='banben' or u2='版本升级' order by id desc 
+[2017-09-12 13:41:18] INSERT INTO `sl_moxing` (`u1`,`u2`,`u3`,`u5`,`u6`) VALUES ('banben','版本升级','表单模型','0','/')
+[2017-09-12 13:41:18] 
+        CREATE TABLE `banben` (
+        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        
+        `dtime` timestamp NULL DEFAULT now() COMMENT '添加时间',
+        PRIMARY KEY (`id`)
+        ) ENGINE=INNODB  DEFAULT CHARSET=utf8  AUTO_INCREMENT=1 COMMENT='banben模型主表';
+[2017-09-12 13:41:18] set names utf8
+[2017-09-12 13:41:18] DESC sl_filed
+[2017-09-12 13:41:18] set names utf8
+[2017-09-12 13:41:18] DESC sl_banben
+[2017-09-12 13:41:25] set names utf8
+[2017-09-12 13:41:25] DESC sl_canshu
+[2017-09-12 13:41:25] SELECT * from sl_canshu where classid='1' order by id desc
+[2017-09-12 13:41:25] set names utf8
+[2017-09-12 13:41:25] DESC sl_column
+[2017-09-12 13:41:25] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:25] set names utf8
+[2017-09-12 13:41:25] DESC sl_column
+[2017-09-12 13:41:25] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:31] set names utf8
+[2017-09-12 13:41:31] DESC sl_moxing
+[2017-09-12 13:41:31] SELECT * from sl_moxing where u1='banben' or u2='版本升级' order by id desc 
+[2017-09-12 13:41:33] set names utf8
+[2017-09-12 13:41:33] DESC sl_canshu
+[2017-09-12 13:41:33] SELECT * from sl_canshu where classid='1' order by id desc
+[2017-09-12 13:41:33] set names utf8
+[2017-09-12 13:41:33] DESC sl_column
+[2017-09-12 13:41:33] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:33] set names utf8
+[2017-09-12 13:41:33] DESC sl_column
+[2017-09-12 13:41:33] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:38] set names utf8
+[2017-09-12 13:41:38] DESC sl_moxing
+[2017-09-12 13:41:38] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:41:38] set names utf8
+[2017-09-12 13:41:38] DESC sl_column
+[2017-09-12 13:41:38] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:38] set names utf8
+[2017-09-12 13:41:38] DESC sl_column
+[2017-09-12 13:41:38] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:45] set names utf8
+[2017-09-12 13:41:45] DESC sl_moxing
+[2017-09-12 13:41:45] select u1 from sl_moxing where id='72'
+[2017-09-12 13:41:45] set names utf8
+[2017-09-12 13:41:45] DESC sl_filed
+[2017-09-12 13:41:45] drop table banben 
+[2017-09-12 13:41:45] delete from sl_filed where model_id='72' 
+[2017-09-12 13:41:45] DELETE FROM `sl_moxing` WHERE `id`=72
+[2017-09-12 13:41:46] set names utf8
+[2017-09-12 13:41:47] DESC sl_moxing
+[2017-09-12 13:41:47] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:41:47] set names utf8
+[2017-09-12 13:41:47] DESC sl_column
+[2017-09-12 13:41:47] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:47] set names utf8
+[2017-09-12 13:41:47] DESC sl_column
+[2017-09-12 13:41:47] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:49] set names utf8
+[2017-09-12 13:41:49] DESC sl_canshu
+[2017-09-12 13:41:49] SELECT * from sl_canshu where classid='1' order by id desc
+[2017-09-12 13:41:49] set names utf8
+[2017-09-12 13:41:49] DESC sl_column
+[2017-09-12 13:41:49] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:41:49] set names utf8
+[2017-09-12 13:41:49] DESC sl_column
+[2017-09-12 13:41:49] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:06] set names utf8
+[2017-09-12 13:42:07] DESC sl_moxing
+[2017-09-12 13:42:07] SELECT * from sl_moxing where u1='sl_banben' or u2='版本升级' order by id desc 
+[2017-09-12 13:42:07] INSERT INTO `sl_moxing` (`u1`,`u2`,`u3`,`u5`,`u6`) VALUES ('sl_banben','版本升级','表单模型','0','/')
+[2017-09-12 13:42:07] 
+        CREATE TABLE `sl_banben` (
+        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        
+        `dtime` timestamp NULL DEFAULT now() COMMENT '添加时间',
+        PRIMARY KEY (`id`)
+        ) ENGINE=INNODB  DEFAULT CHARSET=utf8  AUTO_INCREMENT=1 COMMENT='sl_banben模型主表';
+[2017-09-12 13:42:07] set names utf8
+[2017-09-12 13:42:07] DESC sl_filed
+[2017-09-12 13:42:07] set names utf8
+[2017-09-12 13:42:07] DESC sl_banben
+[2017-09-12 13:42:07] select id from sl_moxing where u1='sl_banben'
+[2017-09-12 13:42:07] SELECT ORDINAL_POSITION as id , column_name ,data_type ,character_maximum_length ,numeric_precision,numeric_scale,is_nullable ,column_default ,column_comment
+                   FROM
+                Information_schema.columns 
+                   WHERE TABLE_NAME='sl_banben'
+[2017-09-12 13:42:07] INSERT INTO `sl_filed` (`model_id`,`u1`,`u2`,`u3`,`u4`,`u5`,`u6`,`u8`,`u9`,`u10`,`u7`) VALUES ('73','dtime','添加时间','','否','否','否','CURRENT_TIMESTAMP','10%','2','时间框')
+[2017-09-12 13:42:08] set names utf8
+[2017-09-12 13:42:08] DESC sl_moxing
+[2017-09-12 13:42:08] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:42:09] set names utf8
+[2017-09-12 13:42:09] DESC sl_column
+[2017-09-12 13:42:09] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:09] set names utf8
+[2017-09-12 13:42:09] DESC sl_column
+[2017-09-12 13:42:09] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:11] set names utf8
+[2017-09-12 13:42:11] DESC sl_filed
+[2017-09-12 13:42:11] select * from sl_filed where model_id='73' 
+[2017-09-12 13:42:11] set names utf8
+[2017-09-12 13:42:11] DESC sl_column
+[2017-09-12 13:42:11] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:11] set names utf8
+[2017-09-12 13:42:11] DESC sl_column
+[2017-09-12 13:42:11] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:13] set names utf8
+[2017-09-12 13:42:13] DESC sl_canshu
+[2017-09-12 13:42:13] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:42:13] set names utf8
+[2017-09-12 13:42:13] DESC sl_column
+[2017-09-12 13:42:13] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:13] set names utf8
+[2017-09-12 13:42:13] DESC sl_column
+[2017-09-12 13:42:13] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:26] set names utf8
+[2017-09-12 13:42:26] DESC sl_filed
+[2017-09-12 13:42:26] select * from sl_filed where model_id=73 and u1='banbenmingcheng' 
+[2017-09-12 13:42:38] set names utf8
+[2017-09-12 13:42:38] DESC sl_filed
+[2017-09-12 13:42:38] set names utf8
+[2017-09-12 13:42:38] DESC sl_moxing
+[2017-09-12 13:42:38] select u1 from sl_moxing where id='73'
+[2017-09-12 13:42:38] set names utf8
+[2017-09-12 13:42:38] DESC sl_banben
+[2017-09-12 13:42:38] INSERT INTO `sl_filed` (`model_id`,`u1`,`u2`,`u3`,`u5`,`u6`,`u7`,`u9`,`u10`,`u4`) VALUES ('73','banbenmingcheng','版本名称',' ','是','是','文本框','10%','0','否')
+[2017-09-12 13:42:38] alter table `sl_banben`  Add column banbenmingcheng char(100) null  COMMENT '版本名称' 
+[2017-09-12 13:42:39] set names utf8
+[2017-09-12 13:42:39] DESC sl_filed
+[2017-09-12 13:42:39] select * from sl_filed where model_id='73' 
+[2017-09-12 13:42:39] set names utf8
+[2017-09-12 13:42:39] DESC sl_column
+[2017-09-12 13:42:39] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:39] set names utf8
+[2017-09-12 13:42:39] DESC sl_column
+[2017-09-12 13:42:39] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:42] set names utf8
+[2017-09-12 13:42:42] DESC sl_canshu
+[2017-09-12 13:42:42] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:42:42] set names utf8
+[2017-09-12 13:42:42] DESC sl_column
+[2017-09-12 13:42:42] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:42] set names utf8
+[2017-09-12 13:42:42] DESC sl_column
+[2017-09-12 13:42:42] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:42:56] set names utf8
+[2017-09-12 13:42:56] DESC sl_filed
+[2017-09-12 13:42:56] select * from sl_filed where model_id=73 and u1='banbenhao' 
+[2017-09-12 13:43:01] set names utf8
+[2017-09-12 13:43:01] DESC sl_filed
+[2017-09-12 13:43:01] set names utf8
+[2017-09-12 13:43:01] DESC sl_moxing
+[2017-09-12 13:43:01] select u1 from sl_moxing where id='73'
+[2017-09-12 13:43:01] set names utf8
+[2017-09-12 13:43:01] DESC sl_banben
+[2017-09-12 13:43:02] INSERT INTO `sl_filed` (`model_id`,`u1`,`u2`,`u3`,`u5`,`u6`,`u7`,`u9`,`u10`,`u4`) VALUES ('73','banbenhao','版本号',' ','是','是','文本框','10%','0','否')
+[2017-09-12 13:43:02] alter table `sl_banben`  Add column banbenhao char(100) null  COMMENT '版本号' 
+[2017-09-12 13:43:03] set names utf8
+[2017-09-12 13:43:03] DESC sl_filed
+[2017-09-12 13:43:03] select * from sl_filed where model_id='73' 
+[2017-09-12 13:43:03] set names utf8
+[2017-09-12 13:43:03] DESC sl_column
+[2017-09-12 13:43:03] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:03] set names utf8
+[2017-09-12 13:43:03] DESC sl_column
+[2017-09-12 13:43:03] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:10] set names utf8
+[2017-09-12 13:43:10] DESC sl_canshu
+[2017-09-12 13:43:10] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:43:10] set names utf8
+[2017-09-12 13:43:10] DESC sl_column
+[2017-09-12 13:43:10] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:10] set names utf8
+[2017-09-12 13:43:10] DESC sl_column
+[2017-09-12 13:43:10] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:25] set names utf8
+[2017-09-12 13:43:25] DESC sl_filed
+[2017-09-12 13:43:25] select * from sl_filed where model_id=73 and u1='shifouqiangzhishengji' 
+[2017-09-12 13:43:45] set names utf8
+[2017-09-12 13:43:45] DESC sl_filed
+[2017-09-12 13:43:45] set names utf8
+[2017-09-12 13:43:45] DESC sl_moxing
+[2017-09-12 13:43:45] select u1 from sl_moxing where id='73'
+[2017-09-12 13:43:46] set names utf8
+[2017-09-12 13:43:46] DESC sl_banben
+[2017-09-12 13:43:46] INSERT INTO `sl_filed` (`model_id`,`u1`,`u2`,`u3`,`u5`,`u7`,`u8`,`u9`,`u10`,`u4`,`u6`) VALUES ('73','shifouqiangzhishengji','是否强制升级',' ','是','单选','是
+否','10%','0','否','否')
+[2017-09-12 13:43:46] alter table `sl_banben`  Add column shifouqiangzhishengji varchar(250) null default '是
+否' COMMENT '是否强制升级' 
+[2017-09-12 13:43:47] set names utf8
+[2017-09-12 13:43:47] DESC sl_filed
+[2017-09-12 13:43:47] select * from sl_filed where model_id='73' 
+[2017-09-12 13:43:47] set names utf8
+[2017-09-12 13:43:48] DESC sl_column
+[2017-09-12 13:43:48] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:48] set names utf8
+[2017-09-12 13:43:48] DESC sl_column
+[2017-09-12 13:43:48] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:56] set names utf8
+[2017-09-12 13:43:56] DESC sl_moxing
+[2017-09-12 13:43:56] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:43:56] set names utf8
+[2017-09-12 13:43:56] DESC sl_column
+[2017-09-12 13:43:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:56] set names utf8
+[2017-09-12 13:43:56] DESC sl_column
+[2017-09-12 13:43:56] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:57] set names utf8
+[2017-09-12 13:43:58] DESC sl_moxing
+[2017-09-12 13:43:58] select u1 from sl_moxing where id=73
+[2017-09-12 13:43:58] set names utf8
+[2017-09-12 13:43:58] DESC sl_banben
+[2017-09-12 13:43:58] set names utf8
+[2017-09-12 13:43:58] DESC sl_filed
+[2017-09-12 13:43:58] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:43:58] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:43:58] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:43:58] set names utf8
+[2017-09-12 13:43:58] DESC sl_column
+[2017-09-12 13:43:58] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:43:58] set names utf8
+[2017-09-12 13:43:58] DESC sl_column
+[2017-09-12 13:43:58] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:06] set names utf8
+[2017-09-12 13:44:06] DESC sl_moxing
+[2017-09-12 13:44:06] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:44:07] set names utf8
+[2017-09-12 13:44:07] DESC sl_column
+[2017-09-12 13:44:07] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:07] set names utf8
+[2017-09-12 13:44:07] DESC sl_column
+[2017-09-12 13:44:07] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:09] set names utf8
+[2017-09-12 13:44:09] DESC sl_filed
+[2017-09-12 13:44:09] select * from sl_filed where model_id='73' 
+[2017-09-12 13:44:09] set names utf8
+[2017-09-12 13:44:09] DESC sl_column
+[2017-09-12 13:44:09] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:09] set names utf8
+[2017-09-12 13:44:09] DESC sl_column
+[2017-09-12 13:44:09] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:12] set names utf8
+[2017-09-12 13:44:12] DESC sl_canshu
+[2017-09-12 13:44:12] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:44:13] set names utf8
+[2017-09-12 13:44:13] DESC sl_filed
+[2017-09-12 13:44:13] select * from `sl_filed` where `id`=493
+[2017-09-12 13:44:13] set names utf8
+[2017-09-12 13:44:13] DESC sl_column
+[2017-09-12 13:44:13] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:13] set names utf8
+[2017-09-12 13:44:13] DESC sl_column
+[2017-09-12 13:44:13] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:17] set names utf8
+[2017-09-12 13:44:18] DESC sl_filed
+[2017-09-12 13:44:18] set names utf8
+[2017-09-12 13:44:18] DESC sl_moxing
+[2017-09-12 13:44:18] select u1 from sl_moxing where id='73'
+[2017-09-12 13:44:18] set names utf8
+[2017-09-12 13:44:18] DESC sl_banben
+[2017-09-12 13:44:18] select u1 from sl_filed where id='493'
+[2017-09-12 13:44:18] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenmingcheng',`u2`='版本名称',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='30%',`u10`='0',`u4`='否' WHERE `id`=493
+[2017-09-12 13:44:18] alter table `sl_banben` change column banbenmingcheng banbenmingcheng char(100) null  COMMENT '版本名称'
+[2017-09-12 13:44:20] set names utf8
+[2017-09-12 13:44:20] DESC sl_filed
+[2017-09-12 13:44:20] select * from sl_filed where model_id='73' 
+[2017-09-12 13:44:20] set names utf8
+[2017-09-12 13:44:20] DESC sl_column
+[2017-09-12 13:44:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:20] set names utf8
+[2017-09-12 13:44:20] DESC sl_column
+[2017-09-12 13:44:20] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:21] set names utf8
+[2017-09-12 13:44:21] DESC sl_moxing
+[2017-09-12 13:44:21] select u1 from sl_moxing where id=73
+[2017-09-12 13:44:21] set names utf8
+[2017-09-12 13:44:21] DESC sl_banben
+[2017-09-12 13:44:21] set names utf8
+[2017-09-12 13:44:21] DESC sl_filed
+[2017-09-12 13:44:22] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:44:22] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:44:22] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:44:22] set names utf8
+[2017-09-12 13:44:22] DESC sl_column
+[2017-09-12 13:44:22] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:22] set names utf8
+[2017-09-12 13:44:22] DESC sl_column
+[2017-09-12 13:44:22] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:30] set names utf8
+[2017-09-12 13:44:30] DESC sl_canshu
+[2017-09-12 13:44:30] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:44:30] set names utf8
+[2017-09-12 13:44:30] DESC sl_filed
+[2017-09-12 13:44:31] select * from `sl_filed` where `id`=494
+[2017-09-12 13:44:31] set names utf8
+[2017-09-12 13:44:31] DESC sl_column
+[2017-09-12 13:44:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:31] set names utf8
+[2017-09-12 13:44:31] DESC sl_column
+[2017-09-12 13:44:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:35] set names utf8
+[2017-09-12 13:44:35] DESC sl_filed
+[2017-09-12 13:44:35] set names utf8
+[2017-09-12 13:44:35] DESC sl_moxing
+[2017-09-12 13:44:35] select u1 from sl_moxing where id='73'
+[2017-09-12 13:44:35] set names utf8
+[2017-09-12 13:44:35] DESC sl_banben
+[2017-09-12 13:44:35] select u1 from sl_filed where id='494'
+[2017-09-12 13:44:35] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenhao',`u2`='版本号',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='20%',`u10`='0',`u4`='否' WHERE `id`=494
+[2017-09-12 13:44:35] alter table `sl_banben` change column banbenhao banbenhao char(100) null  COMMENT '版本号'
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_filed
+[2017-09-12 13:44:37] select * from sl_filed where model_id='73' 
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_column
+[2017-09-12 13:44:37] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_column
+[2017-09-12 13:44:37] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_filed
+[2017-09-12 13:44:37] select * from sl_filed where model_id='73' 
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_column
+[2017-09-12 13:44:37] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:37] set names utf8
+[2017-09-12 13:44:37] DESC sl_column
+[2017-09-12 13:44:37] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:39] set names utf8
+[2017-09-12 13:44:39] DESC sl_canshu
+[2017-09-12 13:44:39] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:44:39] set names utf8
+[2017-09-12 13:44:39] DESC sl_filed
+[2017-09-12 13:44:39] select * from `sl_filed` where `id`=495
+[2017-09-12 13:44:40] set names utf8
+[2017-09-12 13:44:40] DESC sl_column
+[2017-09-12 13:44:40] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:40] set names utf8
+[2017-09-12 13:44:40] DESC sl_column
+[2017-09-12 13:44:40] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:44] set names utf8
+[2017-09-12 13:44:44] DESC sl_moxing
+[2017-09-12 13:44:44] select u1 from sl_moxing where id=73
+[2017-09-12 13:44:44] set names utf8
+[2017-09-12 13:44:44] DESC sl_banben
+[2017-09-12 13:44:44] set names utf8
+[2017-09-12 13:44:44] DESC sl_filed
+[2017-09-12 13:44:44] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:44:44] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:44:44] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:44:44] set names utf8
+[2017-09-12 13:44:44] DESC sl_column
+[2017-09-12 13:44:44] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:44] set names utf8
+[2017-09-12 13:44:44] DESC sl_column
+[2017-09-12 13:44:45] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:46] set names utf8
+[2017-09-12 13:44:46] DESC sl_filed
+[2017-09-12 13:44:46] select * from sl_filed where model_id='73'  order by  u10 asc,id desc 
+[2017-09-12 13:44:46] set names utf8
+[2017-09-12 13:44:46] DESC sl_column
+[2017-09-12 13:44:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:46] set names utf8
+[2017-09-12 13:44:46] DESC sl_column
+[2017-09-12 13:44:46] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:44:46] set names utf8
+[2017-09-12 13:44:46] DESC sl_filed
+[2017-09-12 13:44:46] select * from `sl_filed` where `id`=495
+[2017-09-12 13:44:46] select u8 from sl_filed where id=495
+[2017-09-12 13:45:41] set names utf8
+[2017-09-12 13:45:41] DESC sl_moxing
+[2017-09-12 13:45:41] select u1 from sl_moxing where id=73
+[2017-09-12 13:45:41] set names utf8
+[2017-09-12 13:45:41] DESC sl_banben
+[2017-09-12 13:45:41] set names utf8
+[2017-09-12 13:45:41] DESC sl_filed
+[2017-09-12 13:45:41] select u1 from sl_filed where model_id='73' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='73' and u1='dtime' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='73' and u1='banbenmingcheng' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='73' and u1='banbenhao' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='时间框' and u8='CURRENT_TIMESTAMP' and model_id='73' and u1='shifouqiangzhishengji' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='图片'  and model_id='73' and u1='dtime' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='图片'  and model_id='73' and u1='banbenmingcheng' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='图片'  and model_id='73' and u1='banbenhao' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='图片'  and model_id='73' and u1='shifouqiangzhishengji' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='密码' and model_id='73' and u1='dtime' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='密码' and model_id='73' and u1='banbenmingcheng' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='密码' and model_id='73' and u1='banbenhao' 
+[2017-09-12 13:45:41] select * from sl_filed where  u7='密码' and model_id='73' and u1='shifouqiangzhishengji' 
+[2017-09-12 13:45:41] INSERT INTO `sl_banben` (`banbenmingcheng`,`banbenhao`,`shifouqiangzhishengji`,`dtime`) VALUES ('测试版','v1.0','是','2017-09-12 13:45:41')
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_moxing
+[2017-09-12 13:45:46] select u1 from sl_moxing where id=73
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_banben
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_filed
+[2017-09-12 13:45:46] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:45:46] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:45:46] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_column
+[2017-09-12 13:45:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_column
+[2017-09-12 13:45:46] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_moxing
+[2017-09-12 13:45:46] select u1 from sl_moxing where id=73
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_banben
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_filed
+[2017-09-12 13:45:46] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:45:46] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:45:46] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_column
+[2017-09-12 13:45:46] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:46] set names utf8
+[2017-09-12 13:45:46] DESC sl_column
+[2017-09-12 13:45:46] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:51] set names utf8
+[2017-09-12 13:45:51] DESC sl_filed
+[2017-09-12 13:45:51] select * from sl_filed where model_id='73'  order by  u10 asc,id desc 
+[2017-09-12 13:45:51] set names utf8
+[2017-09-12 13:45:51] DESC sl_moxing
+[2017-09-12 13:45:51] select u1 from sl_moxing where id=73
+[2017-09-12 13:45:52] set names utf8
+[2017-09-12 13:45:52] DESC sl_banben
+[2017-09-12 13:45:52] select * from `sl_banben` where `id`=1
+[2017-09-12 13:45:52] set names utf8
+[2017-09-12 13:45:52] DESC sl_column
+[2017-09-12 13:45:52] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:52] set names utf8
+[2017-09-12 13:45:52] DESC sl_column
+[2017-09-12 13:45:52] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:45:52] set names utf8
+[2017-09-12 13:45:52] DESC sl_filed
+[2017-09-12 13:45:52] select * from `sl_filed` where `id`=495
+[2017-09-12 13:45:52] select u8 from sl_filed where id=495
+[2017-09-12 13:46:01] set names utf8
+[2017-09-12 13:46:01] DESC sl_moxing
+[2017-09-12 13:46:01] select u1 from sl_moxing where id=73
+[2017-09-12 13:46:01] set names utf8
+[2017-09-12 13:46:01] DESC sl_banben
+[2017-09-12 13:46:01] set names utf8
+[2017-09-12 13:46:01] DESC sl_filed
+[2017-09-12 13:46:01] select u1 from sl_filed where model_id='73' 
+[2017-09-12 13:46:01] select * from sl_filed where  u7='图片'  and model_id='73' and u1='dtime' 
+[2017-09-12 13:46:01] select * from sl_filed where  u7='图片'  and model_id='73' and u1='banbenmingcheng' 
+[2017-09-12 13:46:01] select * from sl_filed where  u7='图片'  and model_id='73' and u1='banbenhao' 
+[2017-09-12 13:46:01] select * from sl_filed where  u7='图片'  and model_id='73' and u1='shifouqiangzhishengji' 
+[2017-09-12 13:46:01] UPDATE `sl_banben` SET `dtime`='2017-09-12 13:45:41',`banbenmingcheng`='测试版20170912',`banbenhao`='v1.0',`shifouqiangzhishengji`='是' WHERE `id`=1
+[2017-09-12 13:46:02] set names utf8
+[2017-09-12 13:46:02] DESC sl_moxing
+[2017-09-12 13:46:02] select u1 from sl_moxing where id=73
+[2017-09-12 13:46:02] set names utf8
+[2017-09-12 13:46:02] DESC sl_banben
+[2017-09-12 13:46:02] set names utf8
+[2017-09-12 13:46:02] DESC sl_filed
+[2017-09-12 13:46:03] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:46:03] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:46:03] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:46:03] set names utf8
+[2017-09-12 13:46:03] DESC sl_column
+[2017-09-12 13:46:03] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:46:03] set names utf8
+[2017-09-12 13:46:03] DESC sl_column
+[2017-09-12 13:46:03] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:49:57] set names utf8
+[2017-09-12 13:49:57] DESC sl_column
+[2017-09-12 13:49:57] SELECT * FROM sl_column   order by u2 asc,id desc
+[2017-09-12 13:49:57] set names utf8
+[2017-09-12 13:49:57] DESC sl_column
+[2017-09-12 13:49:57] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:49:57] set names utf8
+[2017-09-12 13:49:57] DESC sl_column
+[2017-09-12 13:49:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:00] set names utf8
+[2017-09-12 13:50:00] DESC sl_column
+[2017-09-12 13:50:00] SELECT * FROM sl_column   order by u2 asc,id desc
+[2017-09-12 13:50:00] set names utf8
+[2017-09-12 13:50:00] DESC sl_column
+[2017-09-12 13:50:00] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:01] set names utf8
+[2017-09-12 13:50:01] DESC sl_column
+[2017-09-12 13:50:01] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:13] set names utf8
+[2017-09-12 13:50:13] DESC sl_column
+[2017-09-12 13:50:13] INSERT INTO `sl_column` (`classid`,`u1`,`u2`,`u3`,`u4`) VALUES ('881','版本升级','0','/index.php?p=admin&amp;c=autotable&amp;a=index&amp;model_id=73','显示')
+[2017-09-12 13:50:14] set names utf8
+[2017-09-12 13:50:15] DESC sl_column
+[2017-09-12 13:50:15] SELECT * FROM sl_column   order by u2 asc,id desc
+[2017-09-12 13:50:15] set names utf8
+[2017-09-12 13:50:15] DESC sl_column
+[2017-09-12 13:50:15] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:15] set names utf8
+[2017-09-12 13:50:15] DESC sl_column
+[2017-09-12 13:50:15] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:20] set names utf8
+[2017-09-12 13:50:20] DESC sl_moxing
+[2017-09-12 13:50:20] select u1 from sl_moxing where id=73
+[2017-09-12 13:50:20] set names utf8
+[2017-09-12 13:50:20] DESC sl_banben
+[2017-09-12 13:50:20] set names utf8
+[2017-09-12 13:50:20] DESC sl_filed
+[2017-09-12 13:50:20] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:50:20] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:50:20] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:50:20] set names utf8
+[2017-09-12 13:50:20] DESC sl_column
+[2017-09-12 13:50:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:50:21] set names utf8
+[2017-09-12 13:50:21] DESC sl_column
+[2017-09-12 13:50:21] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:04] set names utf8
+[2017-09-12 13:51:04] DESC sl_moxing
+[2017-09-12 13:51:04] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:51:04] set names utf8
+[2017-09-12 13:51:04] DESC sl_column
+[2017-09-12 13:51:04] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:05] set names utf8
+[2017-09-12 13:51:05] DESC sl_column
+[2017-09-12 13:51:05] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:06] set names utf8
+[2017-09-12 13:51:06] DESC sl_filed
+[2017-09-12 13:51:06] select * from sl_filed where model_id='73' 
+[2017-09-12 13:51:06] set names utf8
+[2017-09-12 13:51:06] DESC sl_column
+[2017-09-12 13:51:06] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:07] set names utf8
+[2017-09-12 13:51:07] DESC sl_column
+[2017-09-12 13:51:07] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:09] set names utf8
+[2017-09-12 13:51:09] DESC sl_canshu
+[2017-09-12 13:51:09] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:51:09] set names utf8
+[2017-09-12 13:51:09] DESC sl_column
+[2017-09-12 13:51:09] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:09] set names utf8
+[2017-09-12 13:51:09] DESC sl_column
+[2017-09-12 13:51:09] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:15] set names utf8
+[2017-09-12 13:51:15] DESC sl_filed
+[2017-09-12 13:51:15] select * from sl_filed where model_id=73 and u1='xiazaidizhi' 
+[2017-09-12 13:51:28] set names utf8
+[2017-09-12 13:51:28] DESC sl_filed
+[2017-09-12 13:51:28] set names utf8
+[2017-09-12 13:51:29] DESC sl_moxing
+[2017-09-12 13:51:29] select u1 from sl_moxing where id='73'
+[2017-09-12 13:51:29] set names utf8
+[2017-09-12 13:51:29] DESC sl_banben
+[2017-09-12 13:51:29] INSERT INTO `sl_filed` (`model_id`,`u1`,`u2`,`u3`,`u5`,`u7`,`u9`,`u10`,`u4`,`u6`) VALUES ('73','xiazaidizhi','下载地址',' ','是','文本框','10%','0','否','否')
+[2017-09-12 13:51:29] alter table `sl_banben`  Add column xiazaidizhi char(100) null  COMMENT '下载地址' 
+[2017-09-12 13:51:30] set names utf8
+[2017-09-12 13:51:30] DESC sl_filed
+[2017-09-12 13:51:30] select * from sl_filed where model_id='73' 
+[2017-09-12 13:51:31] set names utf8
+[2017-09-12 13:51:31] DESC sl_column
+[2017-09-12 13:51:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:31] set names utf8
+[2017-09-12 13:51:31] DESC sl_column
+[2017-09-12 13:51:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:33] set names utf8
+[2017-09-12 13:51:33] DESC sl_canshu
+[2017-09-12 13:51:33] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:51:33] set names utf8
+[2017-09-12 13:51:34] DESC sl_filed
+[2017-09-12 13:51:34] select * from `sl_filed` where `id`=496
+[2017-09-12 13:51:34] set names utf8
+[2017-09-12 13:51:34] DESC sl_column
+[2017-09-12 13:51:34] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:34] set names utf8
+[2017-09-12 13:51:34] DESC sl_column
+[2017-09-12 13:51:34] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:38] set names utf8
+[2017-09-12 13:51:38] DESC sl_filed
+[2017-09-12 13:51:38] set names utf8
+[2017-09-12 13:51:38] DESC sl_moxing
+[2017-09-12 13:51:38] select u1 from sl_moxing where id='73'
+[2017-09-12 13:51:38] set names utf8
+[2017-09-12 13:51:38] DESC sl_banben
+[2017-09-12 13:51:38] select u1 from sl_filed where id='496'
+[2017-09-12 13:51:38] UPDATE `sl_filed` SET `model_id`='73',`u1`='xiazaidizhi',`u2`='下载地址',`u3`=' ',`u5`='是',`u7`='文本框',`u8`=' ',`u9`='20%',`u10`='0',`u4`='否',`u6`='否' WHERE `id`=496
+[2017-09-12 13:51:38] alter table `sl_banben` change column xiazaidizhi xiazaidizhi char(100) null  COMMENT '下载地址'
+[2017-09-12 13:51:40] set names utf8
+[2017-09-12 13:51:40] DESC sl_filed
+[2017-09-12 13:51:40] select * from sl_filed where model_id='73' 
+[2017-09-12 13:51:40] set names utf8
+[2017-09-12 13:51:40] DESC sl_column
+[2017-09-12 13:51:40] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:40] set names utf8
+[2017-09-12 13:51:40] DESC sl_column
+[2017-09-12 13:51:40] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:41] set names utf8
+[2017-09-12 13:51:41] DESC sl_filed
+[2017-09-12 13:51:41] select * from sl_filed where model_id='73' 
+[2017-09-12 13:51:41] set names utf8
+[2017-09-12 13:51:41] DESC sl_column
+[2017-09-12 13:51:41] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:41] set names utf8
+[2017-09-12 13:51:41] DESC sl_column
+[2017-09-12 13:51:41] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:42] set names utf8
+[2017-09-12 13:51:43] DESC sl_canshu
+[2017-09-12 13:51:43] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:51:43] set names utf8
+[2017-09-12 13:51:43] DESC sl_filed
+[2017-09-12 13:51:43] select * from `sl_filed` where `id`=493
+[2017-09-12 13:51:43] set names utf8
+[2017-09-12 13:51:43] DESC sl_column
+[2017-09-12 13:51:43] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:44] set names utf8
+[2017-09-12 13:51:44] DESC sl_column
+[2017-09-12 13:51:44] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:49] set names utf8
+[2017-09-12 13:51:49] DESC sl_filed
+[2017-09-12 13:51:49] set names utf8
+[2017-09-12 13:51:49] DESC sl_moxing
+[2017-09-12 13:51:49] select u1 from sl_moxing where id='73'
+[2017-09-12 13:51:49] set names utf8
+[2017-09-12 13:51:50] DESC sl_banben
+[2017-09-12 13:51:50] select u1 from sl_filed where id='493'
+[2017-09-12 13:51:50] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenmingcheng',`u2`='版本名称',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='10%',`u10`='0',`u4`='否' WHERE `id`=493
+[2017-09-12 13:51:50] alter table `sl_banben` change column banbenmingcheng banbenmingcheng char(100) null  COMMENT '版本名称'
+[2017-09-12 13:51:51] set names utf8
+[2017-09-12 13:51:51] DESC sl_filed
+[2017-09-12 13:51:51] select * from sl_filed where model_id='73' 
+[2017-09-12 13:51:52] set names utf8
+[2017-09-12 13:51:52] DESC sl_column
+[2017-09-12 13:51:52] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:52] set names utf8
+[2017-09-12 13:51:52] DESC sl_column
+[2017-09-12 13:51:52] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:52] set names utf8
+[2017-09-12 13:51:52] DESC sl_moxing
+[2017-09-12 13:51:52] select u1 from sl_moxing where id=73
+[2017-09-12 13:51:52] set names utf8
+[2017-09-12 13:51:52] DESC sl_banben
+[2017-09-12 13:51:53] set names utf8
+[2017-09-12 13:51:53] DESC sl_filed
+[2017-09-12 13:51:53] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:51:53] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:51:53] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:51:53] set names utf8
+[2017-09-12 13:51:53] DESC sl_column
+[2017-09-12 13:51:53] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:51:53] set names utf8
+[2017-09-12 13:51:53] DESC sl_column
+[2017-09-12 13:51:53] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:02] set names utf8
+[2017-09-12 13:52:02] DESC sl_canshu
+[2017-09-12 13:52:02] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:52:03] set names utf8
+[2017-09-12 13:52:03] DESC sl_filed
+[2017-09-12 13:52:03] select * from `sl_filed` where `id`=494
+[2017-09-12 13:52:03] set names utf8
+[2017-09-12 13:52:03] DESC sl_column
+[2017-09-12 13:52:03] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:04] set names utf8
+[2017-09-12 13:52:04] DESC sl_column
+[2017-09-12 13:52:04] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:10] set names utf8
+[2017-09-12 13:52:10] DESC sl_filed
+[2017-09-12 13:52:10] select * from sl_filed where model_id='73' 
+[2017-09-12 13:52:10] set names utf8
+[2017-09-12 13:52:10] DESC sl_column
+[2017-09-12 13:52:10] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:10] set names utf8
+[2017-09-12 13:52:10] DESC sl_column
+[2017-09-12 13:52:10] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:11] set names utf8
+[2017-09-12 13:52:11] DESC sl_canshu
+[2017-09-12 13:52:11] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:52:11] set names utf8
+[2017-09-12 13:52:12] DESC sl_filed
+[2017-09-12 13:52:12] select * from `sl_filed` where `id`=493
+[2017-09-12 13:52:12] set names utf8
+[2017-09-12 13:52:12] DESC sl_column
+[2017-09-12 13:52:12] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:12] set names utf8
+[2017-09-12 13:52:12] DESC sl_column
+[2017-09-12 13:52:12] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:16] set names utf8
+[2017-09-12 13:52:16] DESC sl_filed
+[2017-09-12 13:52:16] set names utf8
+[2017-09-12 13:52:16] DESC sl_moxing
+[2017-09-12 13:52:16] select u1 from sl_moxing where id='73'
+[2017-09-12 13:52:16] set names utf8
+[2017-09-12 13:52:16] DESC sl_banben
+[2017-09-12 13:52:16] select u1 from sl_filed where id='493'
+[2017-09-12 13:52:16] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenmingcheng',`u2`='版本名称',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='20%',`u10`='0',`u4`='否' WHERE `id`=493
+[2017-09-12 13:52:16] alter table `sl_banben` change column banbenmingcheng banbenmingcheng char(100) null  COMMENT '版本名称'
+[2017-09-12 13:52:18] set names utf8
+[2017-09-12 13:52:18] DESC sl_filed
+[2017-09-12 13:52:18] select * from sl_filed where model_id='73' 
+[2017-09-12 13:52:18] set names utf8
+[2017-09-12 13:52:18] DESC sl_column
+[2017-09-12 13:52:18] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:19] set names utf8
+[2017-09-12 13:52:19] DESC sl_column
+[2017-09-12 13:52:19] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:19] set names utf8
+[2017-09-12 13:52:19] DESC sl_moxing
+[2017-09-12 13:52:19] select u1 from sl_moxing where id=73
+[2017-09-12 13:52:19] set names utf8
+[2017-09-12 13:52:19] DESC sl_banben
+[2017-09-12 13:52:19] set names utf8
+[2017-09-12 13:52:19] DESC sl_filed
+[2017-09-12 13:52:19] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:52:19] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:52:20] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:52:20] set names utf8
+[2017-09-12 13:52:20] DESC sl_column
+[2017-09-12 13:52:20] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:20] set names utf8
+[2017-09-12 13:52:20] DESC sl_column
+[2017-09-12 13:52:20] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:27] set names utf8
+[2017-09-12 13:52:27] DESC sl_canshu
+[2017-09-12 13:52:27] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:52:27] set names utf8
+[2017-09-12 13:52:27] DESC sl_filed
+[2017-09-12 13:52:27] select * from `sl_filed` where `id`=493
+[2017-09-12 13:52:27] set names utf8
+[2017-09-12 13:52:27] DESC sl_column
+[2017-09-12 13:52:27] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:27] set names utf8
+[2017-09-12 13:52:27] DESC sl_column
+[2017-09-12 13:52:27] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:34] set names utf8
+[2017-09-12 13:52:34] DESC sl_filed
+[2017-09-12 13:52:34] set names utf8
+[2017-09-12 13:52:34] DESC sl_moxing
+[2017-09-12 13:52:34] select u1 from sl_moxing where id='73'
+[2017-09-12 13:52:34] set names utf8
+[2017-09-12 13:52:34] DESC sl_banben
+[2017-09-12 13:52:34] select u1 from sl_filed where id='493'
+[2017-09-12 13:52:34] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenmingcheng',`u2`='版本名称',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='15%',`u10`='0',`u4`='否' WHERE `id`=493
+[2017-09-12 13:52:34] alter table `sl_banben` change column banbenmingcheng banbenmingcheng char(100) null  COMMENT '版本名称'
+[2017-09-12 13:52:36] set names utf8
+[2017-09-12 13:52:36] DESC sl_filed
+[2017-09-12 13:52:36] select * from sl_filed where model_id='73' 
+[2017-09-12 13:52:36] set names utf8
+[2017-09-12 13:52:36] DESC sl_column
+[2017-09-12 13:52:36] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:36] set names utf8
+[2017-09-12 13:52:36] DESC sl_column
+[2017-09-12 13:52:37] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:37] set names utf8
+[2017-09-12 13:52:37] DESC sl_filed
+[2017-09-12 13:52:37] select * from sl_filed where model_id='73' 
+[2017-09-12 13:52:37] set names utf8
+[2017-09-12 13:52:37] DESC sl_column
+[2017-09-12 13:52:37] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:37] set names utf8
+[2017-09-12 13:52:37] DESC sl_column
+[2017-09-12 13:52:37] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:39] set names utf8
+[2017-09-12 13:52:39] DESC sl_canshu
+[2017-09-12 13:52:39] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:52:39] set names utf8
+[2017-09-12 13:52:39] DESC sl_filed
+[2017-09-12 13:52:39] select * from `sl_filed` where `id`=494
+[2017-09-12 13:52:39] set names utf8
+[2017-09-12 13:52:39] DESC sl_column
+[2017-09-12 13:52:39] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:39] set names utf8
+[2017-09-12 13:52:39] DESC sl_column
+[2017-09-12 13:52:39] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:45] set names utf8
+[2017-09-12 13:52:45] DESC sl_filed
+[2017-09-12 13:52:45] set names utf8
+[2017-09-12 13:52:45] DESC sl_moxing
+[2017-09-12 13:52:45] select u1 from sl_moxing where id='73'
+[2017-09-12 13:52:45] set names utf8
+[2017-09-12 13:52:45] DESC sl_banben
+[2017-09-12 13:52:45] select u1 from sl_filed where id='494'
+[2017-09-12 13:52:45] UPDATE `sl_filed` SET `model_id`='73',`u1`='banbenhao',`u2`='版本号',`u3`=' ',`u5`='是',`u6`='是',`u7`='文本框',`u8`=' ',`u9`='15%',`u10`='0',`u4`='否' WHERE `id`=494
+[2017-09-12 13:52:45] alter table `sl_banben` change column banbenhao banbenhao char(100) null  COMMENT '版本号'
+[2017-09-12 13:52:47] set names utf8
+[2017-09-12 13:52:47] DESC sl_filed
+[2017-09-12 13:52:47] select * from sl_filed where model_id='73' 
+[2017-09-12 13:52:47] set names utf8
+[2017-09-12 13:52:47] DESC sl_column
+[2017-09-12 13:52:47] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:47] set names utf8
+[2017-09-12 13:52:47] DESC sl_column
+[2017-09-12 13:52:47] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:48] set names utf8
+[2017-09-12 13:52:48] DESC sl_moxing
+[2017-09-12 13:52:48] select u1 from sl_moxing where id=73
+[2017-09-12 13:52:48] set names utf8
+[2017-09-12 13:52:48] DESC sl_banben
+[2017-09-12 13:52:48] set names utf8
+[2017-09-12 13:52:48] DESC sl_filed
+[2017-09-12 13:52:48] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:52:48] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:52:48] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:52:48] set names utf8
+[2017-09-12 13:52:48] DESC sl_column
+[2017-09-12 13:52:48] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:52:48] set names utf8
+[2017-09-12 13:52:48] DESC sl_column
+[2017-09-12 13:52:48] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:10] set names utf8
+[2017-09-12 13:55:10] DESC sl_canshu
+[2017-09-12 13:55:10] SELECT * from sl_canshu where classid='4' order by id asc
+[2017-09-12 13:55:10] set names utf8
+[2017-09-12 13:55:10] DESC sl_filed
+[2017-09-12 13:55:10] select * from `sl_filed` where `id`=496
+[2017-09-12 13:55:10] set names utf8
+[2017-09-12 13:55:10] DESC sl_column
+[2017-09-12 13:55:10] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:10] set names utf8
+[2017-09-12 13:55:10] DESC sl_column
+[2017-09-12 13:55:10] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:25] set names utf8
+[2017-09-12 13:55:25] DESC sl_filed
+[2017-09-12 13:55:25] set names utf8
+[2017-09-12 13:55:25] DESC sl_moxing
+[2017-09-12 13:55:25] select u1 from sl_moxing where id='73'
+[2017-09-12 13:55:25] set names utf8
+[2017-09-12 13:55:25] DESC sl_banben
+[2017-09-12 13:55:25] select u1 from sl_filed where id='496'
+[2017-09-12 13:55:25] UPDATE `sl_filed` SET `model_id`='73',`u1`='xiazaidizhi',`u2`='下载地址',`u3`=' ',`u5`='是',`u7`='文件',`u8`=' ',`u9`='20%',`u10`='0',`u4`='否',`u6`='否' WHERE `id`=496
+[2017-09-12 13:55:25] alter table `sl_banben` change column xiazaidizhi xiazaidizhi char(100) null  COMMENT '下载地址'
+[2017-09-12 13:55:27] set names utf8
+[2017-09-12 13:55:27] DESC sl_filed
+[2017-09-12 13:55:27] select * from sl_filed where model_id='73' 
+[2017-09-12 13:55:27] set names utf8
+[2017-09-12 13:55:27] DESC sl_column
+[2017-09-12 13:55:27] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:27] set names utf8
+[2017-09-12 13:55:27] DESC sl_column
+[2017-09-12 13:55:27] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:28] set names utf8
+[2017-09-12 13:55:28] DESC sl_moxing
+[2017-09-12 13:55:28] select u1 from sl_moxing where id=73
+[2017-09-12 13:55:28] set names utf8
+[2017-09-12 13:55:28] DESC sl_banben
+[2017-09-12 13:55:28] set names utf8
+[2017-09-12 13:55:28] DESC sl_filed
+[2017-09-12 13:55:28] select * from sl_filed where model_id='73' and u5='是' order by u10 asc 
+[2017-09-12 13:55:28] select count(*) from sl_banben where  1=1 
+[2017-09-12 13:55:28] select * from sl_banben  where  1=1    order by   id desc  limit 0, 10
+[2017-09-12 13:55:28] set names utf8
+[2017-09-12 13:55:28] DESC sl_column
+[2017-09-12 13:55:28] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:28] set names utf8
+[2017-09-12 13:55:28] DESC sl_column
+[2017-09-12 13:55:28] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:30] set names utf8
+[2017-09-12 13:55:30] DESC sl_filed
+[2017-09-12 13:55:31] select * from sl_filed where model_id='73'  order by  u10 asc,id desc 
+[2017-09-12 13:55:31] set names utf8
+[2017-09-12 13:55:31] DESC sl_moxing
+[2017-09-12 13:55:31] select u1 from sl_moxing where id=73
+[2017-09-12 13:55:31] set names utf8
+[2017-09-12 13:55:31] DESC sl_banben
+[2017-09-12 13:55:31] select * from `sl_banben` where `id`=1
+[2017-09-12 13:55:31] set names utf8
+[2017-09-12 13:55:31] DESC sl_column
+[2017-09-12 13:55:31] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:31] set names utf8
+[2017-09-12 13:55:31] DESC sl_column
+[2017-09-12 13:55:31] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:31] set names utf8
+[2017-09-12 13:55:31] DESC sl_filed
+[2017-09-12 13:55:31] select * from `sl_filed` where `id`=495
+[2017-09-12 13:55:31] select u8 from sl_filed where id=495
+[2017-09-12 13:55:37] set names utf8
+[2017-09-12 13:55:37] DESC sl_filed
+[2017-09-12 13:55:37] select * from sl_filed where model_id='73'  order by  u10 asc,id desc 
+[2017-09-12 13:55:37] set names utf8
+[2017-09-12 13:55:37] DESC sl_moxing
+[2017-09-12 13:55:37] select u1 from sl_moxing where id=73
+[2017-09-12 13:55:37] set names utf8
+[2017-09-12 13:55:37] DESC sl_banben
+[2017-09-12 13:55:37] select * from `sl_banben` where `id`=1
+[2017-09-12 13:55:37] set names utf8
+[2017-09-12 13:55:37] DESC sl_column
+[2017-09-12 13:55:37] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:37] set names utf8
+[2017-09-12 13:55:37] DESC sl_column
+[2017-09-12 13:55:37] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:38] set names utf8
+[2017-09-12 13:55:38] DESC sl_filed
+[2017-09-12 13:55:38] select * from `sl_filed` where `id`=495
+[2017-09-12 13:55:38] select u8 from sl_filed where id=495
+[2017-09-12 13:55:56] set names utf8
+[2017-09-12 13:55:56] DESC sl_moxing
+[2017-09-12 13:55:56] SELECT *,(SELECT u2 from sl_canshu where u1=mx.u3 ) as moxinglianjie from sl_moxing as mx order by id desc
+[2017-09-12 13:55:56] set names utf8
+[2017-09-12 13:55:56] DESC sl_column
+[2017-09-12 13:55:56] select * from `sl_column`   where  classid = '0' and  u4 = '显示' and  1=1  order by u2 asc, id desc 
+[2017-09-12 13:55:57] set names utf8
+[2017-09-12 13:55:57] DESC sl_column
+[2017-09-12 13:55:57] select * from `sl_column`   where  u4 = '显示' and  1=1  order by u2 asc, id desc 

@@ -122,7 +122,7 @@
 			<div>
 				<a href='/index.php?c=page&id=<?php echo $brand[id]?>' target=_blank>查看</a> |
 				<a href="index.php?p=admin&c=wenzhang&a=edit&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>&id=<?php echo $brand['id'];?>">修改</a> |
-				<a onclick="return confirm('你确认将该信息删除到回收站?   注意：相关图片和资源也将一起删除到回收站');" href="index.php?p=admin&c=wenzhang&a=delete&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>&id=<?php echo $brand['id'];?>">删除</a>
+				<a onclick="return confirm('你确认将该信息删除?删除后不可恢复！');" href="index.php?p=admin&c=wenzhang&a=delete&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>&id=<?php echo $brand['id'];?>">删除</a>
 			|
 				
 			</div>
@@ -151,9 +151,10 @@
 			<a href="javascript:chk1('index.php?p=admin&c=wenzhang&a=updatemore&status=终审&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>')" title="审核通过" class="operation gray"><span class="ficon ficon-renzhengtongguo"></span> 审核通过</a>
 			<a href="javascript:chk1('index.php?p=admin&c=wenzhang&a=updatemore&status=回收站&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>')" title="审核不通过" class="operation gray"><span class="ficon ficon-liuchengbutongguo"></span> 审核不通过</a>
 
-
-<a href="javascript:chk1('index.php?p=admin&c=wenzhang&a=postToBaiduById')" title="提交给百度" class="operation gray"><span class="ficon ficon-renzhengtongguo"></span> 逐条提交给百度</a>
+		<!--
+		<a href="javascript:chk1('index.php?p=admin&c=wenzhang&a=postToBaiduById')" title="提交给百度" class="operation gray"><span class="ficon ficon-renzhengtongguo"></span> 逐条提交给百度</a>
 		<a target="_blank" href='/index.php?p=admin&c=wenzhang&a=postToBaidu&model_id=<?php echo $_GET['model_id']?>&sort_id=<?php echo $_GET['sort_id']?>' ><span class="ficon ficon-renzhengtongguo"></span> 全部提交给百度</a> 
+		-->
 		</div>
 		<p class="clear"></p>
 	</div>
