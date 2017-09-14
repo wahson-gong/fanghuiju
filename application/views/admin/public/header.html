@@ -51,9 +51,26 @@
 					
 					<div style="height: 50%;padding-top: 16px; vertical-align: 50%;">
 					
-					<?php 
+					<!-- $temp_headerModel = new LanmuModel('column_group');
+	                 $tiaojian_headerModel=array("classid"=>"0","u4"=>"显示","group_id"=>$_SESSION['admin']['group_id']);
+                     $temp_header_arr=$temp_headerModel->selectByArrayAnd($tiaojian_headerModel);
+					 	foreach($temp_header_arr as $k=>$v)
+						{
+							if(!empty($ids))
+							{	
+								$ids.=",".$v["id"];
+							}
+							else{
+								$ids=$v["id"];
+							}
+						 
+						}                     
 					 $headerModel = new LanmuModel('column');
-	                 $tiaojian_headerModel=array("classid"=>"0","u4"=>"显示");
+	                 $headerList=$headerModel->select("select * from sl_column where id in ({$ids}) ");
+	                  -->
+					<?php 
+					 $headerModel = new LanmuModel('column_group');
+	                 $tiaojian_headerModel=array("classid"=>"0","u4"=>"显示","group_id"=>$_SESSION['admin']['group_id']);
 	                 $headerList=$headerModel->selectByArrayAndLanmu($tiaojian_headerModel);
 	                 foreach ($headerList as $column) {
                     ?>

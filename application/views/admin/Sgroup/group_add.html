@@ -33,85 +33,83 @@
 		</div>
 		<br/>
 		
-    <form method="post" action="index.php?p=admin&c=group&a=insert" name='theForm' id="theForm" enctype="multipart/form-data">
-		<section class="pos-relative">
-			<!--发布文章中间部分-->
-			<article class="article-edit">
-				<!--上边信息-->
-				<div class="article-top">
-				 	 
-				    <table class="a-info">
-				             
-				      <?php foreach($filedLists as $v){ ?>
-                         <?php if($v['u7']!="文本编辑器" and $v['u7']!="时间框" and $v['u7']!="数字"){ ?>
+    <form method="post" action="index.php?p=admin&c=group&a=insert" name='theForm' id="theForm" >
+			<table class="table table-info cs-table">
+				<tbody>
+					<tr>
+						<th style="width:60px" onclick="admin_js()">组名</th>
+						<td>
+							<input name="zuming" type="text" id="zuming" class="input"><font color="red">*</font>
+	                        <font color="red"></font>&nbsp;&nbsp;[<a href="javascript:admin_select(0)">全选</a>]&nbsp;[<a href="javascript:admin_select(1)">反选</a>]
+						</td>
+				    </tr>
+					<tr>
+						<th>参数</th>
+						<td>
 
-                           <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
-                            
-                         <?php } ?>
-                      <?php } ?>
-				    
-				    
-				    
-				    	
-				    	
-				    </table>
-				    
-				</div>
-				
-				<?php foreach($filedLists as $v){ ?>
-                         
-                    <?php if($v['u7']=="文本编辑器" ){ ?>
-                   
-                      <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
-                          
-                    <?php } ?>
-                       
-               <?php } ?>
-				
-			</article>
-			<!--发布文章 侧边-->
-			<aside class="article-side">
-				<div class="box">
-				
-				<!-- 时间部分 -->
-				<?php foreach($filedLists as $v){ ?>
-                         
-                    <?php if($v['u7']=="时间框" ){ ?>
-                    
-					    <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
-                          
-				   <?php } ?>
-                       
-               <?php } ?>  
-				    
-				<!-- 数字部分 -->  
-			   <?php foreach($filedLists as $v){ ?>
-                         
-                    <?php if($v['u7']=="数字" ){ ?>
-                    
-                        <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,"",$v['u3'] ,$v['id']) ?>
-                    
-                     <?php } ?>
-                       
-               <?php } ?>  
-               
-               
-				 
-				</div>
-			</aside>
-			
-			<p>
-				<tr>
-				<th></th>
-				<td>
-						<a href="#" class="btn btn-blue" onclick="$('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
-						<a href="#" class="btn btn-green" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a>
-			   </td>
-			   </tr>
-			</p>
-			
-		</section>
-     </form>
+						<?php foreach ($lanmu as $k=>$v) {  $che_list++;   ?>
+
+							<table border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; text-align: left">
+								<tbody>
+									<tr>
+										<td style="font-weight: 700; font-size: 14px">
+										<input type="checkbox" data-id="qx_box_<?php echo $che_list ?>" name="colid[<?php echo $che_list ?>]"   value="<?php echo $v["id"] ?>">
+										<input name="classid[<?php echo $che_list ?>]" type="text" value="<?php echo $v["classid"] ?>"  class="yincang">
+										<input name="u1[<?php echo $che_list ?>]" type="text" value="<?php echo $v["u1"] ?>"  class="yincang">
+										<input name="u2[<?php echo $che_list ?>]" type="text" value="<?php echo $v["u2"] ?>"  class="yincang">
+										<input name="u3[<?php echo $che_list ?>]" type="text" value="<?php echo $v["u3"] ?>"  class="yincang">
+										<input name="u4[<?php echo $che_list ?>]" type="text" value="<?php echo $v["u4"] ?>"  class="yincang">
+										
+										<?php echo $v["u1"] ?>
+										</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; text-align: left">
+								<tbody>
+								
+								<?php foreach ($v["child"] as $k1=>$v1) {  $che_list++; ?>
+									<tr>
+										<td style="width: 50%">
+										 	&nbsp;&nbsp;&nbsp;&nbsp;
+										 	<input type="checkbox" data-id="qx_box_<?php echo $che_list ?>" name="colid[<?php echo $che_list ?>]"   value="<?php echo $v1["id"] ?>">
+											<input name="classid[<?php echo $che_list ?>]" type="text" value="<?php echo $v1["classid"] ?>"  class="yincang">
+											<input name="u1[<?php echo $che_list ?>]" type="text" value="<?php echo $v1["u1"] ?>"  class="yincang">
+											<input name="u2[<?php echo $che_list ?>]" type="text" value="<?php echo $v1["u2"] ?>"  class="yincang">
+											<input name="u3[<?php echo $che_list ?>]" type="text" value="<?php echo $v1["u3"] ?>"  class="yincang">
+											<input name="u4[<?php echo $che_list ?>]" type="text" value="<?php echo $v1["u4"] ?>"  class="yincang">
+											<span id="qx_txt_1"><?php echo $v1["u1"] ?></span>
+											<span id="qx_value_1" style="display: none">articles.aspx?Model_id=54&amp;classid=99</span>&nbsp;
+										</td>
+									</tr>
+								<?php } ?>
+									 
+								</tbody>
+							</table>
+							
+					    <?php } ?>
+					   
+					    </td>
+					 </tr>
+
+					<tr>
+
+						<th></th>
+						<td>
+						
+						<a href="#" class="btn btn-blue" onclick="$('#theForm').submit()">
+						    <em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp; 
+						    <a href="#" class="btn btn-green" onclick="if(confirm('确定清空重填?')==false)return false;window.location.reload()">
+						    <em class="ficon ficon-shanchu"></em> 清空重填</a></td>
+					</tr>
+					
+			</table>
+
+
+		</form>
 
 
 <footer>
@@ -131,10 +129,26 @@
 	};
 </script>
 <script type="text/javascript">
-			$(".a-info-ss").click(function(){
-				$(".a-info .collapse").fadeToggle();
-			})
-		</script>
+	var che_list=<?php echo $che_list ?>;
+
+	function admin_select(g1) {
+		for (i = 1; i <= che_list; i++) {
+			//var boxes = document.getElementById("qx_box_" + i);  
+			var boxes = $("input[data-id='qx_box_"+i+"']");
+			for (var j = 0; j < boxes.length; j++) {
+				if (g1 == "0") {
+					boxes[j].checked = true;
+				} else {
+					if (boxes[j].checked) {
+						boxes[j].checked = false;
+					} else {
+						boxes[j].checked = true;
+					}
+				}
+			}
+		}
+	}
+</script>
 
 </body>
 

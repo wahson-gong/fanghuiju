@@ -5,12 +5,11 @@
 
 		</li>
 		            <?php 
-					 $asideModel = new LanmuModel('column');
-	                 $tiaojian_asideModel=array("u4"=>"显示");
+					 $asideModel = new LanmuModel('column_group');
+	                 $tiaojian_asideModel=array("u4"=>"显示","group_id"=>$_SESSION['admin']['group_id']);
 	                 $asideList=$asideModel->selectByArrayAndLanmu($tiaojian_asideModel);
                      $asideList=$asideModel->child($asideList);
-                     //var_dump($asideList);
-	                 
+                     
                     ?>
                     
         <!-- 第一重循环 start -->

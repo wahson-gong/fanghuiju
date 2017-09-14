@@ -517,5 +517,26 @@ class Common
     } 
     
     
+    //分解url里面的参数，将参数返回数组
+    function getUrlParams($url)
+    {
+        
+        $refer_url = parse_url($url);
+        
+        $params = $refer_url['query'];
+        
+        $arr = array();
+        if(!empty($params))
+        {
+            $paramsArr = explode('&',$params);
+            
+            foreach($paramsArr as $k=>$v)
+            {
+                $a = explode('=',$v);
+                $arr[$a[0]] = $a[1];
+            }
+        }
+        return $arr;
+    }
     
 }

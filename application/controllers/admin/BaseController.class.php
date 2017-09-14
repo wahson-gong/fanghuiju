@@ -3,6 +3,7 @@
 class BaseController extends Controller {
 	//构造方法
 	public function __construct(){
+	    @header('Content-type: text/html;charset=UTF-8');
 		$this->checkLogin();
 	}
 	

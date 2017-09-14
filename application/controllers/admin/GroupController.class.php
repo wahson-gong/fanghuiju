@@ -13,7 +13,7 @@ class GroupController extends BaseController{
 		//获取group总的记录数
 		$total = $groupModel->total($where);
 		//指定分页数，每一页显示的记录数
-		$pagesize = 2;
+		$pagesize = 10;
 		// $pagesize = $GLOBALS['config']['pagesize'];
 		//获取当前页数，默认是1
 		$current = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -33,47 +33,107 @@ class GroupController extends BaseController{
 
 	//载入添加用户组页面
 	public function addAction(){
-		include CUR_VIEW_PATH . "Sgroup".DS."group_add.html";
+	    //记录单选框的数量
+	    $che_list=0;
+	    $LanmuModel = new LanmuModel('column');
+	    $classidArray=$LanmuModel->getLanmuByclassid("");
+	    $lanmu= $LanmuModel->child($classidArray);
+	    //var_dump($lanmu);
+	    include CUR_VIEW_PATH . "Sgroup".DS."group_add.html";
 	}
 
 	//载入编辑用户组页面
 	public function editAction(){
-		//获取该用户组信息
-		$groupModel = new groupModel("group");
-		//条件
-		$group_id = $_GET['group_id'] + 0; //出于考虑
-		//使用模型获取
-		$group = $groupModel->selectByPk($group_id);
+	    //获取该用户组信息
+	    $groupModel = new Model("group");
+	    //条件
+	    $group_id = $_GET['id'] + 0; //出于考虑
+	    //使用模型获取
+	    $group = $groupModel->selectByPk($group_id);
+	    
+	    $column_groupModel = new model("column_group");
+	    //记录单选框的数量
+	    $che_list=0;
+	    $LanmuModel = new LanmuModel('column');
+	    $classidArray=$LanmuModel->getLanmuByclassid("");
+	   //查询栏目是否已经选择
+	    foreach($classidArray as $k=>$v)
+	    {
+	        $classidArray[$k]["checked"]="false";
+	        $data2["id"]=$v["id"];
+	        $data2["group_id"]=$group_id;
+	        if(count($column_groupModel->selectByArrayAnd( $data2))>0)
+	        {
+	            $classidArray[$k]["checked"]="true";
+	        }
+	        
+	    }
+	    $lanmu= $LanmuModel->child($classidArray);
+// 	    foreach($lanmu as $k=>$v)
+// 	    {
+	       
+// 	        foreach ($v["child"] as $k1=>$v1 )
+// 	        {
+// 	            $data2["id"]=$v1["id"];
+// 	            $data2["group_id"]=$group_id;
+	             
+// 	            if(count($column_groupModel->selectByArrayAnd( $data2))>0)
+// 	           {
+// 	               $lanmu[$k]["child"][$k1]["checked"]="true";
+// 	           }
+	            
+// 	        }
+	        
+	        
+// 	    }
+	    
 		// var_dump($group);
-		include CUR_VIEW_PATH . "group_edit.html";
+		include CUR_VIEW_PATH . "Sgroup".DS."group_edit.html";
 	}
 
 	//定义insert方法，完成用户组的插入
 	public function insertAction(){
+	    //获取该用户组信息
+	    $groupModel = new Model("group");
+	    $Common = new Common();
+	    $column_groupModel = new model("column_group");
 		//接受表单提交过来的数据
-		$data['group_name'] = trim($_POST['group_name']);
-		$data['url'] = trim($_POST['url']);
-		$data['group_desc'] = trim($_POST['group_desc']);
-		$data['sort_order'] = trim($_POST['sort_order']);
-		$data['is_show'] = trim($_POST['is_show']);
-		//对提交过来的数据需要做一些验证、过滤等一些处理(此处忽略)
+		$col_id = $_REQUEST['colid'];
+		$classid= $_POST['classid'];
+		$u1= $_POST['u1'];
+		$u2= $_POST['u2'];
+		$u3= $_POST['u3'];
+		$u4= $_POST['u4'];
+		//$group_id=$_SESSION["admin"]["group_id"];
+
+		// 1.收集表单数据
+		$data = $groupModel->getFieldArray();
 		$this->helper("input");
 		$data = deepspecialchars($data); //实体转义处理
-		//处理文件上传,需要使用到Upload.class.php
-		$this->library("Upload"); //载入文件上传类
-		$upload = new Upload(); //实例化上传对象
-		if ($filename = $upload->up($_FILES["logo"])){
-			//成功
-			$data['logo'] = $filename;
-			//调用模型完成入库操作，并给出相应的提示
-			$groupModel = new groupModel("group");
-			if ($groupModel->insert($data)){//添加成功	
-				$this->jump("index.php?p=admin&c=group&a=index","添加商品用户组成功",2);
-			}else {//添加失败			
-				$this->jump("index.php?p=admin&c=group&a=add","添加商品用户组失败",3);
-			}
-		}else{//失败
-			$this->jump("index.php?p=admin&c=group&a=add",$upload->error(),3);
+		//var_dump($data);die();
+		$group_id=$groupModel->insert($data);
+		if ($group_id){
+		    //写入另外权限操作表
+		    foreach ($col_id as $k=>$v ){
+		        $controller=$Common->getUrlParams($u3[$k])["c"];
+		        $data1["id"]=$col_id[$k];
+		        $data1["classid"]=$classid[$k];
+		        $data1["u1"]=$u1[$k];
+		        $data1["u2"]=$u2[$k];
+		        $data1["u3"]=$u3[$k];
+		        $data1["u4"]=$u4[$k];
+		        $data1["laiyuan"]=$_SESSION["admin"]["username"];
+		        $data1["group_id"]=$group_id;
+		        $data1["controller"]=$controller;
+		        
+		        $column_groupModel->insert($data1);
+		        
+		        //var_dump($controller);
+		    }
+		    //添加成功
+		    $this->jump("index.php?p=admin&c=group&a=index","添加用户组成功",2);
+		}else {//添加失败
+		    $this->jump("index.php?p=admin&c=group&a=add","添加用户组失败",3);
 		}
 
 		
@@ -81,39 +141,58 @@ class GroupController extends BaseController{
 
 	//定义update方法，完成用户组的更新
 	public function updateAction(){
-		//获取条件及数据
-		$data['group_id'] = $_POST['group_id'];
-		$data['group_name'] = trim($_POST['group_name']);
-		$data['group_desc'] = trim($_POST['group_desc']);
-		$data['sort_order'] = trim($_POST['sort_order']);
-		$data['url'] = trim($_POST['url']);
-		$data['is_show'] = $_POST['is_show'];
-
-		//图片怎么办，需要判断是否有上传，如何判断
-		if($_FILES['logo']['name']){
-			//有上传,完成上传操作
-		}
-		
-		//调用模型完成更新
-		$groupModel = new groupModel("group");
-		if($groupModel->update($data)){
-			$this->jump("index.php?p=admin&c=group&a=index","更新成功",2);
-		}else{
-			$this->jump("index.php?p=admin&c=group&a=edit&group_id=".$data['group_id'],"更新失败",2);
-		}
+	    //获取该用户组信息
+	    $groupModel = new Model("group");
+	    $Common = new Common();
+	    $column_groupModel = new model("column_group");
+	    //接受表单提交过来的数据
+	    $col_id = $_REQUEST['colid'];
+	    $classid= $_POST['classid'];
+	    $u1= $_POST['u1'];
+	    $u2= $_POST['u2'];
+	    $u3= $_POST['u3'];
+	    $u4= $_POST['u4'];
+	    $group_id=trim($_REQUEST['id']);
+	    
+	   // var_dump($col_id);die();
+		//删除用户组原有数据
+		$column_groupModel->select("delete from sl_column_group where group_id={$group_id} ");
+	    foreach ($col_id as $k=>$v ){
+	        $controller=$Common->getUrlParams($u3[$k])["c"];
+	        $data1["id"]=$col_id[$k];
+	        $data1["classid"]=$classid[$k];
+	        $data1["u1"]=$u1[$k];
+	        $data1["u2"]=$u2[$k];
+	        $data1["u3"]=$u3[$k];
+	        $data1["u4"]=$u4[$k];
+	        $data1["laiyuan"]=$_SESSION["admin"]["username"];
+	        $data1["group_id"]=$group_id;
+	        $data1["controller"]=$controller;
+	        
+	        $column_groupModel->insert($data1);
+	        
+	       // var_dump($data1);
+	    }
+	    $data = $groupModel->getFieldArray();
+	    //var_dump($data);die();
+	    if ($groupModel->update($data)>0){//添加成功
+	        $this->jump("index.php?p=admin&c=group&a=index","修改用户组成功",2);
+	    }else {//添加失败  
+	        $this->jump("index.php?p=admin&c=group&a=edit&id={$data["id"]}","修改用户组失败",3);
+	    }
+	    
 	}
 
 	//定义delete方法，完成用户组的删除
 	public function deleteAction(){
 		//获取group_id
-		$group_id = $_GET['group_id'] + 0;
-		$groupModel = new groupModel("group");
+		$group_id = $_GET['id'] + 0;
+		$groupModel = new Model("group");
 		$group = $groupModel->selectByPk($group_id);
-		//得到图片的全路径
-		$img = UPLOAD_PATH . $group['logo'];
+		
 		if ($groupModel->delete($group_id)){
-			//成功的同时删除对应的图片
-			@unlink($img);
+		    $column_groupModel = new model("column_group");
+		    $column_groupModel->select("delete from sl_column_group where group_id={$group_id} ");
 			$this->jump("index.php?p=admin&c=group&a=index","删除成功",2);
 		}else{
 			$this->jump("index.php?p=admin&c=group&a=index","删除失败",3);

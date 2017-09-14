@@ -56,12 +56,16 @@ class LoginController extends Controller
         $user = $adminModel->checkUser($username, $password);
         if ($user) {
             // 登录成功,保存登录标识符
-            $admin_arr = $adminModel->selectByCol('username', $username);
+            $admin_arr =$user;
+            //$admin_arr =$user;
+            
             $_SESSION['admin']['username'] = $admin_arr['username'];
             $_SESSION['admin']['user_id'] = $admin_arr['user_id'];
             $_SESSION['admin']['password'] = $admin_arr['password'];
             $_SESSION['admin']['pic'] = $admin_arr['pic'];
-            $_SESSION['admin']['id'] = $admin_arr['id'];
+            //$_SESSION['admin']['id'] = $admin_arr['id'];
+            $_SESSION['admin']['group_id'] = $admin_arr['group_id'];
+            
             
             // 写入日志
             $System->addSystem($username, $username . ":登录成功,操作页面:" . $Common->getUrl(), $Common->getIP(), "管理员登录");

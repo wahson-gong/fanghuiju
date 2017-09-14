@@ -84,7 +84,7 @@ class LanmuModel extends Model {
 	        $sql.=" 1=1 ";
 	        $sql.=" order by u2 asc, id desc ";
 	    }
-	    return $this->db->getAll($sql);
+ 	    return $this->db->getAll($sql);
 	}
 
 
