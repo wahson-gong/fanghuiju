@@ -353,7 +353,7 @@ function chk1(url)
 window.event.returnValue = false;
 }
 
-//联动空间改变选中项
+//联动控件改变选中项
 function change(val,divid,filedName)
 {
 	var htmlobj=$.ajax({url:"/?p=admin&a=api&type=getLiandongHtml&classid="+val+"&filedName="+filedName,async:false});

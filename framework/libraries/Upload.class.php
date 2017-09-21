@@ -3,7 +3,7 @@ class Upload{
 	private $path;   //文件上传目录
 	private $max_size; //上传文件大小限制
 	private $errno;  //错误信息号
-	private $mime = array('image/jpeg','image/png','image/gif','image/jpg');//允许上传的文件类型
+	private $mime = array('image/jpeg','image/png','image/gif','image/jpg','application/vnd.ms-excel','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/octet-stream');//允许上传的文件类型
 
 	/**
 	 * 构造函数,
@@ -12,7 +12,7 @@ class Upload{
 	 */
 	public function __construct($path = UPLOAD_PATH	){
 		$this->path = $path;
-		$this->max_size = 1000000;
+		$this->max_size = 99999999999;
 	}
 
 	/**

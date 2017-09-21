@@ -21,7 +21,10 @@
 		<!--当前位置-->
 		<div class="site-location">
 			&nbsp;&nbsp;
-			<span class="ficon ficon-weizhi"></span>&nbsp;<a href="index.php?p=admin&c=index&a=index">用户首页</a>&nbsp;&gt;&nbsp;<a href="index.php?p=admin&c=yonghu&a=index">用户管理</a>
+			<span class="ficon ficon-weizhi"></span>&nbsp;
+			<a href="index.php?p=admin&c=index&a=index">用户首页</a>&nbsp;&gt;&nbsp;
+			<a href="index.php?p=admin&c=yonghu&a=index">管理员管理</a>&nbsp;&gt;&nbsp;
+			<a href="#">修改管理员</a>
 		</div>
 		<p class="silo_zw"></p>
 		<!--当前位置 end-->
@@ -30,7 +33,7 @@
 		
 			<table class="add-table" >
 			
-			<form method="post" action="index.php?p=admin&c=yonghu&a=update" name="theForm" id="theForm">
+			<form method="post" action="index.php?p=admin&c=yonghu&a=update" name="theForm" id="theForm" enctype="multipart/form-data">
 			
 			
 			<?php if($adminDetail['username']!=''){?>
@@ -49,20 +52,15 @@
 					</td>
 				</tr>
 				
-		   <?php if($adminDetail['email']!=''){?>
-                <tr class="on">
-           <?php } else{?>
-                <tr>
-           <?php  } ?>
-					<th><em class="ficon ficon-youxiang1"></em></th>
-					<td>
-						<div class="pos-relative">
-							<input name="email" type="text" class="add-input" value="<?php echo $adminDetail['email'] ?>"/>
-							<p class="add-input-txt">电子邮箱</p>
-						</div>
-					</td>
-				</tr>
-				
+					<tr>
+				<th><em class="ficon ficon-mima"></em></th>
+				<td>
+					<div class="pos-relative">
+						<input name="nickname" type="text" class="add-input"  value="<?php echo $adminDetail['nickname'] ?>"/>
+						<p class="add-input-txt">昵称</p>
+					</div>
+				</td>
+			</tr> 
 				
 				<tr>
 					<th><em class="ficon ficon-mima"></em></th>
@@ -92,7 +90,57 @@
 						</div>
 					</td>
 				</tr>
-				<input type="hidden" value="<?php echo $adminDetail['user_id'] ?>" name="user_id" />
+
+
+			<tr>
+				<th><em class="ficon ficon-deng"></em></th>
+				<td><input type="file" name="pic" class="input"> <img
+					src="<?php echo $adminDetail['pic'] ?>"
+					style="max-width: 200px; max-height: 100px; overflow: hidden;"
+					onerror="javascript:this.src='application/views/admin/images/nopic.jpg';">
+					<i> </i></td>
+			</tr>
+
+			<tr>
+				<th><em class="ficon ficon-huiyuan" title="会员组"></em></th>
+				<td>
+					<select name="group_id" id="group_id"
+						class="select-container1">
+						   <?php foreach ($group as $k=>$v){  ?>
+								<?php if($adminDetail['group_id']==$v["id"]){?>
+										<option selected="selected" value="<?php echo $v["id"] ?>"><?php echo $v["zuming"] ?></option>
+             					<?php }else{ ?>
+										<option  value="<?php echo $v["id"] ?>"><?php echo $v["zuming"] ?></option>
+								<?php  } ?>
+							<?php } ?>
+							
+					</select>
+				</td>
+			</tr>
+			
+			
+			<tr id="cun_select"  >
+				<th><em class="ficon ficon-xingming" title="所属村"></em></th>
+				<td>
+					<select name="cun_id" id="cun_id"
+						class="select-container1">
+						  <option selected="selected"  value="无">无</option>
+		 				   <?php foreach ($cun as $k=>$v){  ?>
+		 				  		 <?php if($adminDetail['cun_id']==$v["id"]){?>
+										<option selected="selected" value="<?php echo $v["id"] ?>"><?php echo $v["u1"] ?></option>
+             					 <?php }else{ ?>
+										<option  value="<?php echo $v["id"] ?>"><?php echo $v["u1"] ?></option>
+								 <?php  } ?>
+									 
+							<?php } ?>
+							
+					</select>
+				</td>
+			</tr>
+			
+			
+
+			<input type="hidden" value="<?php echo $adminDetail['user_id'] ?>" name="user_id" />
 				
 				<tr>
 					<th></th>
@@ -124,6 +172,33 @@
 	if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
 		new WOW().init();
 	};
+</script>
+<script>
+			if($("#group_id").find('option:selected').text()=="村管理员")
+				{
+				    $("#cun_select").show();
+				
+				}else
+				{
+					$("#cun_select").hide();
+				}
+			
+			$('#group_id').on('change',function(){
+				//判断是否选取prompt属性，无返回值；
+				    if($(this).val()){
+				        var selectText = $(this).find('option:selected').text();
+				        //alert(selectText);
+				        if(selectText=="村管理员")
+				        	{
+				        	$("#cun_select").show();
+				        	
+				        	}else
+				        	{
+				        		//$("#cun_id").find("option[text='无']").attr("selected",true);
+				        		$("#cun_select").hide();
+				        	}
+				    }
+				});
 </script>
 </body>
 

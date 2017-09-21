@@ -162,6 +162,23 @@ class AutotableController extends BaseController{
 	            $data[$v['u1']]=md5($data[$v['u1']]);
 	        }
 	    }
+	    
+	    //单独处理文件
+	    foreach ($filedAraay as $v)
+	    {
+	        $filedList=$filedModel->select("select * from sl_filed where  u7='文件' and model_id='{$model_id}' and u1='{$v['u1']}' ");
+	        if(count($filedList)>0)
+	        {
+	            //上传文件到服务器
+	            $this->library("Upload"); //载入文件上传类
+	            $upload = new Upload(); //实例化上传对象
+	            if ($filename = $upload->up($_FILES[$v['u1']])){
+	                $data[$v['u1']]=$filename;
+	            }
+	            
+	        }
+	    }
+	    
 	     
 	    //3调用模型完成入库并给出提示
 	    if ($tableModel->insert($data)) {
@@ -214,6 +231,25 @@ class AutotableController extends BaseController{
 	                //$this->jump('index.php?p=admin&c=wenzhang&a=add&model_id='.$model_id."&sort_id=".$sort_id.$data['sort_id'],$upload->error(),3);
 	            }
 	    
+	        }
+	    }
+	    
+	    
+	    //单独处理文件
+	    foreach ($filedAraay as $v)
+	    {
+	        $filedList=$filedModel->select("select * from sl_filed where  u7='文件'  and model_id='{$model_id}' and u1='{$v['u1']}' ");
+	        //判断是否为文件，请文件参数不为空
+	        if(count($filedList)>0 )
+	        {
+	            //处理文件上传,需要使用到Upload.class.php
+	            $this->library("Upload"); //载入文件上传类
+	            $upload = new Upload(); //实例化上传对象
+	            if ($filename = $upload->up($_FILES[$v['u1']])){
+	                $data[$v['u1']] = $filename;
+	            }else {
+	            }
+	            
 	        }
 	    }
 	    //调用模型完成更新

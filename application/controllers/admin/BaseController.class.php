@@ -24,7 +24,7 @@ class BaseController extends Controller {
 	    if(count($Canshu)>0)
 	    {
 	        //$temp_html.='<div id=div_'.$classid.' class="liandong" >';
-	        $temp_html.='<select name="DropDownList'.$classid.'" onchange="$(this).nextAll().remove() ;change(this.value,\'liandong_'.$filedName.'\',\''.$filedName.'\');"   id="DropDownList'.$classid.'" class="select-container2">';
+	        $temp_html.='<select  name="'.$filedName.$classid.'" onchange="$(this).nextAll().remove() ;change(this.value,\'liandong_'.$filedName.'\',\''.$filedName.'\');"   id="'.$filedName.$classid.'" class="select-container2">';
 	        $temp_html.='<option value="">请选择</option>';
 	       
 	       //有子栏目
@@ -43,6 +43,39 @@ class BaseController extends Controller {
 	       }
 	       $temp_html.='</select>';
 	       //$temp_html.='</div>';
+	       
+	       //如果是村管理员1
+	       if($_SESSION['admin']['zuming']=="村管理员")
+	       {
+	           $adminModel = new AdminModel('admin');
+	           $canshuModel =new Model("canshu");
+	           $user = $adminModel->selectByPk($_SESSION['admin']['user_id']);
+	           $canshu = $canshuModel->selectByPk($user["cun_id"]);
+	           //村classID
+	           if($filedName=="suoshuzu")
+	           {
+	               $cun_classid=$user["cun_id"];
+	           }else
+	           {
+	               $cun_classid=$canshu["classid"];
+	           }
+	          
+	           //只查询本村 锁定其他选项
+	           if(!empty($cun_classid))
+	           {
+	               if($cun_classid==$classid)
+	               {
+	                   $script_str='<script>'.
+	   	                   '$("#'.$filedName.$classid.'").prevAll().attr("disabled","disabled") ;  '.
+	   	                   '</script>';
+	                   $temp_html.=$script_str;
+	               }
+	               
+	               
+	           }
+	       }
+	       
+	       
 	    }
 	    else
 	    {
@@ -175,6 +208,23 @@ class BaseController extends Controller {
 	        {
 	            $filedModel1=new FiledModel("filed");
 	            $filedVal=$filedModel1->getFiledDefaultValue($filedId);
+	           
+	            //如果是村管理员1
+	            if($_SESSION['admin']['zuming']=="村管理员")
+	            {
+	                $adminModel = new AdminModel('admin');
+	                $canshuModel =new Model("canshu");
+	                $user = $adminModel->selectByPk($_SESSION['admin']['user_id']);
+	                $canshu = $canshuModel->selectByPk($user["cun_id"]);
+	                //村ID
+	                $cun_classid=  $canshu["classid"];
+	                //只查询本村
+	                if(!empty($cun_classid))
+	                {
+	                    $filedVal=$cun_classid;
+	                }
+	            }
+	            
 	            return '<tr style="display: table-row;">
 				    		    <th>'.$kjName.'</th>
 				    		    <td><div id="liandong_'.$filedName.'" class="liandong1" >'.
@@ -186,6 +236,7 @@ class BaseController extends Controller {
 	        {
 	            $filedModel1=new FiledModel("filed");
 	            $filedVal=$filedModel1->getFiledDefaultValue($filedId);
+	            
 	            //默认值
 	            $classid=$filedVal;
 	            //已选中，递归全部选中项
@@ -228,8 +279,17 @@ class BaseController extends Controller {
                         </tr>';
 	        
 	        
-	    }else 
+	    }else if($type=="文件")
 	    {
+	        
+	        return '<tr style="display: table-row;">
+				    		    <th>'.$kjName.'</th>
+				    		    <td>
+				    			<input type="file" name="'.$filedName.'" class="input"> <a href="'.$selectValue.'">'.$selectValue.'</a>
+				    		    </td>
+				    	     </tr>';
+	        
+	    }else  {
 	        
 	       return '<tr>
 				    	 <th>'.$kjName.'</th>

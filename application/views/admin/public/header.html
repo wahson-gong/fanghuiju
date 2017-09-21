@@ -19,7 +19,7 @@
 							</a>
 						</li> -->
 						<li>
-				    		<a href="/" class="drop-tag" title="返回首页" target="_blank">
+				    		<a href="/index.php?p=admin" class="drop-tag" title="返回首页" target="_blank">
 				    		<span class="ficon ficon-shouye"></span>
 				    		</a>
 				    	</li>
@@ -33,11 +33,11 @@
 										<a><em class="ficon ficon-yonghuzhongxin"></em> 用户中心</a>
 									</dd> -->
 									<dd>
-										<a href="index.php?p=admin&c=yonghu&a=index"><em class="ficon ficon-shezhi"></em> 用户管理</a>
+										<a href="index.php?p=admin&c=yonghu&a=edit&id=<?php echo $_SESSION['admin']['user_id'] ?>"><em class="ficon ficon-shezhi"></em> 用户中心</a>
 									</dd>
-									<dd>
+									<!-- <dd>
 										<a href="index.php?p=admin&c=lanmu&a=index"><em class="ficon ficon-lanmu"></em> 栏目设置</a>
-									</dd>
+									</dd> -->
 									<dd>
 										<a href="index.php?p=admin&c=login&a=logout" onclick="if(confirm('确定取消退出?')==false)return false;"><em class="ficon  ficon-tuichu"></em> 退出</a>
 									</dd>
