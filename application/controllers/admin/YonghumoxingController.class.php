@@ -54,10 +54,9 @@ class YonghumoxingController extends BaseController{
 	    // 使用分页类获取分页信息
 	    $page = new Page($total, $pagesize, $current, "index.php", array(
 	        "p" => "admin",
-	        "c" => "wenzhang",
+	        "c" => "yonghumoxing",
 	        "a" => "index",
 	        "model_id" => "{$model_id}",
-	        "sort_id" => "{$sort_id}"
 	    ));
 	    $pageinfo = $page->showPage();
 	    

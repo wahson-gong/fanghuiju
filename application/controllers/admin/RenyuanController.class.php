@@ -43,15 +43,18 @@ class RenyuanController extends BaseController{
 	        $filedListU6=$filedModel->select("select * from sl_filed where model_id='{$model_id}' and u6='是' ");//模糊查询字段
 	        if(count($filedListU6)>0)
 	        {
-	            $where=$where." and ";
+	            $where=$where." and (";
 	            foreach ($filedListU6 as $v)
 	            {
 	                $where=$where."  {$v['u1']} like '%{$u6}%' or ";
 	            }
-	            $where=$where." 1=2 ";
+	            $where=$where." 1=2 )";
 	        }
-	    
+	        
 	    }
+	    
+	    
+	    
 	    //需要显示的字段
 	    $filedLists=$filedModel->select("select * from sl_filed where model_id='{$model_id}' and u5='是' order by u10 asc ");//显示查询字段
 	    

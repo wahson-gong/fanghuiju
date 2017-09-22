@@ -158,18 +158,20 @@ class IndexController extends   BaseController {
 		        $System1 = new SystemModel('System');
 		        $date2 = $System1->oneRowCol("dtime", " u1='" . $username. "' and u4='用户登录' order by id desc ");
 		        $date2 = $date2['dtime'];
-		        $minute = floor((strtotime($date1) - strtotime($date2)) % 86400 / 60);
+		        $minute = floor((strtotime($date1) - strtotime($date2)) % 86400 );
 		        
 // 		        echo $date1." date1<br>";
 // 		        echo $date2." date2<br>";
 // 		        echo $minute."minute3<br>";
 // 		        die();
 		        
-		        if ($minute < 1) {
-		            $rdata['msg']="您的操作过于频繁";
+		        //小于两秒
+		        if ($minute < 2) {
+		            $rdata['msg']="您的操作过于频繁taipinfan";
 		            //返回接口数据
 		            $this->ajaxReturn($rdata);
 		        }
+		        
 		        // 验证和处理
 		        if (! ($Common->isName($username) || $Common->isName($password))) {
 		            // 写入日志
@@ -392,6 +394,92 @@ class IndexController extends   BaseController {
 		        
 		        $rdata['status'] = "true";
 		        $rdata['msg']=json_encode($temp_arr);
+		        
+		    }
+		    else if($type=="changqiweizoufang")
+		    {
+		        /*
+		         * 长期未走访列表
+		         *
+		         *
+		         *
+		         * */
+		        $suoshucun=$_REQUEST["suoshucun"];
+		        $huji_model = new Model("huji");
+		        if(!empty($suoshucun))
+		        {
+		            $huji = $huji_model->select("select * from sl_huji where suoshucun={$suoshucun} group by huhao");
+		        }else 
+		        {
+		            $huji = $huji_model->select("select * from sl_huji group by huhao");
+		        }
+		        
+		        
+		        foreach ($huji as $k=>$v)
+		        {
+		            $hujileixing= $v["hujileixing"];
+		            $temp_arr= array( "classid" => "31", "u1" => $hujileixing );
+		            $canshu_model = new Model("canshu");
+		            $fangwenshijian = $canshu_model->selectByArrayAnd( $temp_arr)[0]["u2"];
+		            
+// 		            echo "<br/>select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(dtime,NOW())<=0 AND DATEDIFF(dtime,NOW())>-{$fangwenshijian} ";
+// 		            continue;
+		            //间隔时间内是否有访问记录，如果没有则返回最近一次的走访记录，如果有则不加入数组
+		            $zoufangjilu_model = new Model("zoufangjilu");
+		            $zoufangjilu = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(NOW(),dtime)>=0   and DATEDIFF(NOW(),dtime)<{$fangwenshijian} ");
+		            //该户籍属于长期未走访的对象
+		            if(count($zoufangjilu)==0)
+		            {
+		                $data_huji[]["huji"] = $v;
+		                $data_huji[]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
+		                //组名
+		                $canshu_model= new Model("canshu");
+		                $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
+		                $data_huji[]["zu"]=$canshu;
+		                //村名
+		                $canshu = $canshu_model->selectByPk($v["suoshucun"]);
+		                $data_huji[]["cun"]=$canshu;
+		                
+		            }
+		        }
+		        //var_dump($data_huji);die();
+		        $rdata['status'] = "true";
+		        $rdata['msg']=json_encode($data_huji);
+		        
+		    }
+		    else if($type=="del")
+		    {
+		        /*
+		         * 仅删除走访计划
+		         *
+		         *
+		         * */
+		        $zoufangjihua_model = new Model("zoufangjihua");
+		        $temp_sqlStr="select * from sl_zoufangjihua where ". $zoufangjihua_model->getSqlWhereStr();
+		        //echo $temp_sqlStr;
+		        $zoufangjihua = $zoufangjihua_model->select($temp_sqlStr);
+		        if(count($zoufangjihua)>0)
+		        {
+		            if($zoufangjihua_model->delete($zoufangjihua[0]["id"]))
+		            {
+		               //删除成功
+		                $rdata['status'] = "true";
+		                $rdata['msg']="删除成功";
+		            }else 
+		            {
+		               //删除失败
+		                $rdata['status'] = "false";
+		                $rdata['msg']="删除失败";
+		            }
+		        }else 
+		        {
+		            //计划不存在
+		            $rdata['status'] = "false";
+		            $rdata['msg']="计划不存在";
+		            
+		        }
+		        
+		        
 		        
 		    }
 		    else if($type=="随便自己命名的方法")
