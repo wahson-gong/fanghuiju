@@ -62,7 +62,6 @@ class IndexController extends   BaseController {
 		            }
 		            
 		            //给人员表添加姓名拼音首字母
-		            
 		            if($t=="sl_renyuan")
 		            {
 		                //生成首字母 start
@@ -83,6 +82,30 @@ class IndexController extends   BaseController {
 		                $temp_arr[$k]["shouzimu"]=$shouzimu;
 		                //生成首字母 end
 		            }
+		            
+		            //给人员表添加姓名拼音首字母
+		            if($t=="sl_huji")
+		            {
+		                //生成首字母 start
+		                
+		                //挂载中文转拼音类
+		                include_once LIB_PATH . "CUtf8_PY.class.php";
+		                $ch2ypClass =new CUtf8_PY();
+		                //转换后的参数
+		                if($v["huzhuxingming"]=="")
+		                {
+		                    $shouzimu="";
+		                }
+		                else
+		                {
+		                    $shouzimu=substr( $ch2ypClass->encode($v["huzhuxingming"],"all"), 0, 1 );
+		                }
+		                
+		                $temp_arr[$k]["shouzimu"]=$shouzimu;
+		                //生成首字母 end
+		            }
+		            
+		            
 		            //echo $temp_arr[$k]["dtime"];
 		        }
 		        

@@ -183,7 +183,7 @@ class BaseController extends Controller {
 	    {
 	        return '  <div class="marb-20">
 					        <p class="title"><em class="txt-blue ficon ficon-riqi"></em> '.$kjName.'</p>
-					        <p><input name="'.$filedName.'" type="text" id="'.$filedName.'" class="dinput" value="'.$selectValue.'" onClick="WdatePicker()" /></p>
+					        <p><input name="'.$filedName.'" type="text" id="'.$filedName.'" class="dinput" value="'.$selectValue.'" onClick="WdatePicker({skin:\'whyGreen\',dateFmt:\'yyyy-MM-dd HH:mm:ss\',minDate:\'1900-01-01 00:00:00\',maxDate:\''.date("Y-m-d H:i:s").'\'})" /></p>
 					    </div>';
 	        
 	    }else if($type=="数字")

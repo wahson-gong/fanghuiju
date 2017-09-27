@@ -35,7 +35,9 @@
 		<!--当前位置 end-->
 		<br/>
 		
-    <form method="post" action="index.php?p=admin&c=wenzhang&a=update&model_id=<?php echo $_GET['model_id'] ?>&sort_id=<?php echo $_GET['sort_id'] ?>" name='theForm' id="theForm" enctype="multipart/form-data">
+    <form method="post" action="index.php?p=admin&c=wenzhang&a=update&model_id=<?php echo $_GET['model_id'] ?>" name='theForm' id="theForm" enctype="multipart/form-data">
+		<input type="text" name="id" value="<?php echo $wenzhang[id]  ?>" hidden="hide" />
+		<input type="text" name="sort_id" value="<?php echo $wenzhang[sort_id]  ?>" hidden="hide" />
 		<section class="pos-relative">
 			<!--发布文章中间部分-->
 			<article class="article-edit">
@@ -104,7 +106,7 @@
 				 
 				</div>
 			</aside>
-			<input type="text" name="id" value="<?php echo $wenzhang[id]  ?>" hidden="hide" />
+			
 			<p>
 				<tr>
 				<th></th>
