@@ -48,7 +48,7 @@
 				      <?php foreach($filedLists as $v){ ?>
                          <?php if($v['u7']!="文本编辑器" and $v['u7']!="时间框" and $v['u7']!="数字"){ ?>
 
-                            <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$wenzhang[$v['u1']],$v['u3'] ,$v['id']) ?>
+                            <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$autotable[$v['u1']],$v['u3'] ,$v['id']) ?>
 				    	   
                             
                          <?php } ?>
@@ -66,7 +66,7 @@
                          
                     <?php if($v['u7']=="文本编辑器" ){ ?>
                    
-                       <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$wenzhang[$v['u1']],$v['u3'] ,$v['id']) ?>
+                       <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$autotable[$v['u1']],$v['u3'] ,$v['id']) ?>
 				    	    
 				    	   
                     <?php } ?>
@@ -83,7 +83,7 @@
                          
                     <?php if($v['u7']=="时间框" ){ ?>
                     
-					    <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$wenzhang[$v['u1']],$v['u3'] ,$v['id']) ?>
+					    <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$autotable[$v['u1']],$v['u3'] ,$v['id']) ?>
 				    	
 				   <?php } ?>
                        
@@ -94,7 +94,7 @@
                          
                     <?php if($v['u7']=="数字" ){ ?>
                     
-                        <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$wenzhang[$v['u1']],$v['u3'] ,$v['id']) ?>
+                        <?php echo $this->getKj($v['u7'],$v['u2'],$v['u1'] ,$autotable[$v['u1']],$v['u3'] ,$v['id']) ?>
 				    	
                      <?php } ?>
                        

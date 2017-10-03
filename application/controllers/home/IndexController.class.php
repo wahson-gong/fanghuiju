@@ -176,21 +176,22 @@ class IndexController extends   BaseController {
 		        $Common = new Common();
 		        $System = new SystemModel('System');
 		        
-		        $date1 = date('Y-m-d H:i:s', time());
-		        $date2 = $date1;
+		        
 		        $System1 = new SystemModel('System');
 		        $date2 = $System1->oneRowCol("dtime", " u1='" . $username. "' and u4='用户登录' order by id desc ");
 		        $date2 = $date2['dtime'];
+		        $date1 = date('Y-m-d H:i:s', time());
 		        $minute = floor((strtotime($date1) - strtotime($date2)) % 86400 );
+		        
 		        
 // 		        echo $date1." date1<br>";
 // 		        echo $date2." date2<br>";
-// 		        echo $minute."minute3<br>";
+// 		        echo $secs."计算秒数   {$minute}<br>";
 // 		        die();
 		        
 		        //小于两秒
-		        if ($minute < 2) {
-		            $rdata['msg']="您的操作过于频繁taipinfan";
+		        if ($minute< 2) {
+		            $rdata['msg']="您的操作过于频繁，请{$minute}秒后再试";
 		            //返回接口数据
 		            $this->ajaxReturn($rdata);
 		        }
@@ -427,6 +428,18 @@ class IndexController extends   BaseController {
 		         *
 		         *
 		         * */
+		        //返回条数
+		        $number=$_REQUEST["number"];
+		        //当前页数
+		        $page=$_REQUEST["page"];
+		        if(empty($number))
+		        {
+		            $number=1;
+		        }
+		        if(empty($page))
+		        {
+		            $page=1;
+		        }
 		        $suoshucun=$_REQUEST["suoshucun"];
 		        $huji_model = new Model("huji");
 		        if(!empty($suoshucun))
@@ -437,34 +450,45 @@ class IndexController extends   BaseController {
 		            $huji = $huji_model->select("select * from sl_huji group by huhao");
 		        }
 		        
+		        //间隔时间内是否有访问记录，如果没有则返回最近一次的走访记录，如果有则不加入数组
 		        
+		        $zoufangjilu_model = new Model("zoufangjilu");
+		        $canshu_model = new Model("canshu");
 		        foreach ($huji as $k=>$v)
 		        {
 		            $hujileixing= $v["hujileixing"];
 		            $temp_arr= array( "classid" => "31", "u1" => $hujileixing );
-		            $canshu_model = new Model("canshu");
 		            $fangwenshijian = $canshu_model->selectByArrayAnd( $temp_arr)[0]["u2"];
-		            
-// 		            echo "<br/>select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(dtime,NOW())<=0 AND DATEDIFF(dtime,NOW())>-{$fangwenshijian} ";
-// 		            continue;
-		            //间隔时间内是否有访问记录，如果没有则返回最近一次的走访记录，如果有则不加入数组
-		            $zoufangjilu_model = new Model("zoufangjilu");
 		            $zoufangjilu = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(NOW(),dtime)>=0   and DATEDIFF(NOW(),dtime)<{$fangwenshijian} ");
-		            //该户籍属于长期未走访的对象
+		           //该户籍属于长期未走访的对象
 		            if(count($zoufangjilu)==0)
 		            {
-		                $data_huji[]["huji"] = $v;
-		                $data_huji[]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
-		                //组名
-		                $canshu_model= new Model("canshu");
-		                $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
-		                $data_huji[]["zu"]=$canshu;
-		                //村名
-		                $canshu = $canshu_model->selectByPk($v["suoshucun"]);
-		                $data_huji[]["cun"]=$canshu;
+		                $per_pagenum=($page-1)*$number;
+		                $next_pagenum=$page*$number;
+		                //echo $per_pagenum."  |  ".$next_pagenum." "."<br/>";flush();
+		                $cur_huji_num=count($data_huji);
+		                if($per_pagenum<$cur_huji_num&&$cur_huji_num<$next_pagenum+1)
+		                {
+		                    break;
+		                }else {
+		                    $data_huji[]["huji"] = $v;
+		                    $data_huji[]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
+		                    //组名
+		                    $canshu_model= new Model("canshu");
+		                    $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
+		                    $data_huji[]["zu"]=$canshu;
+		                    //村名
+		                    $canshu = $canshu_model->selectByPk($v["suoshucun"]);
+		                    $data_huji[]["cun"]=$canshu;
+		                    
+		                }
+		                
 		                
 		            }
 		        }
+		        
+		        
+		        
 		        //var_dump($data_huji);die();
 		        $rdata['status'] = "true";
 		        $rdata['msg']=json_encode($data_huji);

@@ -1,7 +1,7 @@
 <?php
 //项目配置文件
 return array(
-	'host' => '211.149.187.138',
+	'host' => '222.82.243.27',
 	'user' => 'fanghuiju',
 	'password' => 'fanghuiju',
 	'dbname' => 'fanghuiju',

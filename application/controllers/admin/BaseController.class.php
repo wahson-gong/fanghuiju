@@ -190,7 +190,7 @@ class BaseController extends Controller {
 	    {
 	        return ' <div class="marb-20">
 					        <p class="title"><em class="txt-blue ficon ficon-deng"></em>'.$kjName.'</p>
-					        <p>排序： <input type="text" class="input" style="width: 50px;"  name="'.$filedName.'" value="'.$selectValue.'"/> <span class="txt-blue">数值越小越前面</span></p>
+					        <p>排序： <input type="text" class="input" style="width: 50px;"  name="'.$filedName.'"  id="'.$filedName.'"  value="'.$selectValue.'"/> <span class="txt-blue">数值越小越前面</span></p>
 				        </div>';
 	        
 	    }
@@ -285,7 +285,7 @@ class BaseController extends Controller {
 	        return '<tr style="display: table-row;">
 				    		    <th>'.$kjName.'</th>
 				    		    <td>
-				    			<input type="file" name="'.$filedName.'" class="input"> <a href="'.$selectValue.'">'.$selectValue.'</a>
+				    			<input type="file" name="'.$filedName.'"  id="'.$filedName.'" class="input"> <a href="'.$selectValue.'">'.$selectValue.'</a>
 				    		    </td>
 				    	     </tr>';
 	        
@@ -294,7 +294,7 @@ class BaseController extends Controller {
 	       return '<tr>
 				    	 <th>'.$kjName.'</th>
     				    <td>
-                            <input name="'.$filedName.'" type="text" class="input" value="'.$selectValue.'"/><i>'.$tipString.'</i>
+                            <input name="'.$filedName.'"  id="'.$filedName.'" type="text" class="input" value="'.$selectValue.'"/><i>'.$tipString.'</i>
     				    </td>
 				   </tr>'; 
 	    }

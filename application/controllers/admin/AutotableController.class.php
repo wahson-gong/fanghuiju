@@ -42,7 +42,7 @@ class AutotableController extends BaseController{
 	   
 	    // 载入分页类
 	    include LIB_PATH . "Page.class.php";
-	    // 获取wenzhang总的记录数
+	    // 获取autotable总的记录数
 	    $total = $tableModel->total($where);
 	    // 指定分页数，每一页显示的记录数
 	    $pagesize = 10;
@@ -80,8 +80,8 @@ class AutotableController extends BaseController{
 	//载入编辑自动表页面
 	public function editAction(){
 	    $model_id = $_REQUEST['model_id'];
-	    // 获取wenzhang_id
-	    $wenzhang_id = $_GET['id'] ;
+	    // 获取autotable_id
+	    $autotable_id = $_GET['id'] ;
 	    //得到字段模型
 	    $filedModel=new Model("filed");
 	    $filedLists=$filedModel->select("select * from sl_filed where model_id='{$model_id}'  order by  u10 asc,id desc ");//显示查询字段
@@ -92,7 +92,8 @@ class AutotableController extends BaseController{
 	    //先获取文章信息
 	    $tableModel = new Model($tableName);
 	    
-	    $wenzhang = $tableModel->selectByPk($wenzhang_id);
+	    $autotable = $tableModel->selectByPk($autotable_id);
+	    //var_dump($autotable);die();
 	    include CUR_VIEW_PATH . "Sautotable" . DS . "autotable_edit.html";
 	    
 	}
@@ -146,7 +147,7 @@ class AutotableController extends BaseController{
 	                 
 	            }else {
 	                //print_r($_FILES[$v['u1']]);
-	                //$this->jump('index.php?p=admin&c=wenzhang&a=add&model_id='.$model_id."&sort_id=".$sort_id.$data['sort_id'],$upload->error(),3);
+	                //$this->jump('index.php?p=admin&c=autotable&a=add&model_id='.$model_id."&sort_id=".$sort_id.$data['sort_id'],$upload->error(),3);
 	            }
 	    
 	        }
@@ -228,7 +229,7 @@ class AutotableController extends BaseController{
 	                 
 	            }else {
 	                //print_r($_FILES[$v['u1']]);
-	                //$this->jump('index.php?p=admin&c=wenzhang&a=add&model_id='.$model_id."&sort_id=".$sort_id.$data['sort_id'],$upload->error(),3);
+	                //$this->jump('index.php?p=admin&c=autotable&a=add&model_id='.$model_id."&sort_id=".$sort_id.$data['sort_id'],$upload->error(),3);
 	            }
 	    
 	        }
@@ -264,7 +265,7 @@ class AutotableController extends BaseController{
 	//定义delete方法，完成自动表的删除
 	public function deleteAction(){
 	    $model_id = $_REQUEST['model_id'];
-	    // 获取wenzhang_id
+	    // 获取autotable_id
 	    if($_REQUEST['id']=='')
 	    {
 	        $this->jump('index.php?p=admin&c=autotable&a=index&model_id='.$model_id,"删除失败，参数不能为空",3);
