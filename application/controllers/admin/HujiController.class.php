@@ -58,7 +58,6 @@ class HujiController extends BaseController{
 	    //需要显示的字段
 	    $filedLists=$filedModel->select("select * from sl_filed where model_id='{$model_id}' and u5='是' order by u10 asc ");//显示查询字段
 	    
-	   
 	    // 载入分页类
 	    include LIB_PATH . "Page.class.php";
 	    // 获取wenzhang总的记录数
@@ -70,7 +69,7 @@ class HujiController extends BaseController{
 	    $current = isset($_GET['page']) ? $_GET['page'] : 1;
 	    $offset = ($current - 1) * $pagesize;
 	    // 使用模型完成数据的查询
-	    $tableModel = $tableModel->pageRows($offset, $pagesize, $where);
+	    $tableModel = $tableModel->pageRows($offset, $pagesize, $where,"huhao");
 	    // 使用分页类获取分页信息
 	    $page = new Page($total, $pagesize, $current, "index.php", array(
 	        "p" => "admin",
@@ -268,4 +267,10 @@ class HujiController extends BaseController{
 	        $this->jump('index.php?p=admin&c=huji&a=index&model_id='.$model_id, "删除失败", 3);
 	    }
 	}
+	
+	
+	
+	
+	
+	
 }

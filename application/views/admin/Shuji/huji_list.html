@@ -70,7 +70,7 @@
 	<?php foreach($tableModel as $brand) : ?>
 	<tr>
 		<td style='width:5%'> &nbsp;&nbsp;
-			<div class="checkbox checkbox-inline checkbox-success"><input type="checkbox" name="chk" value="<?php echo $brand[id]?>"><label></label></div>
+			<div class="checkbox checkbox-inline checkbox-success"><input type="checkbox" name="chk" value="<?php echo $brand[huhao]?>"><label></label></div>
 		</td>
 		
 		<?php foreach($filedLists as $v){ ?>
@@ -89,8 +89,8 @@
 		<td>
 			<div>
 				<!-- <a href='#' target=_blank>查看</a> | -->
-				<a href="index.php?p=admin&c=huji&a=edit&model_id=<?php echo $_GET['model_id']?>&id=<?php echo $brand['id'];?>">修改</a> |
-				<a onclick="return confirm('你确认将该信息删除到回收站?   注意：相关图片和资源也将一起删除到回收站');" href="index.php?p=admin&c=huji&a=delete&model_id=<?php echo $_GET['model_id']?>&id=<?php echo $brand['id'];?>">删除</a>
+				<a href="index.php?p=admin&c=huji&a=edit&model_id=<?php echo $_GET['model_id']?>&id=<?php echo $brand['huhao'];?>">修改</a> |
+				<a onclick="return confirm('你确认将该信息删除?');" href="index.php?p=admin&c=huji&a=delete&model_id=<?php echo $_GET['model_id']?>&id=<?php echo $brand['huhao'];?>">删除</a>
 			</div>
 		</td>
 	</tr>

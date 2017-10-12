@@ -266,4 +266,124 @@ class ZoufangjiluController extends BaseController{
 	        $this->jump('index.php?p=admin&c=zoufangjilu&a=index&model_id='.$model_id, "删除失败", 3);
 	    }
 	}
+	
+	
+	//生成word对于的html
+	public function daochuAction(){
+	    $model_id = $_REQUEST['model_id'];
+	    // 获取wenzhang_id
+	    $id = $_GET['id'] ;
+	    //得到字段模型
+	    $filedModel=new Model("filed");
+	    $canshuModel= new Model("canshu");
+	    $yuangongModel = new Model("user");
+	    $hujiModel = new Model("huji");
+	    $renyuanModel = new Model("renyuan");
+	    
+	    $filedLists=$filedModel->select("select * from sl_filed where model_id='{$model_id}'  order by  u10 asc,id desc ");//显示查询字段
+	    
+	    // 获得当前表名
+	    $moxingModel = new MoxingModel("moxing");
+	    $tableName = $moxingModel->oneRowCol("u1", "id={$model_id}")['u1'];
+	    //先获取文章信息
+	    $tableModel = new Model($tableName);
+	    $wenzhang = $tableModel->selectByPk($id);
+	    //村详情
+	    $cun = $canshuModel->selectByPk($wenzhang["suoshucun"]);
+	    //员工详情
+	    // $yuangong = $yuangongModel->selectByCol("yonghuming", $wenzhang["ruhurenyuan"]);
+	    //户籍详情
+	    $huji = $hujiModel->selectByPk($wenzhang["huhao"]);
+	    //帮教对象亲属
+	    $renyuan = $renyuanModel->selectByCol("hukoubianhao", $wenzhang["huhao"]);
+	    foreach ($renyuan as $k => $v) {
+	        if(empty($qinshuNames))
+	        {
+	            $qinshuNames=$v["xingming"];
+	        }
+	        else
+	        {
+	            $qinshuNames.=",".$v["xingming"];
+	            
+	        }
+	    }
+	    //走访图片
+	    $zutu=str_replace("{next}","|",$wenzhang["zutu"]);  
+	    $zutuArrTemp= explode("|",$zutu);
+	    //主机地址
+	    //$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+	    $host="222.82.243.27:8282";
+	    foreach ($zutuArrTemp as $zt) {
+	        $temp_arr=explode("|",str_replace("{title}","|",$zt)) ;
+	        $zutuArr[]="http://".$host.DS.$temp_arr[0];
+	    }
+	    //echo $cun["u1"];die();
+	    include CUR_VIEW_PATH . "Szoufangjilu" . DS . "zoufangjilu_daochu.html";
+	    
+	}
+	
+	
+	//生成并下载word
+	public function xiazaiAction(){
+	    $this->helper("ToWord");
+	    $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+	    //$host="222.82.243.27:8282";
+	    
+	    //创建文件夹
+	    $dir = iconv("UTF-8", "GBK", "public/word/".$_SESSION['admin']['username']."/".time()."/");
+	    if (!file_exists($dir)){
+	        mkdir ($dir,0777,true);
+	    } 
+	   
+	    $ids = $_REQUEST['id'];
+	    $array_id=explode(",", $ids);
+	    $array_id=array_unique($array_id);
+	    for ($i = 0; $i < count($array_id); $i++) {
+	        $url="http://".$host.DS."index.php?p=admin&c=zoufangjilu&a=daochu&model_id=66&id=".$array_id[$i];
+	        $html= file_get_contents($url);
+ 	        $ToWord= new ToWord();
+	        $ToWord->start();
+	        $wordname = $dir.'入户帮教登记表'.$array_id[$i].".doc";
+	        echo $html; 
+	        $ToWord->save($wordname);
+	        //ob_flush();//每次执行前刷新缓存
+	        flush(); 
+	    }
+	    
+	    //打包并下载
+	    $filename="入户帮教登记表".time().".zip";
+	    $temp_filename="public/word/".$_SESSION['admin']['username']."/".$filename;
+	    $z = new ZipArchive();
+	    $z->open($temp_filename, ZIPARCHIVE::CREATE);
+	    $this->addFileToZip($dir, $z);
+	    $z->close();
+	    
+	    //设置打包完自动下载
+	    
+	    header("Cache-Control: public");
+	    header("Content-Description: File Transfer");
+	    header('Content-disposition: attachment; filename='.basename($temp_filename)); //文件名
+	    header("Content-Type: application/zip"); //zip格式的
+	    header("Content-Transfer-Encoding: binary"); //告诉浏览器，这是二进制文件
+	    header('Content-Length: '. filesize($temp_filename)); //告诉浏览器，文件大小
+	    @readfile($temp_filename);
+
+	    
+	    
+	}
+	
+	function addFileToZip($path,$zip){
+	    $handler=opendir($path); //打开当前文件夹由$path指定。
+	    while(($filename=readdir($handler))!==false){
+	        if($filename != "." && $filename != ".."){//文件夹文件名字为'.'和‘..’，不要对他们进行操作
+	            if(is_dir($path."/".$filename)){// 如果读取的某个对象是文件夹，则递归
+	                addFileToZip($path."/".$filename, $zip);
+	            }else{ //将文件加入zip对象
+	                $zip->addFile($path."/".$filename);
+	            }
+	        }
+	    }
+	    @closedir($path);
+	}
+	
 }

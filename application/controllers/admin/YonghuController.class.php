@@ -26,7 +26,7 @@ class YonghuController extends BaseController
             $admins[$k]["zuming"]=$groupModel->selectByPk($v["group_id"])["zuming"];
         }
         //使用分页类获取分页信息
-        $page = new Page($total,$pagesize,$current,"index.php",array("p"=>"admin","c"=>"admin","a"=>"index"));
+        $page = new Page($total,$pagesize,$current,"index.php",array("p"=>"admin","c"=>"yonghu","a"=>"index"));
         $pageinfo = $page->showPage();
         include CUR_VIEW_PATH . "Syonghuguanli".DS."yonghu_list.html";
     }

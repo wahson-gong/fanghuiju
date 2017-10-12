@@ -57,7 +57,7 @@ class IndexController extends   BaseController {
 		        {
 		            if($temp_arr[$k]["dtime"]!=null)
 		            {
-		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime"]=$commonClass->formatTime($v["dtime"]);
 		                $temp_arr[$k]["dtime1"]=$v["dtime"];
 		            }
 		            
@@ -456,40 +456,46 @@ class IndexController extends   BaseController {
 		        $canshu_model = new Model("canshu");
 		        foreach ($huji as $k=>$v)
 		        {
-		            $hujileixing= $v["hujileixing"];
+		           $hujileixing= $v["hujileixing"];
+		           if($hujileixing=="")
+		               continue;
 		            $temp_arr= array( "classid" => "31", "u1" => $hujileixing );
 		            $fangwenshijian = $canshu_model->selectByArrayAnd( $temp_arr)[0]["u2"];
+		            $fangwenshijian = $this->NumberFilter($fangwenshijian);
 		            $zoufangjilu = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(NOW(),dtime)>=0   and DATEDIFF(NOW(),dtime)<{$fangwenshijian} ");
 		           //该户籍属于长期未走访的对象
+		           // echo count($zoufangjilu)."<br/>";
 		            if(count($zoufangjilu)==0)
 		            {
 		                $per_pagenum=($page-1)*$number;
 		                $next_pagenum=$page*$number;
 		                //echo $per_pagenum."  |  ".$next_pagenum." "."<br/>";flush();
 		                $cur_huji_num=count($data_huji);
-		                if($per_pagenum<$cur_huji_num&&$cur_huji_num<$next_pagenum+1)
+		                //echo $cur_huji_num."<br/>";
+		                if($per_pagenum<=$cur_huji_num&&$cur_huji_num<$next_pagenum)
 		                {
-		                    break;
-		                }else {
-		                    $data_huji[]["huji"] = $v;
-		                    $data_huji[]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
-		                    //组名
-		                    $canshu_model= new Model("canshu");
-		                    $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
-		                    $data_huji[]["zu"]=$canshu;
-		                    //村名
-		                    $canshu = $canshu_model->selectByPk($v["suoshucun"]);
-		                    $data_huji[]["cun"]=$canshu;
+		                    $temp_zuijinzoufangjilu=$data_huji[$cur_huji_num]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
+		                    if(empty($temp_zuijinzoufangjilu))
+		                    {
+		                        $data_huji[$cur_huji_num]["huji"] = $v;
+		                        $data_huji[$cur_huji_num]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
+		                        //组名
+		                        $canshu_model= new Model("canshu");
+		                        $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
+		                        $data_huji[$cur_huji_num]["zu"]=$canshu;
+		                        //村名
+		                        $canshu = $canshu_model->selectByPk($v["suoshucun"]);
+		                        $data_huji[$cur_huji_num]["cun"]=$canshu;
+		                    }
 		                    
+		                }else {
+		                    break;
 		                }
 		                
 		                
 		            }
 		        }
 		        
-		        
-		        
-		        //var_dump($data_huji);die();
 		        $rdata['status'] = "true";
 		        $rdata['msg']=json_encode($data_huji);
 		        

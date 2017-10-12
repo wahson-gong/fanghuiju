@@ -99,16 +99,16 @@ class Model
     public function getDtimeSql($time_str = 'dtime')
     {
         if (isset($_REQUEST['dtime_str']) && $_REQUEST['dtime_str'] != '') {
-            $dtime_str = $_REQUEST['dtime_str'];
+            $dtime_str = $_REQUEST['dtime_str']."  00:00:00";
         }
         if (isset($_REQUEST['dtime_end']) && $_REQUEST['dtime_end'] != '') {
-            $dtime_end = $_REQUEST['dtime_end'];
+            $dtime_end = $_REQUEST['dtime_end']."  24:00:00";
         }
         if ((isset($dtime_str) && $dtime_str != '') && (! isset($dtime_end) && $dtime_end == '')) {
-            $sql = " dtime BETWEEN '{$dtime_str}' and NOW() ";
+            $sql = " dtime >= '{$dtime_str}' and  dtime <= NOW() ";
         } else 
             if ((isset($dtime_str) && $dtime_str != '') && (isset($dtime_end) && $dtime_end != '')) {
-                $sql = "  {$time_str} BETWEEN '{$dtime_str}' and '{$dtime_end}'  ";
+                $sql = "  {$time_str} >= '{$dtime_str}' and  dtime <= '{$dtime_end}'  ";
             }
         return $sql;
     }

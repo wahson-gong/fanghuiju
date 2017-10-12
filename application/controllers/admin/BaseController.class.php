@@ -11,8 +11,16 @@ class BaseController extends Controller {
 	public function checkLogin(){
 		//注意，此处的admin是我在登录成功时保存的登录标识符
 		if (!isset($_SESSION['admin'])) {
-			$this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
+// 		    if($_GET["a"]=="daochu")
+// 		    {
+		        
+// 		    }else
+// 		    {
+// 		        $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
+// 		    }
+           $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
 		}
+		
 	}
 	
 	
@@ -183,7 +191,7 @@ class BaseController extends Controller {
 	    {
 	        return '  <div class="marb-20">
 					        <p class="title"><em class="txt-blue ficon ficon-riqi"></em> '.$kjName.'</p>
-					        <p><input name="'.$filedName.'" type="text" id="'.$filedName.'" class="dinput" value="'.$selectValue.'" onClick="WdatePicker({skin:\'whyGreen\',dateFmt:\'yyyy-MM-dd HH:mm:ss\',minDate:\'1900-01-01 00:00:00\',maxDate:\''.date("Y-m-d H:i:s").'\'})" /></p>
+					        <p><input name="'.$filedName.'" type="text" id="'.$filedName.'" class="dinput" value="'.$selectValue.'" onClick="WdatePicker({skin:\'whyGreen\',dateFmt:\'yyyy-MM-dd HH:mm:ss\',minDate:\'1900-01-01 00:00:00\',maxDate:\'2117-01-01 00:00:00\'})" /></p>
 					    </div>';
 	        
 	    }else if($type=="数字")
@@ -199,7 +207,7 @@ class BaseController extends Controller {
 	        return '<tr>
 				    	 <th>'.$kjName.'</th>
     				    <td>
-                            <input name="'.$filedName.'" type="text" class="input" /><i>密码为空则不修改'.$tipString.'</i>
+                            <input name="'.$filedName.'" type="password" class="input" /><i>密码为空则不修改'.$tipString.'</i>
     				    </td>
 				   </tr>'; 
 	    } else if($type=="联动")

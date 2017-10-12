@@ -199,7 +199,7 @@ $(function(){
 	$(".add-input").click(function(e){
 		e.stopPropagation();
 		var par = $(this).parents("tr");
-		par.addClass("on").siblings("tr").removeClass("on");
+		//par.addClass("on").siblings("tr").removeClass("on");
 	})
 	$(document).click(function(){
 		$(".add-table tr").removeClass("on");

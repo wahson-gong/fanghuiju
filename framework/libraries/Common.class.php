@@ -462,6 +462,41 @@ class Common
         }
     }  
     
+    
+    // 严格按照离当前时间的间隔来输出
+    
+    function formatTime($time)
+    {
+        $now_time = date("Y-m-d H:i:s", time());
+        $the_time=$time;
+        
+        //echo $time."<br/>";
+        //flush();
+        $now_time = strtotime($now_time);
+        $show_time = strtotime($the_time);
+        $t= $now_time - $show_time;
+        $f = array(
+            '31536000' => '年',
+            '2592000' => '个月',
+            '604800' => '星期',
+            '86400' => '天',
+            '3600' => '小时',
+            '60' => '分钟',
+            '1' => '秒'
+        );
+        foreach ($f as $k => $v) {
+            if (0 != $c = floor($t / (int)$k)) {
+                $m = floor($t % $k);
+                foreach ($f as $x => $y) {
+                    if (0 != $r = floor($m / (int)$x)) {
+                        return $c.$v.$r.$y.'前';
+                    }
+                }
+                return $c.$v.'前';
+            }
+        }
+    }
+    
     //加密算法
     function encrypt($data, $key)
     {

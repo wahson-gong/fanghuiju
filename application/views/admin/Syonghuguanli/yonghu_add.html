@@ -36,12 +36,7 @@
 			<form method="post" action="index.php?p=admin&c=yonghu&a=insert" name="theForm" id="theForm" enctype="multipart/form-data">
 			
 			
-			<?php if($adminDetail['username']!=''){?>
-                <tr class="on">
-            <?php } else{?>
-                <tr>
-           <?php  } ?>
-				
+		<tr  class="on">
 				
 					<th><em class="ficon ficon-yonghuming"></em></th>
 					<td>
@@ -52,8 +47,8 @@
 					</td>
 				</tr>
 				
-			<tr>
-				<th><em class="ficon ficon-mima"></em></th>
+			<tr  class="on">
+				<th><em class="ficon ficon-xingming"></em></th>
 				<td>
 					<div class="pos-relative">
 						<input name="nickname" type="text" class="add-input"/>
@@ -62,7 +57,7 @@
 				</td>
 			</tr> 
 			
-			<tr>
+			<tr  class="on">
 				<th><em class="ficon ficon-mima"></em></th>
 				<td>
 					<div class="pos-relative">
@@ -116,7 +111,7 @@
 					<th></th>
 					<td>
 						<a href="#" class="btn btn-blue marb-20"  onclick="$('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认修改</a>
-				    	<a href="#" class="btn btn-green marb-20" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a>
+				    	<!-- <a href="#" class="btn btn-green marb-20" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a> -->
 					</td>
 				</tr>
 				

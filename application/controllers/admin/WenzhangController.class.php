@@ -27,6 +27,7 @@ class WenzhangController extends BaseController
         {
             $where .=" and ".$tableModel->getDtimeSql();
         }
+        
         //得到字段模型
         $filedModel=new FiledModel("filed");
         if(trim($u6)!='')
@@ -48,7 +49,6 @@ class WenzhangController extends BaseController
         
         //获得状态栏目 status
         $statusList =$tableModel->select("select status from {$tableName} where sort_id='{$sort_id}' group by status ");
-        
         // 载入分页类
         include LIB_PATH . "Page.class.php";
         // 获取wenzhang总的记录数
@@ -70,6 +70,7 @@ class WenzhangController extends BaseController
             "sort_id" => "{$sort_id}"
         ));
         $pageinfo = $page->showPage();
+       //var_dump($tableModel);die();
         include CUR_VIEW_PATH . "Swenzhang" . DS . "wenzhang_list.html";
     }
     
