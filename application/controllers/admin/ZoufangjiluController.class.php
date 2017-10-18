@@ -328,9 +328,9 @@ class ZoufangjiluController extends BaseController{
 	    $this->helper("ToWord");
 	    $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
 	    //$host="222.82.243.27:8282";
-	    
 	    //创建文件夹
-	    $dir = iconv("UTF-8", "GBK", "public/word/".$_SESSION['admin']['username']."/".time()."/");
+	    //$dir = iconv("UTF-8", "GBK", "public/word/".$_SESSION['admin']['username']."/".time()."/");
+	    $dir = iconv("UTF-8", "GBK", time()."/");
 	    if (!file_exists($dir)){
 	        mkdir ($dir,0777,true);
 	    } 
@@ -359,14 +359,18 @@ class ZoufangjiluController extends BaseController{
 	    $z->close();
 	    
 	    //设置打包完自动下载
+// 	    echo $temp_filename;
+	    echo '<script language="javascript" type="text/javascript"> 
+window.location.href="'.$temp_filename.'"; 
+</script> ';
 	    
-	    header("Cache-Control: public");
-	    header("Content-Description: File Transfer");
-	    header('Content-disposition: attachment; filename='.basename($temp_filename)); //文件名
-	    header("Content-Type: application/zip"); //zip格式的
-	    header("Content-Transfer-Encoding: binary"); //告诉浏览器，这是二进制文件
-	    header('Content-Length: '. filesize($temp_filename)); //告诉浏览器，文件大小
-	    @readfile($temp_filename);
+// 	    header("Cache-Control: public");
+// 	    header("Content-Description: File Transfer");
+// 	    header('Content-disposition: attachment; filename='.basename($temp_filename)); //文件名
+// 	    header("Content-Type: application/zip"); //zip格式的
+// 	    header("Content-Transfer-Encoding: binary"); //告诉浏览器，这是二进制文件
+// 	    header('Content-Length: '. filesize($temp_filename)); //告诉浏览器，文件大小
+// 	    @readfile($temp_filename);
 
 	    
 	    
@@ -377,7 +381,7 @@ class ZoufangjiluController extends BaseController{
 	    while(($filename=readdir($handler))!==false){
 	        if($filename != "." && $filename != ".."){//文件夹文件名字为'.'和‘..’，不要对他们进行操作
 	            if(is_dir($path."/".$filename)){// 如果读取的某个对象是文件夹，则递归
-	                addFileToZip($path."/".$filename, $zip);
+	                //addFileToZip($path."/".$filename, $zip);
 	            }else{ //将文件加入zip对象
 	                $zip->addFile($path."/".$filename);
 	            }

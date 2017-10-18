@@ -486,6 +486,13 @@ class IndexController extends   BaseController {
 		                        //村名
 		                        $canshu = $canshu_model->selectByPk($v["suoshucun"]);
 		                        $data_huji[$cur_huji_num]["cun"]=$canshu;
+		                        
+		                        //长期未走访记录表
+		                        $changqiweizoufangModel =new Model("changqiweizoufang");
+		                        $changqiweizoufangModel->select("delete from sl_changqiweizoufang where yonghuming='{$v["yonghuming"]}' ");
+		                        $temp_data["yonghuming"]=$v["yonghuming"];
+		                        $temp_data["huhao"]=$v["huhao"];
+		                        $changqiweizoufangModel->insert($temp_data);
 		                    }
 		                    
 		                }else {
@@ -499,6 +506,153 @@ class IndexController extends   BaseController {
 		        $rdata['status'] = "true";
 		        $rdata['msg']=json_encode($data_huji);
 		        
+		    }else if($type=="hujil_div")
+		    {
+		        /*
+		         * 户籍列表
+		         *
+		         *
+		         *
+		         * */
+		        
+		        //处理返回的列名称，用于多表查询
+		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
+		        //返回条数
+		        $number=$this->NumberFilter($_GET["number"]);
+		        //当前页数
+		        $page=$this->NumberFilter($_GET["page"]);
+		        
+		        // 		   ordertype：排序字段，默认已有ID，如不需要排序请为空
+		        $ordertype=$commonClass->SafeFilterStr($_GET["ordertype"]);
+		        // 		   orderby：排序方式，升序和降序
+		        $orderby=$commonClass->SafeFilterStr($_GET["orderby"]);
+		        // 		   sqlvalue：默认查询方式,如果有多个用逗号分隔，“|”会替换成=号
+		        $sqlvalue=$this->SqlvalueFilter($_GET["sqlvalue"]);
+		        
+		        
+		        //拼接为sql语句
+		        $_sql=$this->getSql($t,$liemingcheng,$number,$page,$ordertype,$orderby,$sqlvalue);
+		        if($print=="yes")
+		        {
+		            echo $_sql;
+		            die();
+		        }
+		        
+		        $temp_model = new Model($t);
+		        $temp_arr=$temp_model->select($_sql);
+		        //处理多表数据
+		        foreach ($temp_arr as $k=>$v)
+		        {
+		            if($temp_arr[$k]["dtime"]!=null)
+		            {
+		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime1"]=$v["dtime"];
+		            }
+// 		            //户籍下的人员
+// 		            $renyuan_model= new Model("renyuan");
+// 		            $renyuan= $renyuan_model->select("select * from sl_renyuan where hukoubianhao='{$v["huhao"]}' ");
+// 		            $temp_arr[$k]["renyuan"]=$renyuan;
+// 		            //上次走访时间
+// 		            $zoufangjilu_model= new Model("zoufangjilu");
+// 		            $zoufangjilu= $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc limit 0 , 1 ");
+		            
+// 		            $temp_arr[$k]["zoufangjilu"]=$zoufangjilu;
+		            
+		            //该户籍对应的计划
+		            $zoufangjihuaModel = new Model("zoufangjihua");
+		            $zoufangjihua = $zoufangjihuaModel->select("select yonghuming,id from sl_zoufangjihua where huhao='{$v["huhao"]}' limit 0,1 ")  ;
+		            if(count($zoufangjihua)>0)
+		            {
+		                $temp_arr[$k]["bl"]="no";
+		            }
+		            else {
+		                $temp_arr[$k]["bl"]="yes";
+		            }
+		            $temp_arr[$k]["zoufangjihua"]=$zoufangjihua;
+		            
+		        }
+		        
+		        //下面两个方法都是输出查询结果
+		        //var_dump($temp_model->select($_sql));
+		        //$print($temp_model->select($_sql));
+		        
+		        $rdata['status'] = "true";
+		        $rdata['msg']=json_encode($temp_arr);
+		        
+		    }
+		    else if($type=="hujil_div_add_zoufangjihua")
+		    {
+		        /*
+		         * 户籍列表
+		         *
+		         *
+		         *
+		         * */
+		        
+		        //处理返回的列名称，用于多表查询
+		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
+		        //返回条数
+		        $number=$this->NumberFilter($_GET["number"]);
+		        //当前页数
+		        $page=$this->NumberFilter($_GET["page"]);
+		        
+		        // 		   ordertype：排序字段，默认已有ID，如不需要排序请为空
+		        $ordertype=$commonClass->SafeFilterStr($_GET["ordertype"]);
+		        // 		   orderby：排序方式，升序和降序
+		        $orderby=$commonClass->SafeFilterStr($_GET["orderby"]);
+		        // 		   sqlvalue：默认查询方式,如果有多个用逗号分隔，“|”会替换成=号
+		        $sqlvalue=$this->SqlvalueFilter($_GET["sqlvalue"]);
+		        
+		        
+		        //拼接为sql语句
+		        $_sql=$this->getSql($t,$liemingcheng,$number,$page,$ordertype,$orderby,$sqlvalue);
+		        if($print=="yes")
+		        {
+		            echo $_sql;
+		            die();
+		        }
+		        
+		        $temp_model = new Model($t);
+		        $temp_arr=$temp_model->select($_sql);
+		        //处理多表数据
+		        foreach ($temp_arr as $k=>$v)
+		        {
+		            if($temp_arr[$k]["dtime"]!=null)
+		            {
+		                $temp_arr[$k]["dtime"]=$commonClass->time_tran($v["dtime"]);
+		                $temp_arr[$k]["dtime1"]=$v["dtime"];
+		            }
+		            // 		            //户籍下的人员
+		            // 		            $renyuan_model= new Model("renyuan");
+		            // 		            $renyuan= $renyuan_model->select("select * from sl_renyuan where hukoubianhao='{$v["huhao"]}' ");
+		            // 		            $temp_arr[$k]["renyuan"]=$renyuan;
+		            // 		            //上次走访时间
+		            // 		            $zoufangjilu_model= new Model("zoufangjilu");
+		            // 		            $zoufangjilu= $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc limit 0 , 1 ");
+		            
+		            // 		            $temp_arr[$k]["zoufangjilu"]=$zoufangjilu;
+		            
+		            //该户籍对应的计划
+		            $zoufangjihuaModel = new Model("zoufangjihua");
+		            $zoufangjihua = $zoufangjihuaModel->select("select yonghuming,id from sl_zoufangjihua where huhao='{$v["huhao"]}' limit 0,1 ")  ;
+		            if(count($zoufangjihua)>0)
+		            {
+		                $temp_arr[$k]["bl"]="no";
+		            }
+		            else {
+		                $temp_arr[$k]["bl"]="yes";
+		            }
+		            $temp_arr[$k]["zoufangjihua"]=$zoufangjihua;
+		            
+		        }
+		        
+		        //下面两个方法都是输出查询结果
+		        //var_dump($temp_model->select($_sql));
+		        //$print($temp_model->select($_sql));
+		        
+		        $rdata['status'] = "true";
+		        $rdata['msg']=json_encode($temp_arr);
+		        
 		    }
 		    else if($type=="del")
 		    {
@@ -508,7 +662,15 @@ class IndexController extends   BaseController {
 		         *
 		         * */
 		        $zoufangjihua_model = new Model("zoufangjihua");
-		        $temp_sqlStr="select * from sl_zoufangjihua where ". $zoufangjihua_model->getSqlWhereStr();
+		        $huhaos=$_REQUEST["huhaos"];
+		        if(!empty($huhaos))
+		        {
+		            $temp_sqlStr="select * from sl_zoufangjihua where ". $zoufangjihua_model->getSqlWhereStr()." and huhao in ({$huhaos})";
+		        }else
+		        {
+		            $temp_sqlStr="select * from sl_zoufangjihua where ". $zoufangjihua_model->getSqlWhereStr();
+		        }
+		       
 		        //echo $temp_sqlStr;
 		        $zoufangjihua = $zoufangjihua_model->select($temp_sqlStr);
 		        if(count($zoufangjihua)>0)
@@ -559,5 +721,126 @@ class IndexController extends   BaseController {
 		$this->ajaxReturn($rdata);
 		
 	}
+	
+	
+	//生成word对于的html
+	public function daochuAction(){
+	    $model_id = $_REQUEST['model_id'];
+	    // 获取wenzhang_id
+	    $id = $_GET['id'] ;
+	    //得到字段模型
+	    $filedModel=new Model("filed");
+	    $canshuModel= new Model("canshu");
+	    $yuangongModel = new Model("user");
+	    $hujiModel = new Model("huji");
+	    $renyuanModel = new Model("renyuan");
+	    
+	    $filedLists=$filedModel->select("select * from sl_filed where model_id='{$model_id}'  order by  u10 asc,id desc ");//显示查询字段
+	    
+	    // 获得当前表名
+	    $moxingModel = new MoxingModel("moxing");
+	    $tableName = $moxingModel->oneRowCol("u1", "id={$model_id}")['u1'];
+	    //先获取文章信息
+	    $tableModel = new Model($tableName);
+	    $wenzhang = $tableModel->selectByPk($id);
+	    //村详情
+	    $cun = $canshuModel->selectByPk($wenzhang["suoshucun"]);
+	    //员工详情
+	    // $yuangong = $yuangongModel->selectByCol("yonghuming", $wenzhang["ruhurenyuan"]);
+	    //户籍详情
+	    $huji = $hujiModel->selectByPk($wenzhang["huhao"]);
+	    //帮教对象亲属
+	    $renyuan = $renyuanModel->selectByCol("hukoubianhao", $wenzhang["huhao"]);
+	    foreach ($renyuan as $k => $v) {
+	        if(empty($qinshuNames))
+	        {
+	            $qinshuNames=$v["xingming"];
+	        }
+	        else
+	        {
+	            $qinshuNames.=",".$v["xingming"];
+	            
+	        }
+	    }
+	    //走访图片
+	    $zutu=str_replace("{next}","|",$wenzhang["zutu"]);
+	    $zutuArrTemp= explode("|",$zutu);
+	    //主机地址
+	    //$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+	    $host="222.82.243.27:8282";
+	    foreach ($zutuArrTemp as $zt) {
+	        $temp_arr=explode("|",str_replace("{title}","|",$zt)) ;
+	        $zutuArr[]="http://".$host.DS.$temp_arr[0];
+	    }
+	    //echo $cun["u1"];die();
+	    include CUR_VIEW_PATH . "Szoufangjilu" . DS . "zoufangjilu_daochu.html";
+	    
+	}
+	
+	
+	//生成并下载word
+	public function xiazaiAction(){
+	    $this->helper("ToWord");
+	    //$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+	    $host="222.82.243.27:8282";
+	    
+	    //创建文件夹
+	    $dir = iconv("UTF-8", "GBK", "public/word/".$_SESSION['admin']['username']."/".time()."/");
+	    if (!file_exists($dir)){
+	        mkdir ($dir,0777,true);
+	    }
+	    
+	    $ids = $_REQUEST['id'];
+	    $array_id=explode(",", $ids);
+	    $array_id=array_unique($array_id);
+	    for ($i = 0; $i < count($array_id); $i++) {
+	        $url="http://".$host.DS."index.php?p=admin&c=zoufangjilu&a=daochu&model_id=66&id=".$array_id[$i];
+	        $html= file_get_contents($url);
+	        $ToWord= new ToWord();
+	        $ToWord->start();
+	        $wordname = $dir.'入户帮教登记表'.$array_id[$i].".doc";
+	        echo $html;
+	        $ToWord->save($wordname);
+	        //ob_flush();//每次执行前刷新缓存
+	        flush();
+	    }
+	    
+	    //打包并下载
+	    $filename="入户帮教登记表".time().".zip";
+	    $temp_filename="public/word/".$_SESSION['admin']['username']."/".$filename;
+	    $z = new ZipArchive();
+	    $z->open($temp_filename, ZIPARCHIVE::CREATE);
+	    $this->addFileToZip($dir, $z);
+	    $z->close();
+	    
+	    //设置打包完自动下载
+	    echo $filename;
+	    // 	    header("Cache-Control: public");
+	    // 	    header("Content-Description: File Transfer");
+	    // 	    header('Content-disposition: attachment; filename='.basename($temp_filename)); //文件名
+	    // 	    header("Content-Type: application/zip"); //zip格式的
+	    // 	    header("Content-Transfer-Encoding: binary"); //告诉浏览器，这是二进制文件
+	    // 	    header('Content-Length: '. filesize($temp_filename)); //告诉浏览器，文件大小
+	    // 	    @readfile($temp_filename);
+	    
+	    
+	    
+	}
+	
+	function addFileToZip($path,$zip){
+	    $handler=opendir($path); //打开当前文件夹由$path指定。
+	    while(($filename=readdir($handler))!==false){
+	        if($filename != "." && $filename != ".."){//文件夹文件名字为'.'和‘..’，不要对他们进行操作
+	            if(is_dir($path."/".$filename)){// 如果读取的某个对象是文件夹，则递归
+	                addFileToZip($path."/".$filename, $zip);
+	            }else{ //将文件加入zip对象
+	                $zip->addFile($path."/".$filename);
+	            }
+	        }
+	    }
+	    @closedir($path);
+	}
+	
+	
 		
 }

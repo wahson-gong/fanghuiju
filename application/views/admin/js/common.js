@@ -353,6 +353,39 @@ function chk1(url)
 window.event.returnValue = false;
 }
 
+//在新标签页打开
+function chk2(url)
+{
+	if(confirm('确定执行当前操作吗?')==false)return false;
+    var boxes = document.getElementsByName("chk"); 
+    var t2=0;
+    var t1="";
+    for (var i = 0; i < boxes.length; i++)   
+    {
+     if (boxes[i].checked)   
+     {
+        t2=t2+1;
+        if(t2==1)
+        {
+        t1=t1+boxes[i].value;
+        }
+        else
+        {
+        t1=t1+","+boxes[i].value;
+        }
+     }
+    }
+    if(t1=="")
+    	{
+    	alert("请至少选择一项");
+    	window.event.returnValue = false;
+    	}
+    console.log(url+"&id="+t1);
+    window.open(url+"&id="+t1);
+//    window.location=url+"&id="+t1;
+//    window.event.returnValue = false;
+}
+
 //联动控件改变选中项
 function change(val,divid,filedName)
 {

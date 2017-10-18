@@ -9,17 +9,21 @@ class BaseController extends Controller {
 	
 	//验证用户是否登录
 	public function checkLogin(){
-		//注意，此处的admin是我在登录成功时保存的登录标识符
-		if (!isset($_SESSION['admin'])) {
-// 		    if($_GET["a"]=="daochu")
-// 		    {
-		        
-// 		    }else
-// 		    {
-// 		        $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
-// 		    }
-           $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
-		}
+        if ($_GET["a"] == "daochu") {
+            //导出功能不用判断登录；
+        } else {
+            //注意，此处的admin是我在登录成功时保存的登录标识符
+            if (!isset($_SESSION['admin'])) {
+                $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
+            }
+        }
+
+// 	    //注意，此处的admin是我在登录成功时保存的登录标识符
+// 	    if (!isset($_SESSION['admin'])) {
+// 	        $this->jump('index.php?p=admin&c=login&a=login','你还没有登录呢');
+// 	    }
+	                
+		
 		
 	}
 	

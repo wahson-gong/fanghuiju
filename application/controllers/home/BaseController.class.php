@@ -149,6 +149,7 @@ class BaseController extends Controller {
         $sqlvalue=str_replace("|"," = ",$sqlvalue);
         $sqlvalue=str_replace(","," and ",$sqlvalue);
         $sqlvalue=str_replace("/"," or ",$sqlvalue);
+        $sqlvalue=str_replace("dh"," , ",$sqlvalue);//把逗号替换为，
         //处理模糊查询
         $sqlvalue=str_replace("{like}"," like ",$sqlvalue);
         $sqlvalue=str_replace("{bfb}","%",$sqlvalue);

@@ -108,15 +108,16 @@ $('#test').diyUpload({
 		console.info( data._raw );
 		//获取上传图片路径
 		var imgPath=data._raw;
-		imgPath+="{title}"+"图片简介测试内容";
+		//imgPath+="{title}"+"图片简介测试内容";
+		imgPath+="{title}"+"";
 		//修改父框架的元素
 		var _ghyOb=$('#<?php echo $_GET["field"]?>', window.parent.document);
-		if(_ghyOb.val()=="")
+		if(_ghyOb.val()==""||_ghyOb.val()==" ")
 			{
 				_ghyOb.val(imgPath);
 			}else
 			{
-				_ghyOb.val(_ghyOb.val()+"{next}"+imgPath);	
+				_ghyOb.val(imgPath+ "{next}"+ _ghyOb.val());	
 			}
 		//$('#zutu', window.parent.document).val($('#zutu', window.parent.document).val()+","+imgPath);
 		
