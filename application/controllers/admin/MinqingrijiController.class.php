@@ -61,7 +61,7 @@ class MinqingrijiController extends BaseController{
 	    // 获取wenzhang总的记录数
 	    $total = $tableModel->total($where);
 	    // 指定分页数，每一页显示的记录数
-	    $pagesize = 10;
+	    $pagesize = isset($_GET['pagesize']) ? $_GET['pagesize']: 10;
 	    // $pagesize = $GLOBALS['config']['pagesize'];
 	    // 获取当前页数，默认是1
 	    $current = isset($_GET['page']) ? $_GET['page'] : 1;

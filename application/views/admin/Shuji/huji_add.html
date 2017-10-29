@@ -108,7 +108,7 @@
 				<tr>
 				<th></th>
 				<td>
-						<a href="#" class="btn btn-blue" onclick="$('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
+						<a href="#" class="btn btn-blue" onclick=" if(is_right_form())  $('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
 						<a href="#" class="btn btn-green" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a>
 			   </td>
 			   </tr>
@@ -141,7 +141,27 @@
 			
 			$("#huhao").parent("p").parent("div").hide();
 </script>
-
+<script type="text/javascript">
+//表单验证
+function is_right_form()
+{ 
+	if($.trim($("#allxingming").val())=="")
+	{
+	alert("房屋所有人姓名不能为空");
+	return false;
+	}
+	
+if($.trim($("input[name='hujileixing']:checked").val())=="")
+{
+alert("户籍类型不能为空");
+return false;
+}
+return true;
+ 
+}
+ 
+ 
+</script>
 </body>
 
 </html>

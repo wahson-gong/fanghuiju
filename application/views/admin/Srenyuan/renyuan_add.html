@@ -108,7 +108,7 @@
 				<tr>
 				<th></th>
 				<td>
-						<a href="#" class="btn btn-blue" onclick="$('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
+						<a href="#" class="btn btn-blue" onclick=" if(is_right_form())  $('#theForm').submit()"><em class="ficon ficon-queren"></em> 确认操作</a>&nbsp;&nbsp;
 						<a href="#" class="btn btn-green" onclick="if(confirm('确定清空重填?')==false)return false;$('#theForm').find('input').val('')"><em class="ficon ficon-shanchu"></em> 清空重填</a>
 			   </td>
 			   </tr>
@@ -143,6 +143,41 @@
 if($("#chushengriqi")){
 	$("#chushengriqi").val("1960-01-01");
 }
+</script>
+
+
+<script type="text/javascript">
+//表单验证
+function is_right_form()
+{ 
+	if($.trim($("#xingming").val())=="")
+	{
+	alert("姓名不能为空");
+	return false;
+	}
+	
+if($.trim($("input[name='xingbie']:checked").val())=="")
+{
+alert("性别不能为空");
+return false;
+}
+
+if($.trim($("#minzu").val())=="")
+{
+alert("民族不能为空");
+return false;
+}
+
+
+if($.trim($("input[name='renyuanleibie']:checked").val())=="")
+{
+alert("人员类别不能为空");
+return false;
+}	
+return true;
+}
+ 
+ 
 </script>
 
 </body>

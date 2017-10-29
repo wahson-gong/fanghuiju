@@ -3,7 +3,7 @@ class BaseController extends Controller {
     // protected $smarty;
     //构造方法
     public function __construct(){
-        $this->checkRequest();
+        //$this->checkRequest();
     }
     
     //验证接口合法性
@@ -13,6 +13,39 @@ class BaseController extends Controller {
         //查询该表是否可以查询
         
         //写入系统日志
+        $type=$_GET["type"];
+        $t=$_GET["t"];
+        $yonghuming=$_GET["xt_yhm"];
+        $type_str="";
+        if($type=="search")
+        {
+            $type_str="查询"; 
+        }else if($type=="login")
+        {
+            $type_str="登录";
+        }else if($type=="add")
+        {
+            $type_str="添加";
+        }else if($type=="edit")
+        {
+            $type_str="修改";
+        }else 
+        {
+            $type_str=$type;
+        }
+        
+        $Common = new Common();
+        $System = new SystemModel('System');
+        $sysData["u1"]=$yonghuming;
+        $sysData["yonghuming"]=$yonghuming;
+        $sysData["u4"]=$type_str;
+        $sysData["u3"]=$Common->getIP();
+        if(!empty($yonghuming)){
+            $sysData["u2"]=$username . "操作类型: {$type_str}，相关数据表 {$t}";
+            $System->insert($sysData);
+        }
+        
+        
     }
     
     /**
