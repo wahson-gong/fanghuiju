@@ -31,18 +31,80 @@
 		<!--筛选条件-->
 <div class="filter">
 <form method="post" action="index.php?p=admin&c=zoufangjilu&a=index&model_id=<?php echo $_GET['model_id'] ?>" name='theForm' id="search_from">
+	<div class="filter-right">
+		
+		<a href="index.php?p=admin&c=minqingriji&a=add&model_id=<?php echo $_GET['model_id'] ?>" class="btn btn-green"> + 添加信息</a>
+		<a href="index.php?p=admin&c=minqingriji&a=index&model_id=<?php echo $_GET['model_id'] ?>&pagesize=100000000000" class="btn btn-green"> 打印日记</a>
+	</div>
+	<p>
 	<div class="filter-left">
+	
+	    <div class="form-control">
+			时间：从<input name="dtime_str" type="text" id="TextBox1" class="dinput" onClick="WdatePicker()" />至<input name="dtime_end" type="text" id="TextBox2" class="dinput" onClick="WdatePicker()" />
+		</div>
+		
+		<div class="form-control">
+			所属村：
+			<div class="select-container">
+				<span id="Label1" class="selectOption gray">请选择</span>
+				<ul class="selectMenu">
+					<li>全部</li> 
+					
+					<?php foreach($cunList as $v){  ?>
+                     <li class="zhuangtai" data-value="<?php echo $v['id'] ?>"><?php echo $v['u1'] ?></li>
+                    <?php } ?>
+					
+					
+				</ul>
+				<input type="text" hidden="hide" name="suoshucun" id="suoshucun" value="" />
+				<script>
+				var status="";
+				$(".suoshucun").click(function(){
+					status=$(this).attr("data-value");
+					$("#suoshucun").val(status);
+				});
+				</script>
+				
+				<span class="shows ficon ficon-down-open"></span>
+			</div>
+
+			&nbsp;&nbsp;
+		</div>
+		<div class="form-control">
+			所属组：
+			<div class="select-container">
+				<span id="Label1" class="selectOption gray">请选择</span>
+				<ul class="selectMenu">
+					<li>全部</li> 
+					
+					<?php foreach($zuList as $v){  ?>
+                     <li class="suoshuzu" data-value="<?php echo $v['id'] ?>"><?php echo $v['u1'] ?></li>
+                    <?php } ?>
+					
+					
+				</ul>
+				<input type="text" hidden="hide" name="suoshuzu" id="suoshuzu" value="" />
+				<script>
+				var status="";
+				$(".suoshuzu").click(function(){
+					status=$(this).attr("data-value");
+					$("#suoshuzu").val(status);
+				});
+				</script>
+				
+				<span class="shows ficon ficon-down-open"></span>
+			</div>
+
+			&nbsp;&nbsp;
+		</div>
+		
+		
 		<div class="form-control">
 			<input name="u6" type="text" id="u6" class="input" placeholder="搜索条件" />
 
 			<input type="submit" name="Button1" value="搜索" id="Button1" class="btn btn-blue" />
 		</div>
 		
-	</div>
-
-	<div class="filter-right">
-		
-		<a href="index.php?p=admin&c=zoufangjilu&a=add&model_id=<?php echo $_GET['model_id'] ?>" class="btn btn-green"> + 添加信息</a>
 	</div>
 </form>
 	

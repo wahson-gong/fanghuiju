@@ -1,0 +1,75 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+ <style type="text/css">   
+    .border-table {   
+        border-collapse: collapse;   
+        border: none;   
+    }   
+    .border-table td {   
+        border: solid #000 1px; 
+		word-wrap：break-word；  
+    }   
+    .border-table td img{   
+        max-width:70%;
+    }   
+</style>  
+<body>
+<div align="center">
+  <table widtd="355" >
+    <tr>
+      <td widtd="276" height="47"><div align="center">
+        <h1>入户帮教登记表</h1>
+      </div></td>
+    </tr>
+  </table>
+  <table widtd="1016" height="835" class="border-table">
+    
+    <tr>
+      <td width="101" height="59" widtd="98" ><div align="center"><strong>村</strong></div></td>
+      <td width="196" widtd="292" ><div align="center"><strong>时间</strong></div></td>
+      <td width="232" widtd="145" ><div align="center"><strong>帮教干部</strong></div></td>
+      <td width="261" widtd="145"><div align="center"><strong>帮教对象</strong></div></td>
+      <td width="274" widtd="145"><div align="center"><strong>帮教对象亲属</strong></div></td>
+      <td width="249" widtd="151" ><div align="center"><strong>帮教对象亲属签字</strong></div></td>
+    </tr>
+    <tr>
+      <td height="92" ><div align="center">栏杆村</div></td>
+      <td><div align="center">2017-10-30</div></td>
+      <td><div align="center">测试用户新增</div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center">2,2,d,t,�,t,�,�,5,�,p,�,1,2,8,1,,,,,�,�,�,�,h,,,�,�,�,,1,,�,�,,,,�,�,8,v,A,,,,,,,,,�,,�,2,2,,,</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr>
+      <td height="270">
+      <div align="center">
+       <strong>乡▪村干部包户入户走访记录谈话及情况</strong>
+</div>
+      </td>
+      <td colspan="5">
+      	存在的问题:<p>
+      	&nbsp;&nbsp;&nbsp;&nbsp;是WWE      	<p>	走访情况:<p>
+      	&nbsp;&nbsp;&nbsp;&nbsp;是窝        
+      </tr>
+    <tr>
+      <td><div align="center"> <strong>照片</strong></div></td>
+      <td colspan="5">
+       <div align="center">
+                  <img src="http://222.82.243.27:8282/"  >
+         <p>
+				</div>
+         
+      </td>
+    </tr>
+    
+  </table>
+</div>
+</body>
+</html>
+</html>

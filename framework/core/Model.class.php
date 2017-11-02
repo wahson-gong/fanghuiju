@@ -102,7 +102,7 @@ class Model
             $dtime_str = $_REQUEST['dtime_str']."  00:00:00";
         }
         if (isset($_REQUEST['dtime_end']) && $_REQUEST['dtime_end'] != '') {
-            $dtime_end = $_REQUEST['dtime_end']."  24:00:00";
+            $dtime_end = $_REQUEST['dtime_end']."  23:59:59";
         }
         if ((isset($dtime_str) && $dtime_str != '') && (! isset($dtime_end) && $dtime_end == '')) {
             $sql = " dtime >= '{$dtime_str}' and  dtime <= NOW() ";

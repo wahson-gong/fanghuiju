@@ -20,6 +20,16 @@ class ZoufangjiluController extends BaseController{
 	        $where .= " and ".$tableModel->getSqlWhereStr();
 	    }
 	    
+	    //时间筛选
+	    if(trim($tableModel->getDtimeSql())!='')
+	    {
+	        $where .=" and ".$tableModel->getDtimeSql();
+	    }
+	    $canshuModel =new Model("canshu");
+	    $cunList=$canshuModel->select("select * from sl_canshu where id in (select suoshucun from sl_user group by suoshucun) ");
+	    $zuList=$canshuModel->select("select * from sl_canshu where id in (select suoshuzu from sl_user group by suoshuzu) ");
+	    
+	    
 	    //如果是村管理员1 
 	    if($_SESSION['admin']['zuming']=="村管理员")
 	    {
@@ -31,6 +41,10 @@ class ZoufangjiluController extends BaseController{
 	        if(!empty($cun_id))
 	        {
 	            $where .= " and suoshucun={$cun_id} ";
+	            $cunList=$canshuModel->select("select * from sl_canshu where id in (select suoshucun from sl_user where suoshucun={$cun_id} group by suoshucun) ");
+	            $zuList=$canshuModel->select("select * from sl_canshu where id in (select suoshuzu from sl_user where suoshucun={$cun_id}  group by suoshuzu) ");
+	            
+	            
 	        }
 	    }
 	    
@@ -295,28 +309,38 @@ class ZoufangjiluController extends BaseController{
 	    //户籍详情
 	    $huji = $hujiModel->selectByPk($wenzhang["huhao"]);
 	    //帮教对象亲属
-	    $renyuan = $renyuanModel->selectByCol("hukoubianhao", $wenzhang["huhao"]);
-	    foreach ($renyuan as $k => $v) {
-	        if(empty($qinshuNames))
-	        {
-	            $qinshuNames=$v["xingming"];
-	        }
-	        else
-	        {
-	            $qinshuNames.=",".$v["xingming"];
-	            
+// 	    $renyuan = $renyuanModel->selectByCol("hukoubianhao", $wenzhang["huhao"]);
+	    if($wenzhang["huhao"]!=""&&!empty($wenzhang["huhao"]))
+	    {
+	        $renyuan = $renyuanModel->select("select * from sl_renyuan where hukoubianhao={$wenzhang["huhao"]} ");
+	        foreach ($renyuan as $k => $v) {
+	            if(empty($qinshuNames))
+	            {
+	                $qinshuNames=$v["xingming"];
+	            }
+	            else
+	            {
+	                $qinshuNames.=",".$v["xingming"];
+	                
+	            }
 	        }
 	    }
+	   
 	    //走访图片
-	    $zutu=str_replace("{next}","|",$wenzhang["zutu"]);  
-	    $zutuArrTemp= explode("|",$zutu);
-	    //主机地址
-	    //$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
-	    $host="222.82.243.27:8282";
-	    foreach ($zutuArrTemp as $zt) {
-	        $temp_arr=explode("|",str_replace("{title}","|",$zt)) ;
-	        $zutuArr[]="http://".$host.DS.$temp_arr[0];
+	    if(!empty($wenzhang["zutu"])&& $wenzhang["zutu"]!="")
+	    {
+	        $zutu=str_replace("{next}","|",$wenzhang["zutu"]);
+	        $zutuArrTemp= explode("|",$zutu);
+	        //主机地址
+	        //$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+	        $host="222.82.243.27:8282";
+	        foreach ($zutuArrTemp as $zt) {
+	            $temp_arr=explode("|",str_replace("{title}","|",$zt)) ;
+	            $zutuArr[]="http://".$host.DS.$temp_arr[0];
+	        }
+	        
 	    }
+	    
 	    //echo $cun["u1"];die();
 	    include CUR_VIEW_PATH . "Szoufangjilu" . DS . "zoufangjilu_daochu.html";
 	    
@@ -339,11 +363,11 @@ class ZoufangjiluController extends BaseController{
 	    $array_id=explode(",", $ids);
 	    $array_id=array_unique($array_id);
 	    for ($i = 0; $i < count($array_id); $i++) {
-	        $url="http://".$host.DS."index.php?p=admin&c=zoufangjilu&a=daochu&model_id=66&id=".$array_id[$i];
+	        $url="http://".$host."/index.php?p=admin&c=zoufangjilu&a=daochu&model_id=66&id=".$array_id[$i];
 	        $html= file_get_contents($url);
  	        $ToWord= new ToWord();
 	        $ToWord->start();
-	        $wordname = $dir.'入户帮教登记表'.$array_id[$i].".doc";
+	        $wordname = $dir.'word'.$array_id[$i].".doc";
 	        echo $html; 
 	        $ToWord->save($wordname);
 	        //ob_flush();//每次执行前刷新缓存
@@ -351,8 +375,8 @@ class ZoufangjiluController extends BaseController{
 	    }
 	    
 	    //打包并下载
-	    $filename="入户帮教登记表".time().".zip";
-	    $temp_filename="public/word/".$_SESSION['admin']['username']."/".$filename;
+	    $filename="words".time().".zip";
+	    $temp_filename="public/".$filename;
 	    $z = new ZipArchive();
 	    $z->open($temp_filename, ZIPARCHIVE::CREATE);
 	    $this->addFileToZip($dir, $z);

@@ -3,6 +3,9 @@
 class IndexController extends   BaseController {
 	//index方法
 	public function indexAction(){
+// 	    ini_set("display_errors", "On");
+// 	    error_reporting(E_ALL | E_STRICT);
+	    
 	    //设置默认数据格式，便于测试时使用
 	    header("Content-type: text/html; charset=utf-8");
 	    
@@ -61,49 +64,49 @@ class IndexController extends   BaseController {
 		                $temp_arr[$k]["dtime1"]=$v["dtime"];
 		            }
 		            
-		            //给人员表添加姓名拼音首字母
-		            if($t=="sl_renyuan")
-		            {
-		                //生成首字母 start
+// 		            //给人员表添加姓名拼音首字母
+// 		            if($t=="sl_renyuan")
+// 		            {
+// 		                //生成首字母 start
 		                
-		                //挂载中文转拼音类
-		                include_once LIB_PATH . "CUtf8_PY.class.php";
-		                $ch2ypClass =new CUtf8_PY();
-		                //转换后的参数
-		                if($v["xingming"]=="")
-		                {
-		                    $shouzimu="";
-		                }
-		                else
-		                {
-		                    $shouzimu=substr( $ch2ypClass->encode($v["xingming"],"all"), 0, 1 );
-		                }
+// 		                //挂载中文转拼音类
+// 		                include_once LIB_PATH . "CUtf8_PY.class.php";
+// 		                $ch2ypClass =new CUtf8_PY();
+// 		                //转换后的参数
+// 		                if($v["xingming"]=="")
+// 		                {
+// 		                    $shouzimu="";
+// 		                }
+// 		                else
+// 		                {
+// 		                    $shouzimu=substr( $ch2ypClass->encode($v["xingming"],"all"), 0, 1 );
+// 		                }
 		                
-		                $temp_arr[$k]["shouzimu"]=$shouzimu;
-		                //生成首字母 end
-		            }
+// 		                $temp_arr[$k]["shouzimu"]=$shouzimu;
+// 		                //生成首字母 end
+// 		            }
 		            
-		            //给人员表添加姓名拼音首字母
-		            if($t=="sl_huji")
-		            {
-		                //生成首字母 start
+// 		            //给人员表添加姓名拼音首字母
+// 		            if($t=="sl_huji")
+// 		            {
+// 		                //生成首字母 start
 		                
-		                //挂载中文转拼音类
-		                include_once LIB_PATH . "CUtf8_PY.class.php";
-		                $ch2ypClass =new CUtf8_PY();
-		                //转换后的参数
-		                if($v["huzhuxingming"]=="")
-		                {
-		                    $shouzimu="";
-		                }
-		                else
-		                {
-		                    $shouzimu=substr( $ch2ypClass->encode($v["huzhuxingming"],"all"), 0, 1 );
-		                }
+// 		                //挂载中文转拼音类
+// 		                include_once LIB_PATH . "CUtf8_PY.class.php";
+// 		                $ch2ypClass =new CUtf8_PY();
+// 		                //转换后的参数
+// 		                if($v["huzhuxingming"]=="")
+// 		                {
+// 		                    $shouzimu="";
+// 		                }
+// 		                else
+// 		                {
+// 		                    $shouzimu=substr( $ch2ypClass->encode($v["huzhuxingming"],"all"), 0, 1 );
+// 		                }
 		                
-		                $temp_arr[$k]["shouzimu"]=$shouzimu;
-		                //生成首字母 end
-		            }
+// 		                $temp_arr[$k]["shouzimu"]=$shouzimu;
+// 		                //生成首字母 end
+// 		            }
 		            
 		            
 		            //echo $temp_arr[$k]["dtime"];
@@ -428,32 +431,43 @@ class IndexController extends   BaseController {
 		         *
 		         *
 		         * */
+		        $t="sl_huji";
+		        //处理返回的列名称，用于多表查询
+		        $liemingcheng=$this->LiemingchengFilter($_GET["liemingcheng"]);
 		        //返回条数
-		        $number=$_REQUEST["number"];
+		        $number=$this->NumberFilter($_GET["number"]);
 		        //当前页数
-		        $page=$_REQUEST["page"];
-		        if(empty($number))
+		        $page=$this->NumberFilter($_GET["page"]);
+		        
+		        // 		   ordertype：排序字段，默认已有ID，如不需要排序请为空
+		        $ordertype=$commonClass->SafeFilterStr($_GET["ordertype"]);
+		        // 		   orderby：排序方式，升序和降序
+		        $orderby=$commonClass->SafeFilterStr($_GET["orderby"]);
+		        // 		   sqlvalue：默认查询方式,如果有多个用逗号分隔，“|”会替换成=号
+		        $sqlvalue=$this->SqlvalueFilter($_GET["sqlvalue"]);
+		        
+		        if(empty($sqlvalue))
 		        {
-		            $number=1;
-		        }
-		        if(empty($page))
-		        {
-		            $page=1;
-		        }
-		        $suoshucun=$_REQUEST["suoshucun"];
-		        $huji_model = new Model("huji");
-		        if(!empty($suoshucun))
-		        {
-		            $huji = $huji_model->select("select * from sl_huji where suoshucun={$suoshucun} group by huhao");
+		            $sqlvalue=" huhao in (select huhao from sl_zoufangjilu )";
 		        }else 
 		        {
-		            $huji = $huji_model->select("select * from sl_huji group by huhao");
+		            $sqlvalue=" and huhao in (select huhao from sl_zoufangjilu )";
 		        }
-		        
+		        //拼接为sql语句
+		        $_sql=$this->getSql($t,$liemingcheng,999999,$page,$ordertype,$orderby,$sqlvalue);
+		        if($print=="yes")
+		        {
+		            echo $_sql;
+		            die();
+		        }
+  
+		        $huji_model = new Model("huji");
+		        $huji=$huji_model->select($_sql);
 		        //间隔时间内是否有访问记录，如果没有则返回最近一次的走访记录，如果有则不加入数组
-		        
 		        $zoufangjilu_model = new Model("zoufangjilu");
 		        $canshu_model = new Model("canshu");
+		        //长期未走访记录表
+		        $data_huji="";
 		        foreach ($huji as $k=>$v)
 		        {
 		           $hujileixing= $v["hujileixing"];
@@ -461,50 +475,55 @@ class IndexController extends   BaseController {
 		               continue;
 		            $temp_arr= array( "classid" => "31", "u1" => $hujileixing );
 		            $fangwenshijian = $canshu_model->selectByArrayAnd( $temp_arr)[0]["u2"];
-		            $fangwenshijian = $this->NumberFilter($fangwenshijian);
-		            $zoufangjilu = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' and DATEDIFF(NOW(),dtime)>=0   and DATEDIFF(NOW(),dtime)<{$fangwenshijian} ");
-		           //该户籍属于长期未走访的对象
-		           // echo count($zoufangjilu)."<br/>";
+		            //$fangwenshijian = $this->NumberFilter($fangwenshijian);
+		            $zoufangjilu = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}'   and DATEDIFF(NOW(),dtime)<{$fangwenshijian}  ");
+		             //该户籍属于长期未走访的对象
 		            if(count($zoufangjilu)==0)
 		            {
-		                $per_pagenum=($page-1)*$number;
-		                $next_pagenum=$page*$number;
-		                //echo $per_pagenum."  |  ".$next_pagenum." "."<br/>";flush();
-		                $cur_huji_num=count($data_huji);
-		                //echo $cur_huji_num."<br/>";
-		                if($per_pagenum<=$cur_huji_num&&$cur_huji_num<$next_pagenum)
-		                {
-		                    $temp_zuijinzoufangjilu= $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
-		                    if(empty($temp_zuijinzoufangjilu))
+		                
+		                    $temp_zuijinzoufangjilu= $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc  limit 0,1 ")[0];
+		                    if(!empty($temp_zuijinzoufangjilu))
 		                    {
-		                        $data_huji[$cur_huji_num]["huji"] = $v;
-		                        $data_huji[$cur_huji_num]["zuijinzoufangjilu"] = $zoufangjilu_model->select("select * from sl_zoufangjilu where huhao='{$v["huhao"]}' order by dtime desc ")[0];
+		                        
+		                        $data_huji_temp["huji"] = $v;
+		                        $data_huji_temp["zuijinzoufangjilu"] = $temp_zuijinzoufangjilu;
 		                        //组名
-		                        $canshu_model= new Model("canshu");
-		                        $canshu = $canshu_model->selectByPk($v["suoshuzu"]);
-		                        $data_huji[$cur_huji_num]["zu"]=$canshu;
+		                        $canshu = $canshu_model->selectByPk($temp_zuijinzoufangjilu["suoshuzu"]);
+		                        $data_huji_temp["zu"]=$canshu;
 		                        //村名
-		                        $canshu = $canshu_model->selectByPk($v["suoshucun"]);
-		                        $data_huji[$cur_huji_num]["cun"]=$canshu;
+// 		                        $canshu = $canshu_model->selectByPk($v["suoshucun"]);
+// 		                        $data_huji[$cur_huji_num]["cun"]=$canshu;
 		                        
 		                        //长期未走访记录表
-		                        $changqiweizoufangModel =new Model("changqiweizoufang");
-		                        $changqiweizoufangModel->select("delete from sl_changqiweizoufang where yonghuming='{$v["yonghuming"]}' ");
-		                        $temp_data["yonghuming"]=$v["yonghuming"];
-		                        $temp_data["huhao"]=$v["huhao"];
-		                        $changqiweizoufangModel->insert($temp_data);
+		                         
+// 		                        $changqiweizoufangModel->select("delete from sl_changqiweizoufang where yonghuming='{$v["yonghuming"]}' ");
+// 		                        $temp_data["yonghuming"]=$v["yonghuming"];
+// 		                        $temp_data["huhao"]=$v["huhao"];
+// 		                        $changqiweizoufangModel->insert($temp_data);
+		                        $data_huji[]=$data_huji_temp;
 		                    }
 		                    
-		                }else {
-		                    break;
-		                }
 		                
 		                
 		            }
 		        }
 		        
+		        //返回对应条数
+		        foreach ($data_huji as $k=>$v)
+		        {
+		            $per_pagenum=($page-1)*$number;
+		            $next_pagenum=$page*$number;
+		            //echo $per_pagenum."  |  ".$next_pagenum." "."<br/>";flush();
+		            $cur_huji_num=count($data_huji);
+		            //echo $cur_huji_num."<br/>";
+		            if($per_pagenum<=$cur_huji_num&&$cur_huji_num<$next_pagenum)
+		            {
+		                $data_huji1[]=$v;
+		            }
+		        }
+		         
 		        $rdata['status'] = "true";
-		        $rdata['msg']=json_encode($data_huji);
+		        $rdata['msg']=json_encode($data_huji1);
 		        
 		    }else if($type=="hujil_div")
 		    {

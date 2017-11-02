@@ -19,6 +19,16 @@ class HujiController extends BaseController{
 	    {
 	        $where .= " and ".$tableModel->getSqlWhereStr();
 	    }
+	    //时间筛选
+	    if(trim($tableModel->getDtimeSql())!='')
+	    {
+	        $where .=" and ".$tableModel->getDtimeSql();
+	    }
+	   // echo $where;die();
+	    $canshuModel =new Model("canshu");
+	    $cunList=$canshuModel->select("select * from sl_canshu where id in (select suoshucun from sl_user group by suoshucun) ");
+	    $zuList=$canshuModel->select("select * from sl_canshu where id in (select suoshuzu from sl_user group by suoshuzu) ");
+	    
 	    
 	    //如果是村管理员1 
 	    if($_SESSION['admin']['zuming']=="村管理员")
@@ -31,6 +41,9 @@ class HujiController extends BaseController{
 	        if(!empty($cun_id))
 	        {
 	            $where .= " and suoshucun={$cun_id} ";
+	            $cunList=$canshuModel->select("select * from sl_canshu where id in (select suoshucun from sl_user where suoshucun={$cun_id} group by suoshucun) ");
+	            $zuList=$canshuModel->select("select * from sl_canshu where id in (select suoshuzu from sl_user where suoshucun={$cun_id}  group by suoshuzu) ");
+	            
 	        }
 	    }
 	    
